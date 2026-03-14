@@ -30,20 +30,19 @@
     position: fixed; top: 0; left: 0; right: 0;
     display: flex; justify-content: space-between; align-items: center;
     padding: 0 48px; height: 72px;
-    background: rgba(255,255,255,.92);
+    background: rgba(17,17,17,.95);
     backdrop-filter: blur(12px);
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid rgba(255,255,255,.1);
     z-index: 100;
   }
   .logo {
-    font-size: 20px; font-weight: 800; letter-spacing: .02em;
+    font-size: 20px; font-weight: 800; letter-spacing: .02em; color: var(--white);
   }
-  .logo span { color: var(--accent); }
   nav a {
-    margin-left: 32px; text-decoration: none; color: var(--black);
+    margin-left: 32px; text-decoration: none; color: rgba(255,255,255,.7);
     font-size: 13px; font-weight: 600; letter-spacing: .04em;
   }
-  nav a:hover { color: var(--accent); }
+  nav a:hover { color: var(--white); }
   .header-cta {
     margin-left: 32px; padding: 10px 24px;
     background: var(--black); color: var(--white);
