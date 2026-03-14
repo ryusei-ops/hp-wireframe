@@ -30,9 +30,10 @@
     position: fixed; top: 0; left: 0; right: 0;
     display: flex; justify-content: space-between; align-items: center;
     padding: 0 48px; height: 72px;
-    background: rgba(17,17,17,.95);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255,255,255,.1);
+    background: transparent;
+    backdrop-filter: none;
+    border-bottom: 1px solid transparent;
+    transition: background .3s, backdrop-filter .3s, border-color .3s;
     z-index: 100;
   }
   .logo {
@@ -718,6 +719,20 @@
   init();
   draw();
 })();
+
+// ===== HEADER SCROLL =====
+const header = document.querySelector('header');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 80) {
+    header.style.background = 'rgba(17,17,17,.95)';
+    header.style.backdropFilter = 'blur(12px)';
+    header.style.borderBottomColor = 'rgba(255,255,255,.1)';
+  } else {
+    header.style.background = 'transparent';
+    header.style.backdropFilter = 'none';
+    header.style.borderBottomColor = 'transparent';
+  }
+});
 
 const REPO = 'ryusei-ops/hp-wireframe';
 const SECTION_NAMES = {
