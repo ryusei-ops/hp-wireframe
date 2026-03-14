@@ -280,6 +280,17 @@
     color: rgba(255,255,255,.4); text-decoration: none; margin-left: 24px;
   }
 
+  /* ===== SCROLL ANIMATION ===== */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity .7s ease, transform .7s ease;
+  }
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
   /* ===== REVIEW TOOLBAR ===== */
   .review-bar {
     position: fixed; top: 0; left: 0; right: 0;
@@ -414,29 +425,29 @@
 
 <!-- ===== SERVICE ===== -->
 <section id="service" data-section="service" data-section-label="SERVICE - クリックしてコメント">
-  <div class="section-label">Service</div>
-  <div class="section-title">事業内容</div>
-  <div class="section-desc">デジタル技術を用いて、企業の課題に最適なソリューションを展開します。</div>
+  <div class="section-label fade-up">Service</div>
+  <div class="section-title fade-up">事業内容</div>
+  <div class="section-desc fade-up">デジタル技術を用いて、企業の課題に最適なソリューションを展開します。</div>
   <div class="service-grid">
-    <div class="service-card">
+    <div class="service-card fade-up">
       <div class="service-num">01</div>
       <h3>Web集客事業</h3>
       <p>リスティング広告・SNS広告の運用代行、MEO対策など、オンライン・オフラインの集客を支援します。</p>
       <a href="#" class="link">詳しく見る →</a>
     </div>
-    <div class="service-card">
+    <div class="service-card fade-up" style="transition-delay:.1s">
       <div class="service-num">02</div>
       <h3>採用代行 オタスケジンジ</h3>
       <p>求人媒体の選定から応募者対応まで、採用業務をまるごと代行。コストを抑えた採用を実現します。</p>
       <a href="#" class="link">詳しく見る →</a>
     </div>
-    <div class="service-card">
+    <div class="service-card fade-up" style="transition-delay:.2s">
       <div class="service-num">03</div>
       <h3>HP・LP制作</h3>
       <p>集客に強いホームページ・ランディングページを制作。戦略設計からデザイン・実装まで一貫対応。</p>
       <a href="#" class="link">詳しく見る →</a>
     </div>
-    <div class="service-card">
+    <div class="service-card fade-up" style="transition-delay:.3s">
       <div class="service-num">04</div>
       <h3>AI導入・業務効率化支援</h3>
       <p>ChatGPT活用、業務フロー自動化、データ分析基盤の構築など、AI技術で業務を変革します。</p>
@@ -447,9 +458,9 @@
 
 <!-- ===== ABOUT ===== -->
 <section id="about" class="bg-light" data-section="about" data-section-label="ABOUT - クリックしてコメント">
-  <div class="section-label">About</div>
-  <div class="section-title">私たちについて</div>
-  <div class="about-content">
+  <div class="section-label fade-up">About</div>
+  <div class="section-title fade-up">私たちについて</div>
+  <div class="about-content fade-up">
     <div class="about-text">
       <h3>デジタルの力で、<br>ビジネスの可能性を広げる</h3>
       <p>私たちは「テクノロジーをもっと身近に」をミッションに、中小企業のデジタル活用を支援しています。広告運用・Web制作の知見とAI技術を掛け合わせ、成果に直結するソリューションを提供します。</p>
@@ -462,21 +473,21 @@
 
 <!-- ===== STRENGTH ===== -->
 <section data-section="strength" data-section-label="STRENGTH - クリックしてコメント">
-  <div class="section-label">Strength</div>
-  <div class="section-title">選ばれる理由</div>
-  <div class="section-desc">多くのクライアント様に継続いただいている理由をご紹介します。</div>
+  <div class="section-label fade-up">Strength</div>
+  <div class="section-title fade-up">選ばれる理由</div>
+  <div class="section-desc fade-up">多くのクライアント様に継続いただいている理由をご紹介します。</div>
   <div class="strength-list">
-    <div class="strength-item">
+    <div class="strength-item fade-up">
       <div class="num">01</div>
       <h3>ワンストップ対応</h3>
       <p>集客・採用・制作・AI活用まで、複数の課題を一社で解決。窓口が分散しないため、スピーディーに進行できます。</p>
     </div>
-    <div class="strength-item">
+    <div class="strength-item fade-up" style="transition-delay:.1s">
       <div class="num">02</div>
       <h3>成果にコミット</h3>
       <p>施策の実行だけでなく、KPI設計から効果測定まで。数値に基づいたPDCAで確実に成果を積み上げます。</p>
     </div>
-    <div class="strength-item">
+    <div class="strength-item fade-up" style="transition-delay:.2s">
       <div class="num">03</div>
       <h3>中小企業に最適化</h3>
       <p>大手向けの画一的なプランではなく、御社の予算・規模・フェーズに合わせた柔軟なプランをご提案します。</p>
@@ -486,11 +497,11 @@
 
 <!-- ===== WORKS ===== -->
 <section id="works" class="bg-light" data-section="works" data-section-label="WORKS - クリックしてコメント">
-  <div class="section-label">Works</div>
-  <div class="section-title">実績・事例</div>
-  <div class="section-desc">さまざまな業種・課題でお手伝いしてきた事例の一部をご紹介します。</div>
+  <div class="section-label fade-up">Works</div>
+  <div class="section-title fade-up">実績・事例</div>
+  <div class="section-desc fade-up">さまざまな業種・課題でお手伝いしてきた事例の一部をご紹介します。</div>
   <div class="works-grid">
-    <div class="works-card">
+    <div class="works-card fade-up">
       <div class="works-thumb">事例画像</div>
       <div class="works-card-body">
         <span class="works-tag">Web集客</span>
@@ -498,7 +509,7 @@
         <p>CPA 40%削減、来店数1.5倍を達成</p>
       </div>
     </div>
-    <div class="works-card">
+    <div class="works-card fade-up" style="transition-delay:.1s">
       <div class="works-thumb">事例画像</div>
       <div class="works-card-body">
         <span class="works-tag">採用代行</span>
@@ -506,7 +517,7 @@
         <p>採用単価を60%削減しながら応募数2倍</p>
       </div>
     </div>
-    <div class="works-card">
+    <div class="works-card fade-up" style="transition-delay:.2s">
       <div class="works-thumb">事例画像</div>
       <div class="works-card-body">
         <span class="works-tag">AI導入</span>
@@ -519,33 +530,33 @@
 
 <!-- ===== CTA ===== -->
 <section class="cta-section" data-section="cta" data-section-label="CTA - クリックしてコメント">
-  <div class="section-label" style="color:rgba(255,255,255,.5);">Contact</div>
-  <div class="section-title">まずはお気軽にご相談ください</div>
-  <p>課題のヒアリングからお見積もりまで無料で対応いたします。</p>
-  <a href="#contact" class="cta-btn">お問い合わせ</a>
+  <div class="section-label fade-up" style="color:rgba(255,255,255,.5);">Contact</div>
+  <div class="section-title fade-up">まずはお気軽にご相談ください</div>
+  <p class="fade-up">課題のヒアリングからお見積もりまで無料で対応いたします。</p>
+  <a href="#contact" class="cta-btn fade-up">お問い合わせ</a>
 </section>
 
 <!-- ===== BLOG ===== -->
 <section id="blog" data-section="blog" data-section-label="BLOG - クリックしてコメント">
-  <div class="section-label">Blog</div>
-  <div class="section-title">ブログ</div>
-  <div class="section-desc">マーケティングやAI活用のノウハウを発信しています。</div>
+  <div class="section-label fade-up">Blog</div>
+  <div class="section-title fade-up">ブログ</div>
+  <div class="section-desc fade-up">マーケティングやAI活用のノウハウを発信しています。</div>
   <div class="blog-grid">
-    <div class="blog-card">
+    <div class="blog-card fade-up">
       <div class="blog-thumb">記事サムネイル</div>
       <div class="blog-card-body">
         <div class="blog-date">2026.03.10</div>
         <h3>リスティング広告の費用対効果を最大化する5つのポイント</h3>
       </div>
     </div>
-    <div class="blog-card">
+    <div class="blog-card fade-up" style="transition-delay:.1s">
       <div class="blog-thumb">記事サムネイル</div>
       <div class="blog-card-body">
         <div class="blog-date">2026.03.05</div>
         <h3>中小企業がAIを導入する前に知っておくべきこと</h3>
       </div>
     </div>
-    <div class="blog-card">
+    <div class="blog-card fade-up" style="transition-delay:.2s">
       <div class="blog-thumb">記事サムネイル</div>
       <div class="blog-card-body">
         <div class="blog-date">2026.02.28</div>
@@ -557,10 +568,10 @@
 
 <!-- ===== RECRUIT ===== -->
 <section id="recruit" style="background:var(--dark);color:var(--white);text-align:center;" data-section="recruit" data-section-label="RECRUIT - クリックしてコメント">
-  <div class="section-label" style="color:rgba(255,255,255,.4);">Recruit</div>
-  <div class="section-title" style="color:var(--white);">一緒に働く仲間を募集しています</div>
-  <p style="color:rgba(255,255,255,.5);margin-bottom:40px;">私たちと一緒に、クライアントのビジネス成長を支援しませんか。</p>
-  <a href="#" class="cta-btn">採用情報を見る</a>
+  <div class="section-label fade-up" style="color:rgba(255,255,255,.4);">Recruit</div>
+  <div class="section-title fade-up" style="color:var(--white);">一緒に働く仲間を募集しています</div>
+  <p class="fade-up" style="color:rgba(255,255,255,.5);margin-bottom:40px;">私たちと一緒に、クライアントのビジネス成長を支援しませんか。</p>
+  <a href="#" class="cta-btn fade-up">採用情報を見る</a>
 </section>
 
 <!-- ===== FOOTER ===== -->
@@ -719,6 +730,17 @@
   init();
   draw();
 })();
+
+// ===== SCROLL ANIMATION =====
+const fadeEls = document.querySelectorAll('.fade-up');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.15 });
+fadeEls.forEach(el => observer.observe(el));
 
 // ===== HEADER SCROLL =====
 const header = document.querySelector('header');
