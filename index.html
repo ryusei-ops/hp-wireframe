@@ -60,10 +60,8 @@
     position: relative;
     overflow: hidden;
   }
-  .hero::after {
-    content: "";
-    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-    background: url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='1' cy='1' r='.6' fill='rgba(255,255,255,.07)'/%3E%3C/svg%3E");
+  .hero canvas {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
     pointer-events: none;
   }
   .hero-inner { max-width: 900px; position: relative; z-index: 1; }
@@ -397,10 +395,11 @@
 
 <!-- ===== HERO ===== -->
 <section class="hero" data-section="hero" data-section-label="HERO - クリックしてコメント">
+  <canvas id="heroCanvas"></canvas>
   <div class="hero-inner">
     <div class="hero-sub">AI × Digital Marketing</div>
-    <h1>最先端のテクノロジーで<br>ビジネスの成長を導く</h1>
-    <p>AIをはじめとする最新テクノロジーを活用し、<br>集客・採用・業務効率化まで、御社の成長を加速させます。</p>
+    <h1>デジタルを先導し、<br>成果に繋げる</h1>
+    <p>AIをはじめとした最新のデジタルを駆使し、<br>御社の課題に合わせた最適なソリューションを提供します。</p>
     <a href="#contact" class="hero-cta">まずは無料で相談する</a>
   </div>
 </section>
@@ -409,7 +408,7 @@
 <section id="service" data-section="service" data-section-label="SERVICE - クリックしてコメント">
   <div class="section-label">Service</div>
   <div class="section-title">事業内容</div>
-  <div class="section-desc">マーケティング・採用・制作・AIの4領域で、ビジネスの課題を一気通貫で解決します。</div>
+  <div class="section-desc">デジタル技術を用いて、企業の課題に最適なソリューションを展開します。</div>
   <div class="service-grid">
     <div class="service-card">
       <div class="service-num">01</div>
@@ -419,7 +418,7 @@
     </div>
     <div class="service-card">
       <div class="service-num">02</div>
-      <h3>採用代行<br>オタスケジンジ</h3>
+      <h3>採用代行 オタスケジンジ</h3>
       <p>求人媒体の選定から応募者対応まで、採用業務をまるごと代行。コストを抑えた採用を実現します。</p>
       <a href="#" class="link">詳しく見る →</a>
     </div>
@@ -431,7 +430,7 @@
     </div>
     <div class="service-card">
       <div class="service-num">04</div>
-      <h3>AI導入・<br>業務効率化支援</h3>
+      <h3>AI導入・業務効率化支援</h3>
       <p>ChatGPT活用、業務フロー自動化、データ分析基盤の構築など、AI技術で業務を変革します。</p>
       <a href="#" class="link">詳しく見る →</a>
     </div>
@@ -596,6 +595,70 @@
 </footer>
 
 <script>
+// ===== MOTION GRAPHIC =====
+(function() {
+  const canvas = document.getElementById('heroCanvas');
+  const ctx = canvas.getContext('2d');
+  let w, h, particles, connections;
+
+  function resize() {
+    const hero = canvas.parentElement;
+    w = canvas.width = hero.offsetWidth;
+    h = canvas.height = hero.offsetHeight;
+  }
+
+  function init() {
+    resize();
+    particles = [];
+    const count = Math.floor((w * h) / 12000);
+    for (let i = 0; i < count; i++) {
+      particles.push({
+        x: Math.random() * w,
+        y: Math.random() * h,
+        vx: (Math.random() - 0.5) * 0.5,
+        vy: (Math.random() - 0.5) * 0.5,
+        r: Math.random() * 2 + 1
+      });
+    }
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, w, h);
+    // connections
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < 120) {
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.strokeStyle = 'rgba(42,92,255,' + (1 - dist / 120) * 0.15 + ')';
+          ctx.lineWidth = 0.5;
+          ctx.stroke();
+        }
+      }
+    }
+    // particles
+    for (const p of particles) {
+      p.x += p.vx;
+      p.y += p.vy;
+      if (p.x < 0 || p.x > w) p.vx *= -1;
+      if (p.y < 0 || p.y > h) p.vy *= -1;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(42,92,255,0.3)';
+      ctx.fill();
+    }
+    requestAnimationFrame(draw);
+  }
+
+  window.addEventListener('resize', () => { resize(); });
+  init();
+  draw();
+})();
+
 const REPO = 'ryusei-ops/hp-wireframe';
 const SECTION_NAMES = {
   hero: 'ヒーロー',
