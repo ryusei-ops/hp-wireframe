@@ -228,27 +228,60 @@
   .works-card {
     border-radius: var(--radius); overflow: hidden;
     border: none; background: var(--white);
-    transition: transform .3s ease;
+    padding: 32px 28px;
+    position: relative;
   }
-  .works-card:hover { transform: scale(1.02); }
-  .works-thumb {
-    height: 220px; background: #e8e8ed;
-    display: flex; align-items: center; justify-content: center;
-    color: var(--gray); font-size: 14px;
-    border-radius: var(--radius);
+  .works-metric {
+    font-size: 40px; font-weight: 700; line-height: 1.1;
+    letter-spacing: -.02em; margin-bottom: 16px;
+    background: linear-gradient(135deg, var(--accent) 0%, #6a9dff 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
-  .works-card-body { padding: 20px 4px; }
   .works-tag {
-    display: inline-block; font-size: 12px; font-weight: 600;
+    display: inline-block; font-size: 11px; font-weight: 600;
     color: var(--accent); background: rgba(42,92,255,.08);
-    padding: 4px 12px; border-radius: 100px; margin-bottom: 10px;
+    padding: 3px 10px; border-radius: 100px; margin-bottom: 12px;
   }
-  .works-card-body h3 {
-    font-size: 19px; font-weight: 700; margin-bottom: 6px;
-    letter-spacing: -.01em;
+  .works-card h3 {
+    font-size: 17px; font-weight: 700; margin-bottom: 8px;
+    letter-spacing: -.01em; line-height: 1.35;
   }
-  .works-card-body p {
-    font-size: 14px; color: var(--gray); font-weight: 400;
+  .works-card p {
+    font-size: 13px; color: var(--gray); font-weight: 400; line-height: 1.5;
+  }
+
+  /* ===== MARQUEE (制作実績) ===== */
+  .marquee-section {
+    padding: 80px 0;
+    background: var(--white);
+    overflow: hidden;
+    max-width: 100%;
+  }
+  .marquee-section .section-label,
+  .marquee-section .section-title {
+    max-width: 980px; margin-left: auto; margin-right: auto;
+    padding-left: 22px; padding-right: 22px;
+  }
+  .marquee-section .section-title { margin-bottom: 48px; }
+  .marquee-track {
+    display: flex; width: max-content;
+    animation: marquee 30s linear infinite;
+  }
+  .marquee-track:hover { animation-play-state: paused; }
+  .marquee-item {
+    flex-shrink: 0; width: 400px; height: 240px;
+    margin-right: 20px; border-radius: var(--radius);
+    overflow: hidden; position: relative;
+    box-shadow: 0 2px 16px rgba(0,0,0,.08);
+  }
+  .marquee-item img {
+    width: 100%; height: 100%; object-fit: cover;
+    display: block;
+  }
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
   }
 
   /* ===== STRENGTH ===== */
@@ -435,7 +468,7 @@
 
   /* ===== FOOTER ===== */
   footer {
-    background: var(--light); color: var(--gray);
+    background: #111; color: rgba(255,255,255,.5);
     padding: 48px 22px 20px;
   }
   .footer-inner {
@@ -443,32 +476,32 @@
     max-width: 980px; margin: 0 auto 40px;
   }
   .footer-logo {
-    font-size: 21px; font-weight: 700; color: var(--black);
+    font-size: 21px; font-weight: 700; color: var(--white);
     margin-bottom: 16px;
   }
-  .footer-info p { font-size: 12px; margin-bottom: 4px; color: var(--gray); line-height: 1.47; }
+  .footer-info p { font-size: 12px; margin-bottom: 4px; color: rgba(255,255,255,.5); line-height: 1.47; }
   .footer-nav h4 {
-    font-size: 12px; font-weight: 600; color: var(--black);
+    font-size: 12px; font-weight: 600; color: var(--white);
     margin-bottom: 12px; letter-spacing: .02em;
     text-transform: uppercase;
   }
   .footer-nav a {
-    display: block; font-size: 12px; color: var(--gray);
+    display: block; font-size: 12px; color: rgba(255,255,255,.5);
     text-decoration: none; margin-bottom: 8px;
     line-height: 1.47;
   }
-  .footer-nav a:hover { color: var(--black); }
+  .footer-nav a:hover { color: var(--white); }
   .footer-bottom {
-    border-top: 1px solid #d2d2d7;
+    border-top: 1px solid rgba(255,255,255,.15);
     padding-top: 16px;
     max-width: 980px; margin: 0 auto;
     display: flex; justify-content: space-between;
-    font-size: 12px; color: var(--gray);
+    font-size: 12px; color: rgba(255,255,255,.4);
   }
   .footer-bottom a {
-    color: var(--gray); text-decoration: none; margin-left: 20px;
+    color: rgba(255,255,255,.4); text-decoration: none; margin-left: 20px;
   }
-  .footer-bottom a:hover { color: var(--black); }
+  .footer-bottom a:hover { color: var(--white); }
 
   /* ===== SCROLL ANIMATION ===== */
   .fade-up {
@@ -481,22 +514,78 @@
     transform: translateY(0);
   }
 
+  .pc-only { display: inline; }
+  .sp-br { display: none; }
+  .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; z-index: 200; position: relative; }
+  .hamburger span { display: block; width: 26px; height: 2px; background: var(--white); margin: 6px 0; transition: transform .3s ease, opacity .3s ease; }
+  .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(6px,6px); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(6px,-6px); }
+  .mobile-nav {
+    position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,.97); z-index: 150;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 36px;
+    opacity: 0; visibility: hidden;
+    transition: opacity .35s ease, visibility .35s ease;
+  }
+  .mobile-nav.open { opacity: 1; visibility: visible; }
+  .mobile-nav a {
+    color: var(--white); text-decoration: none; font-size: 22px; font-weight: 500;
+    letter-spacing: .02em;
+    transform: translateY(20px); opacity: 0;
+    transition: transform .4s ease, opacity .4s ease;
+  }
+  .mobile-nav.open a {
+    transform: translateY(0); opacity: 1;
+  }
+  .mobile-nav.open a:nth-child(1) { transition-delay: .05s; }
+  .mobile-nav.open a:nth-child(2) { transition-delay: .1s; }
+  .mobile-nav.open a:nth-child(3) { transition-delay: .15s; }
+  .mobile-nav.open a:nth-child(4) { transition-delay: .2s; }
+  .mobile-nav.open a:nth-child(6) { transition-delay: .3s; }
+  .mobile-nav-close {
+    position: absolute; top: 20px; right: 20px;
+    background: none; border: none; cursor: pointer;
+    width: 40px; height: 40px; padding: 0;
+  }
+  .mobile-nav-close span {
+    display: block; width: 28px; height: 2px; background: var(--white);
+    position: absolute; top: 50%; left: 50%;
+  }
+  .mobile-nav-close span:nth-child(1) { transform: translate(-50%,-50%) rotate(45deg); }
+  .mobile-nav-close span:nth-child(2) { transform: translate(-50%,-50%) rotate(-45deg); }
+
   /* ===== RESPONSIVE ===== */
   @media (max-width: 768px) {
+    .pc-only { display: none; }
     header { padding: 0 20px; }
-    nav a { display: none; }
-    .hero { padding: 140px 20px 80px; }
-    .hero h1 { font-size: 40px; }
-    .hero { min-height: auto; }
+    nav { display: none; }
+    .header-cta { display: none; }
+    .hamburger { display: block; }
+    .hero { padding: 140px 16px 80px; min-height: auto; }
+    .hero-inner { padding: 0 16px; }
+    .hero h1 { font-size: 36px; }
+    .hero p { font-size: 15px; }
+    .sp-br { display: inline; }
+    .pc-br { display: none; }
     section { padding: 80px 20px; }
-    .section-title { font-size: 32px; }
+    .section-title { font-size: 28px; }
+    .section-desc { font-size: 15px; }
     .service-grid { grid-template-columns: 1fr; }
-    .works-grid,
+    .works-grid {
+      grid-template-columns: repeat(2, 1fr); gap: 12px;
+    }
+    .works-card { padding: 20px 16px; }
+    .works-metric { font-size: 22px; margin-bottom: 8px; }
+    .works-card h3 { font-size: 13px; margin-bottom: 4px; }
+    .works-card p { font-size: 11px; }
     .blog-grid,
     .strength-list { grid-template-columns: 1fr; }
     .about-content { grid-template-columns: 1fr; gap: 40px; }
     .footer-inner { flex-direction: column; gap: 32px; }
-    .cta-section .section-title { font-size: 32px; }
+    .cta-section .section-title { font-size: 26px; }
+    .cta-section p { font-size: 15px; }
+    .marquee-item { width: 300px; height: 180px; }
   }
 </style>
 </head>
@@ -513,15 +602,28 @@
       <a href="#recruit">RECRUIT</a>
     </nav>
     <a href="#contact" class="header-cta">お問い合わせ</a>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav-close" onclick="toggleMenu()" aria-label="閉じる">
+    <span></span><span></span>
+  </button>
+  <a href="#service" onclick="toggleMenu()">SERVICE</a>
+  <a href="#about" onclick="toggleMenu()">ABOUT</a>
+  <a href="#works" onclick="toggleMenu()">WORKS</a>
+  <a href="#recruit" onclick="toggleMenu()">RECRUIT</a>
+  <a href="#contact" onclick="toggleMenu()">お問い合わせ</a>
+</div>
 
 <!-- ===== HERO ===== -->
 <section class="hero">
   <canvas id="heroCanvas"></canvas>
   <div class="hero-inner">
-    <h1>デジタルを先導し、<br>成果に繋げる</h1>
-    <p>AIをはじめとした最新のデジタルを駆使し、<br>御社の課題に合わせた最適なソリューションを提供します。</p>
+    <h1>デジタルを先導し、<br class="pc-only">成果に繋げる</h1>
+    <p>AIをはじめとした最新のデジタルを駆使し、<br class="pc-only">御社の頭脳・右腕として<br class="sp-br">目標達成にコミットします。</p>
     <a href="#contact" class="hero-cta">まずは無料で相談する</a>
   </div>
 </section>
@@ -530,7 +632,7 @@
 <section id="service">
   <div class="section-label fade-up">Service</div>
   <div class="section-title fade-up">事業内容</div>
-  <div class="section-desc fade-up">デジタル技術を用いて、<br>企業の課題に最適なソリューションを展開します。</div>
+  <div class="section-desc fade-up">デジタル技術を用いて、<br class="pc-only">企業の課題に最適なソリューションを展開します。</div>
   <div class="service-grid">
     <div class="service-card fade-up">
       <div class="service-num">01</div>
@@ -565,9 +667,9 @@
     <div class="section-label" style="color:rgba(255,255,255,.4);">About</div>
     <div class="section-title" style="color:var(--white);">私たちについて</div>
     <div class="about-message">
-      <p>Leit Onは静岡県浜松市に拠点を置くデジタル支援会社です。</p>
-      <p>Leit Onはドイツ語のleiten（導く）を元にした造語で、<br>「御社の強力なパートナーになる」ことを使命に、<br>中小企業のデジタル活用を支援しています。</p>
-      <p>最先端の技術と知見を掛け合わせ、御社のポテンシャルを最大化させます。</p>
+      <p>Leit Onは静岡県浜松市に<br class="sp-br">拠点を置くデジタル支援会社です。</p>
+      <p>Leit Onはドイツ語のleiten（導く）を<br class="sp-br">元にした造語で、<br>「御社の強力なパートナーになる」<br class="sp-br">ことを使命に、中小企業の<br class="sp-br">デジタル活用を支援しています。</p>
+      <p>最先端の技術と知見を掛け合わせ、<br class="sp-br">御社のポテンシャルを最大化します。</p>
     </div>
   </div>
 </section>
@@ -599,64 +701,72 @@
 <section id="works" class="bg-light">
   <div class="section-label fade-up">Works</div>
   <div class="section-title fade-up">実績・事例</div>
-  <div class="section-desc fade-up">さまざまな業種・課題でお手伝いしてきた事例の一部をご紹介します。<br>その他、クリニック・ブライダル・人材サービス・EC・整体など幅広い業種を支援しています。</div>
+  <div class="section-desc fade-up">さまざまな業種・課題でお手伝いしてきた事例の一部をご紹介します。<br class="pc-only">その他、クリニック・ブライダル・人材サービス・EC・整体など幅広い業種を支援しています。</div>
   <div class="works-grid">
     <div class="works-card fade-up">
-      <div class="works-thumb">事例画像</div>
-      <div class="works-card-body">
-        <span class="works-tag">広告運用</span>
-        <h3>ECサイトの売上改善</h3>
-        <p>Meta・Google広告の運用で月売上を30倍に拡大</p>
-      </div>
+      <span class="works-tag">広告運用</span>
+      <div class="works-metric">売上 ×30</div>
+      <h3>ECサイトの売上改善</h3>
+      <p>Meta・Google広告の運用で月売上を30倍に拡大</p>
     </div>
     <div class="works-card fade-up" style="transition-delay:.1s">
-      <div class="works-thumb">事例画像</div>
-      <div class="works-card-body">
-        <span class="works-tag">広告運用</span>
-        <h3>飲食店の集客支援</h3>
-        <p>月3万円の広告費で昨年対比 売上100万円増を実現</p>
-      </div>
+      <span class="works-tag">広告運用</span>
+      <div class="works-metric">+100万円/月</div>
+      <h3>飲食店の集客支援</h3>
+      <p>月3万円の広告費で昨年対比 売上100万円増を実現</p>
     </div>
     <div class="works-card fade-up" style="transition-delay:.2s">
-      <div class="works-thumb">事例画像</div>
-      <div class="works-card-body">
-        <span class="works-tag">HP制作 / SEO</span>
-        <h3>バーのHP制作・SEO対策</h3>
-        <p>主要キーワードで検索2位を獲得、LINE経由で求人応募も安定化</p>
-      </div>
+      <span class="works-tag">店舗集客</span>
+      <div class="works-metric">累計50店舗↑</div>
+      <h3>店舗集客支援</h3>
+      <p>飲食・美容・クリニックなど累計50店舗以上の集客をサポート</p>
     </div>
     <div class="works-card fade-up">
-      <div class="works-thumb">事例画像</div>
-      <div class="works-card-body">
-        <span class="works-tag">LP制作 / 広告</span>
-        <h3>撮影サービスのLP制作・広告運用</h3>
-        <p>広告費6万円で月商100万円以上を達成</p>
-      </div>
+      <span class="works-tag">LP制作 / 広告</span>
+      <div class="works-metric">月商100万↑</div>
+      <h3>撮影サービスのLP制作・広告運用</h3>
+      <p>広告費6万円で月商100万円以上を達成</p>
     </div>
     <div class="works-card fade-up" style="transition-delay:.1s">
-      <div class="works-thumb">事例画像</div>
-      <div class="works-card-body">
-        <span class="works-tag">広告 / SEO</span>
-        <h3>耳鼻科クリニックの開業支援</h3>
-        <p>開業から右肩上がりで成長し、1年で月商600万円規模に</p>
-      </div>
+      <span class="works-tag">広告 / SEO</span>
+      <div class="works-metric">月商600万</div>
+      <h3>耳鼻科クリニックの開業支援</h3>
+      <p>開業から右肩上がりで成長し、1年で月商600万円規模に</p>
     </div>
     <div class="works-card fade-up" style="transition-delay:.2s">
-      <div class="works-thumb">事例画像</div>
-      <div class="works-card-body">
-        <span class="works-tag">広告 / SEO</span>
-        <h3>歯科クリニックの新患獲得</h3>
-        <p>月間新患数 最大+30人、自費診療の相談数も増加</p>
-      </div>
+      <span class="works-tag">広告 / SEO</span>
+      <div class="works-metric">新患 +30人</div>
+      <h3>歯科クリニックの新患獲得</h3>
+      <p>月間新患数 最大+30人、自費診療の相談数も増加</p>
     </div>
   </div>
 </section>
 
+<!-- ===== 制作実績マーキー ===== -->
+<div class="marquee-section">
+  <div class="section-label fade-up">Works — Web</div>
+  <div class="section-title fade-up">制作実績</div>
+  <div class="marquee-track">
+    <div class="marquee-item"><img src="images/work-1.jpg" alt="採用サイト制作"></div>
+    <div class="marquee-item"><img src="images/work-2.jpg" alt="採用サイト制作"></div>
+    <div class="marquee-item"><img src="images/work-3.jpg" alt="コーポレートサイト制作"></div>
+    <div class="marquee-item"><img src="images/work-4.jpg" alt="HP制作"></div>
+    <div class="marquee-item"><img src="images/work-5.jpg" alt="ECサイト制作"></div>
+    <!-- ループ用複製 -->
+    <div class="marquee-item"><img src="images/work-1.jpg" alt="採用サイト制作"></div>
+    <div class="marquee-item"><img src="images/work-2.jpg" alt="採用サイト制作"></div>
+    <div class="marquee-item"><img src="images/work-3.jpg" alt="コーポレートサイト制作"></div>
+    <div class="marquee-item"><img src="images/work-4.jpg" alt="HP制作"></div>
+    <div class="marquee-item"><img src="images/work-5.jpg" alt="ECサイト制作"></div>
+  </div>
+  <p style="text-align:right;max-width:980px;margin:16px auto 0;padding:0 22px;font-size:11px;color:var(--gray);">※本サンプルはパートナー CHIDA DESIGN の制作によるものです</p>
+</div>
+
 <!-- ===== CTA ===== -->
 <section class="cta-section">
   <div class="section-label fade-up" style="color:rgba(255,255,255,.5);">Contact</div>
-  <div class="section-title fade-up">まずはお気軽にご相談ください</div>
-  <p class="fade-up">課題のヒアリングからお見積もりまで無料で対応いたします。</p>
+  <div class="section-title fade-up">まずはお気軽に<br class="sp-br">ご相談ください</div>
+  <p class="fade-up">課題のヒアリングからお見積もりまで<br class="sp-br">無料で対応いたします。</p>
   <a href="#contact" class="cta-btn fade-up">お問い合わせ</a>
 </section>
 
@@ -665,7 +775,7 @@
   <div class="contact-inner">
     <div class="section-label fade-up">Contact</div>
     <div class="section-title fade-up">お問い合わせ</div>
-    <div class="section-desc fade-up">ご相談・お見積もりは無料です。お気軽にお問い合わせください。</div>
+    <div class="section-desc fade-up">ご相談・お見積もりは無料です。<br class="sp-br">お気軽にお問い合わせください。</div>
     <form id="contactForm" class="contact-form fade-up">
       <div class="form-row">
         <div class="form-group">
@@ -711,9 +821,9 @@
 <!-- ===== RECRUIT ===== -->
 <section id="recruit" style="background:#000;color:var(--white);text-align:center;max-width:100%;padding:120px 22px;">
   <div class="section-label fade-up" style="color:rgba(255,255,255,.4);">Recruit</div>
-  <div class="section-title fade-up" style="color:var(--white);letter-spacing:-.015em;">一緒に働く仲間を募集しています</div>
-  <p class="fade-up" style="color:rgba(255,255,255,.5);margin-bottom:40px;">私たちと一緒に、クライアントのビジネス成長を支援しませんか。</p>
-  <a href="#" class="cta-btn fade-up">採用情報を見る</a>
+  <div class="section-title fade-up" style="color:var(--white);letter-spacing:-.015em;">一緒に働く仲間を<br class="sp-br">募集しています</div>
+  <p class="fade-up" style="color:rgba(255,255,255,.5);margin-bottom:40px;">私たちと一緒に、クライアントの<br class="sp-br">ビジネス成長を支援しませんか。</p>
+  <a href="#contact" class="cta-btn fade-up">採用について相談する</a>
 </section>
 
 <!-- ===== COMPANY ===== -->
@@ -742,28 +852,25 @@
     </div>
     <div class="footer-nav">
       <h4>Service</h4>
-      <a href="#">Web集客事業</a>
-      <a href="#">採用代行（オタスケジンジ）</a>
-      <a href="#">HP・LP制作</a>
-      <a href="#">AI導入・業務効率化支援</a>
+      <a href="#service">Web集客事業</a>
+      <a href="#service">採用代行（オタスケジンジ）</a>
+      <a href="#service">HP・LP制作</a>
+      <a href="#service">AI導入・業務効率化支援</a>
     </div>
     <div class="footer-nav">
       <h4>Company</h4>
-      <a href="#">会社概要</a>
-      <a href="#">実績・事例</a>
-      <a href="#">採用情報</a>
+      <a href="#company">会社概要</a>
+      <a href="#works">実績・事例</a>
+      <a href="#recruit">採用情報</a>
     </div>
     <div class="footer-nav">
       <h4>Support</h4>
-      <a href="#">お問い合わせ</a>
-      <a href="#">プライバシーポリシー</a>
+      <a href="#contact">お問い合わせ</a>
     </div>
   </div>
   <div class="footer-bottom">
     <span>&copy; 2026 株式会社Leit On All rights reserved.</span>
-    <div>
-      <a href="#">プライバシーポリシー</a>
-    </div>
+    <div></div>
   </div>
 </footer>
 
@@ -895,6 +1002,12 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.15 });
 fadeEls.forEach(el => observer.observe(el));
+
+// ===== HAMBURGER MENU =====
+function toggleMenu() {
+  document.getElementById('mobileNav').classList.toggle('open');
+  document.querySelector('.hamburger').classList.toggle('open');
+}
 
 // ===== HEADER SCROLL =====
 const header = document.querySelector('header');
