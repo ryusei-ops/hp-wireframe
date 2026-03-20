@@ -170,24 +170,54 @@
   }
 
   /* ===== ABOUT ===== */
-  .about-content {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 80px; max-width: 980px; align-items: center;
+  .about-section {
+    max-width: 100%;
+    padding: 120px 22px;
+    background: linear-gradient(135deg, #0a0a1a 0%, #0f1a3d 35%, #162454 60%, #1a3a7a 100%);
+    text-align: center;
   }
-  .about-text h3 {
-    font-size: 32px; font-weight: 700; margin-bottom: 24px;
-    line-height: 1.125;
-    letter-spacing: -.01em;
+  .about-inner {
+    max-width: 760px;
+    margin: 0 auto;
   }
-  .about-text p {
-    font-size: 17px; color: var(--gray); margin-bottom: 20px;
-    line-height: 1.47;
+  .about-message p {
+    font-size: 19px;
+    color: rgba(255,255,255,.75);
+    line-height: 1.8;
+    margin-bottom: 24px;
     font-weight: 400;
+    letter-spacing: .02em;
   }
-  .about-visual {
-    background: #e8ecf2; border-radius: var(--radius);
-    height: 400px; display: flex; align-items: center;
-    justify-content: center; color: var(--gray); font-size: 14px;
+  .about-message p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ===== COMPANY TABLE ===== */
+  .company-table {
+    width: 100%;
+    max-width: 980px;
+    margin: 64px auto 0;
+    border-collapse: collapse;
+    padding: 0 22px;
+  }
+  .company-table th,
+  .company-table td {
+    font-size: 15px;
+    padding: 20px 24px;
+    border-bottom: 1px solid #d2d2d7;
+    text-align: left;
+    line-height: 1.6;
+    font-weight: 400;
+    vertical-align: top;
+  }
+  .company-table th {
+    width: 140px;
+    font-weight: 600;
+    color: var(--black);
+    white-space: nowrap;
+  }
+  .company-table td {
+    color: var(--gray-light);
   }
 
   /* ===== WORKS ===== */
@@ -265,6 +295,120 @@
     letter-spacing: -.01em;
   }
   .cta-btn:hover { background: var(--accent-dark); }
+
+  /* ===== CONTACT FORM ===== */
+  .contact-section {
+    background: var(--white);
+    max-width: 100%;
+    padding: 120px 22px;
+  }
+  .contact-inner {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  .contact-section .section-label,
+  .contact-section .section-title,
+  .contact-section .section-desc {
+    text-align: center;
+  }
+  .contact-section .section-desc {
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .form-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--black);
+    letter-spacing: .01em;
+  }
+  .form-group label .req {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--accent);
+    margin-left: 6px;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-family: inherit;
+    font-size: 16px;
+    padding: 14px 16px;
+    border: 1px solid #d2d2d7;
+    border-radius: 12px;
+    background: var(--light);
+    color: var(--black);
+    outline: none;
+    transition: border-color .2s, box-shadow .2s;
+    -webkit-appearance: none;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(42,92,255,.1);
+  }
+  .form-group textarea {
+    min-height: 160px;
+    resize: vertical;
+  }
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .contact-submit {
+    display: inline-block;
+    padding: 16px 48px;
+    background: var(--accent);
+    color: var(--white);
+    border: none;
+    font-family: inherit;
+    font-size: 17px;
+    font-weight: 500;
+    border-radius: 100px;
+    cursor: pointer;
+    letter-spacing: -.01em;
+    transition: background .2s, transform .1s;
+    align-self: center;
+    margin-top: 8px;
+  }
+  .contact-submit:hover { background: var(--accent-dark); }
+  .contact-submit:active { transform: scale(.98); }
+  .contact-submit:disabled {
+    opacity: .5;
+    cursor: not-allowed;
+  }
+  .form-status {
+    text-align: center;
+    font-size: 15px;
+    padding: 16px;
+    border-radius: 12px;
+    display: none;
+  }
+  .form-status.success {
+    display: block;
+    background: rgba(42,92,255,.06);
+    color: var(--accent);
+  }
+  .form-status.error {
+    display: block;
+    background: rgba(255,59,48,.06);
+    color: #ff3b30;
+  }
+  @media (max-width: 768px) {
+    .form-row { grid-template-columns: 1fr; }
+  }
 
   /* ===== BLOG ===== */
   .blog-grid {
@@ -366,7 +510,6 @@
       <a href="#service">SERVICE</a>
       <a href="#about">ABOUT</a>
       <a href="#works">WORKS</a>
-      <a href="#blog">BLOG</a>
       <a href="#recruit">RECRUIT</a>
     </nav>
     <a href="#contact" class="header-cta">お問い合わせ</a>
@@ -387,70 +530,67 @@
 <section id="service">
   <div class="section-label fade-up">Service</div>
   <div class="section-title fade-up">事業内容</div>
-  <div class="section-desc fade-up">デジタル技術を用いて、企業の課題に最適なソリューションを展開します。</div>
+  <div class="section-desc fade-up">デジタル技術を用いて、<br>企業の課題に最適なソリューションを展開します。</div>
   <div class="service-grid">
     <div class="service-card fade-up">
       <div class="service-num">01</div>
       <h3>Web集客事業</h3>
-      <p>リスティング広告・SNS広告の運用代行、MEO対策など、オンライン・オフラインの集客を支援します。</p>
-      <a href="#" class="link">詳しく見る &gt;</a>
+      <p>リスティング広告・SNS広告の運用代行、<br>MEO対策など、オンライン・オフラインの集客を支援します。</p>
+
     </div>
     <div class="service-card fade-up" style="transition-delay:.1s">
       <div class="service-num">02</div>
       <h3>採用代行 オタスケジンジ</h3>
-      <p>求人媒体の選定から応募者対応まで、採用業務をまるごと代行。コストを抑えた採用を実現します。</p>
-      <a href="#" class="link">詳しく見る &gt;</a>
+      <p>求人媒体の選定から応募者対応まで、<br>採用業務をまるごと代行。コストを抑えた採用を実現します。</p>
+
     </div>
     <div class="service-card fade-up" style="transition-delay:.2s">
       <div class="service-num">03</div>
       <h3>HP・LP制作</h3>
-      <p>集客に強いホームページ・ランディングページを制作。戦略設計からデザイン・実装まで一貫対応。</p>
-      <a href="#" class="link">詳しく見る &gt;</a>
+      <p>集客に強いホームページ・ランディングページを制作。<br>戦略設計からデザイン・実装まで一貫対応。</p>
+
     </div>
     <div class="service-card fade-up" style="transition-delay:.3s">
       <div class="service-num">04</div>
       <h3>AI導入・業務効率化支援</h3>
-      <p>ChatGPT活用、業務フロー自動化、データ分析基盤の構築など、AI技術で業務を変革します。</p>
-      <a href="#" class="link">詳しく見る &gt;</a>
+      <p>ChatGPT活用、業務フロー自動化、<br>データ分析基盤の構築など、AI技術で業務を変革します。</p>
+
     </div>
   </div>
 </section>
 
 <!-- ===== ABOUT ===== -->
-<section id="about" class="bg-light">
-  <div class="section-label fade-up">About</div>
-  <div class="section-title fade-up">私たちについて</div>
-  <div class="about-content fade-up">
-    <div class="about-text">
-      <h3>デジタルの力で、<br>ビジネスの可能性を広げる</h3>
-      <p>私たちは「テクノロジーをもっと身近に」をミッションに、中小企業のデジタル活用を支援しています。広告運用・Web制作の知見とAI技術を掛け合わせ、成果に直結するソリューションを提供します。</p>
-      <p>クライアントのビジネスを深く理解し、伴走型で課題解決に取り組むことを大切にしています。</p>
-      <a href="#" class="link" style="color:var(--accent);text-decoration:none;font-weight:400;font-size:17px;">会社概要を見る &gt;</a>
+<section id="about" class="about-section">
+  <div class="about-inner fade-up">
+    <div class="section-label" style="color:rgba(255,255,255,.4);">About</div>
+    <div class="section-title" style="color:var(--white);">私たちについて</div>
+    <div class="about-message">
+      <p>Leit Onは静岡県浜松市に拠点を置くデジタル支援会社です。</p>
+      <p>Leit Onはドイツ語のleiten（導く）を元にした造語で、<br>「御社の強力なパートナーになる」ことを使命に、<br>中小企業のデジタル活用を支援しています。</p>
+      <p>最先端の技術と知見を掛け合わせ、御社のポテンシャルを最大化させます。</p>
     </div>
-    <div class="about-visual">会社イメージ写真</div>
   </div>
 </section>
 
 <!-- ===== STRENGTH ===== -->
 <section>
-  <div class="section-label fade-up">Strength</div>
-  <div class="section-title fade-up">選ばれる理由</div>
-  <div class="section-desc fade-up">多くのクライアント様に継続いただいている理由をご紹介します。</div>
+  <div class="section-label fade-up">Features</div>
+  <div class="section-title fade-up">Leit Onの特徴</div>
   <div class="strength-list">
     <div class="strength-item fade-up">
       <div class="num">01</div>
-      <h3>ワンストップ対応</h3>
-      <p>集客・採用・制作・AI活用まで、複数の課題を一社で解決。窓口が分散しないため、スピーディーに進行できます。</p>
+      <h3>相談から実行まで、<br>丸ごと任せられる</h3>
+      <p>「何から始めればいいかわからない」でも大丈夫。<br>現状のヒアリングから戦略設計、施策の実行まで<br>一社で完結。複数の会社に依頼する手間がなくなります。</p>
     </div>
     <div class="strength-item fade-up" style="transition-delay:.1s">
       <div class="num">02</div>
-      <h3>成果にコミット</h3>
-      <p>施策の実行だけでなく、KPI設計から効果測定まで。数値に基づいたPDCAで確実に成果を積み上げます。</p>
+      <h3>限られた予算でも、<br>成果を出せる</h3>
+      <p>AIを活用した業務効率化により、<br>高品質なサービスを低コストで提供。<br>大手に頼む予算がなくても、同等以上の成果を実現できます。</p>
     </div>
     <div class="strength-item fade-up" style="transition-delay:.2s">
       <div class="num">03</div>
-      <h3>中小企業に最適化</h3>
-      <p>大手向けの画一的なプランではなく、御社の予算・規模・フェーズに合わせた柔軟なプランをご提案します。</p>
+      <h3>数字で、<br>効果を実感できる</h3>
+      <p>施策のやりっぱなしはしません。<br>定期的なレポートで成果を可視化し、<br>改善点を明確にした上で次の打ち手をご提案します。</p>
     </div>
   </div>
 </section>
@@ -459,30 +599,54 @@
 <section id="works" class="bg-light">
   <div class="section-label fade-up">Works</div>
   <div class="section-title fade-up">実績・事例</div>
-  <div class="section-desc fade-up">さまざまな業種・課題でお手伝いしてきた事例の一部をご紹介します。</div>
+  <div class="section-desc fade-up">さまざまな業種・課題でお手伝いしてきた事例の一部をご紹介します。<br>その他、クリニック・ブライダル・人材サービス・EC・整体など幅広い業種を支援しています。</div>
   <div class="works-grid">
     <div class="works-card fade-up">
       <div class="works-thumb">事例画像</div>
       <div class="works-card-body">
-        <span class="works-tag">Web集客</span>
-        <h3>飲食店チェーンの広告運用改善</h3>
-        <p>CPA 40%削減、来店数1.5倍を達成</p>
+        <span class="works-tag">広告運用</span>
+        <h3>ECサイトの売上改善</h3>
+        <p>Meta・Google広告の運用で月売上を30倍に拡大</p>
       </div>
     </div>
     <div class="works-card fade-up" style="transition-delay:.1s">
       <div class="works-thumb">事例画像</div>
       <div class="works-card-body">
-        <span class="works-tag">採用代行</span>
-        <h3>製造業の採用コスト最適化</h3>
-        <p>採用単価を60%削減しながら応募数2倍</p>
+        <span class="works-tag">広告運用</span>
+        <h3>飲食店の集客支援</h3>
+        <p>月3万円の広告費で昨年対比 売上100万円増を実現</p>
       </div>
     </div>
     <div class="works-card fade-up" style="transition-delay:.2s">
       <div class="works-thumb">事例画像</div>
       <div class="works-card-body">
-        <span class="works-tag">AI導入</span>
-        <h3>不動産会社の業務自動化</h3>
-        <p>月間40時間の業務工数を自動化で削減</p>
+        <span class="works-tag">HP制作 / SEO</span>
+        <h3>バーのHP制作・SEO対策</h3>
+        <p>主要キーワードで検索2位を獲得、LINE経由で求人応募も安定化</p>
+      </div>
+    </div>
+    <div class="works-card fade-up">
+      <div class="works-thumb">事例画像</div>
+      <div class="works-card-body">
+        <span class="works-tag">LP制作 / 広告</span>
+        <h3>撮影サービスのLP制作・広告運用</h3>
+        <p>広告費6万円で月商100万円以上を達成</p>
+      </div>
+    </div>
+    <div class="works-card fade-up" style="transition-delay:.1s">
+      <div class="works-thumb">事例画像</div>
+      <div class="works-card-body">
+        <span class="works-tag">広告 / SEO</span>
+        <h3>耳鼻科クリニックの開業支援</h3>
+        <p>開業から右肩上がりで成長し、1年で月商600万円規模に</p>
+      </div>
+    </div>
+    <div class="works-card fade-up" style="transition-delay:.2s">
+      <div class="works-thumb">事例画像</div>
+      <div class="works-card-body">
+        <span class="works-tag">広告 / SEO</span>
+        <h3>歯科クリニックの新患獲得</h3>
+        <p>月間新患数 最大+30人、自費診療の相談数も増加</p>
       </div>
     </div>
   </div>
@@ -496,33 +660,51 @@
   <a href="#contact" class="cta-btn fade-up">お問い合わせ</a>
 </section>
 
-<!-- ===== BLOG ===== -->
-<section id="blog">
-  <div class="section-label fade-up">Blog</div>
-  <div class="section-title fade-up">ブログ</div>
-  <div class="section-desc fade-up">マーケティングやAI活用のノウハウを発信しています。</div>
-  <div class="blog-grid">
-    <div class="blog-card fade-up">
-      <div class="blog-thumb">記事サムネイル</div>
-      <div class="blog-card-body">
-        <div class="blog-date">2026.03.10</div>
-        <h3>リスティング広告の費用対効果を最大化する5つのポイント</h3>
+<!-- ===== CONTACT ===== -->
+<section id="contact" class="contact-section">
+  <div class="contact-inner">
+    <div class="section-label fade-up">Contact</div>
+    <div class="section-title fade-up">お問い合わせ</div>
+    <div class="section-desc fade-up">ご相談・お見積もりは無料です。お気軽にお問い合わせください。</div>
+    <form id="contactForm" class="contact-form fade-up">
+      <div class="form-row">
+        <div class="form-group">
+          <label>会社名</label>
+          <input type="text" name="company" placeholder="株式会社○○">
+        </div>
+        <div class="form-group">
+          <label>お名前<span class="req">必須</span></label>
+          <input type="text" name="name" required placeholder="山田 太郎">
+        </div>
       </div>
-    </div>
-    <div class="blog-card fade-up" style="transition-delay:.1s">
-      <div class="blog-thumb">記事サムネイル</div>
-      <div class="blog-card-body">
-        <div class="blog-date">2026.03.05</div>
-        <h3>中小企業がAIを導入する前に知っておくべきこと</h3>
+      <div class="form-row">
+        <div class="form-group">
+          <label>メールアドレス<span class="req">必須</span></label>
+          <input type="email" name="email" required placeholder="info@example.com">
+        </div>
+        <div class="form-group">
+          <label>電話番号</label>
+          <input type="tel" name="phone" placeholder="090-0000-0000">
+        </div>
       </div>
-    </div>
-    <div class="blog-card fade-up" style="transition-delay:.2s">
-      <div class="blog-thumb">記事サムネイル</div>
-      <div class="blog-card-body">
-        <div class="blog-date">2026.02.28</div>
-        <h3>採用コストを抑えて優秀な人材を確保する方法</h3>
+      <div class="form-group">
+        <label>ご相談内容<span class="req">必須</span></label>
+        <select name="category" required>
+          <option value="" disabled selected>選択してください</option>
+          <option value="Web集客・広告運用">Web集客・広告運用</option>
+          <option value="採用代行（オタスケジンジ）">採用代行（オタスケジンジ）</option>
+          <option value="HP・LP制作">HP・LP制作</option>
+          <option value="AI導入・業務効率化">AI導入・業務効率化</option>
+          <option value="その他">その他</option>
+        </select>
       </div>
-    </div>
+      <div class="form-group">
+        <label>お問い合わせ内容<span class="req">必須</span></label>
+        <textarea name="message" required placeholder="ご相談内容をご記入ください"></textarea>
+      </div>
+      <button type="submit" class="contact-submit">送信する</button>
+      <div id="formStatus" class="form-status"></div>
+    </form>
   </div>
 </section>
 
@@ -534,15 +716,28 @@
   <a href="#" class="cta-btn fade-up">採用情報を見る</a>
 </section>
 
+<!-- ===== COMPANY ===== -->
+<section id="company" class="bg-light">
+  <div class="section-label fade-up">Company</div>
+  <div class="section-title fade-up">会社概要</div>
+  <table class="company-table fade-up">
+    <tr><th>会社名</th><td>株式会社Leit On</td></tr>
+    <tr><th>代表</th><td>大石 竜聖</td></tr>
+    <tr><th>設立</th><td>2026年2月</td></tr>
+    <tr><th>資本金</th><td>100万円</td></tr>
+    <tr><th>所在地</th><td>〒430-0933 静岡県浜松市中央区鍛冶町100-1<br>ザザシティ浜松中央館 B1F FUSE内</td></tr>
+    <tr><th>事業内容</th><td>Web集客事業（広告運用・MEO対策）/ 採用代行（オタスケジンジ）/ HP・LP制作 / AI導入・業務効率化支援</td></tr>
+  </table>
+</section>
+
 <!-- ===== FOOTER ===== -->
 <footer>
   <div class="footer-inner">
     <div>
       <div class="footer-logo">Leit On</div>
       <div class="footer-info">
-        <p>〒000-0000 東京都○○区○○ 0-0-0</p>
-        <p>TEL: 00-0000-0000</p>
-        <p>営業時間: 9:00 - 18:00（土日祝休）</p>
+        <p>〒430-0933 静岡県浜松市中央区鍛冶町100-1</p>
+        <p>ザザシティ浜松中央館 B1F FUSE内</p>
       </div>
     </div>
     <div class="footer-nav">
@@ -556,7 +751,6 @@
       <h4>Company</h4>
       <a href="#">会社概要</a>
       <a href="#">実績・事例</a>
-      <a href="#">ブログ</a>
       <a href="#">採用情報</a>
     </div>
     <div class="footer-nav">
@@ -566,7 +760,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <span>&copy; 2026 Leit On Inc. All rights reserved.</span>
+    <span>&copy; 2026 株式会社Leit On All rights reserved.</span>
     <div>
       <a href="#">プライバシーポリシー</a>
     </div>
@@ -713,6 +907,42 @@ window.addEventListener('scroll', () => {
     header.style.background = 'transparent';
     header.style.backdropFilter = 'none';
     header.style.borderBottomColor = 'transparent';
+  }
+});
+
+// ===== CONTACT FORM =====
+const FORM_URL = 'https://formspree.io/f/xgonrvnb';
+
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const form = e.target;
+  const btn = form.querySelector('.contact-submit');
+  const status = document.getElementById('formStatus');
+
+  btn.disabled = true;
+  btn.textContent = '送信中...';
+  status.className = 'form-status';
+  status.style.display = 'none';
+
+  try {
+    const res = await fetch(FORM_URL, {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: new FormData(form),
+    });
+    if (res.ok) {
+      status.textContent = 'お問い合わせを受け付けました。2営業日以内にご回答させていただきます。';
+      status.className = 'form-status success';
+      form.reset();
+    } else {
+      throw new Error();
+    }
+  } catch (err) {
+    status.textContent = '送信に失敗しました。お手数ですがメールにてお問い合わせください。';
+    status.className = 'form-status error';
+  } finally {
+    btn.disabled = false;
+    btn.textContent = '送信する';
   }
 });
 
