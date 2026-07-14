@@ -3,619 +3,584 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>株式会社Leit On | 浜松のWeb集客・広告運用・AI導入支援</title>
-<meta name="description" content="静岡県浜松市のデジタル支援会社Leit On。Web広告運用・MEO対策・HP/LP制作・AI導入で中小企業の集客と業務効率化をサポート。まずは無料相談。">
-<meta name="keywords" content="Web集客,広告運用,浜松,AI導入,HP制作,LP制作,MEO対策,採用代行,業務効率化,Leit On">
-<meta property="og:title" content="株式会社Leit On | 浜松のWeb集客・広告運用・AI導入支援">
-<meta property="og:description" content="Web広告運用・HP/LP制作・AI導入で中小企業の集客と業務効率化をサポート。まずは無料相談。">
+<title>株式会社Leit On | AI導入・業務自動化とWeb集客の伴走パートナー</title>
+<meta name="description" content="静岡県浜松市のデジタル支援会社Leit On。生成AIによる業務効率化・AI BPO、Web広告運用、HP/LP制作で中小企業の成果に伴走します。ご相談は無料。">
+<meta name="keywords" content="AI導入,業務効率化,AI BPO,業務自動化,Web集客,広告運用,浜松,HP制作,LP制作,MEO対策,Leit On">
+<meta property="og:title" content="株式会社Leit On | AI導入・業務自動化とWeb集客の伴走パートナー">
+<meta property="og:description" content="生成AIによる業務効率化・AI BPO、Web広告運用、HP/LP制作で中小企業の成果に伴走。ご相談は無料。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://leit-on.jp/">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="株式会社Leit On | 浜松のWeb集客・広告運用・AI導入支援">
-<meta name="twitter:description" content="Web広告運用・HP/LP制作・AI導入で中小企業の集客と業務効率化をサポート。まずは無料相談。">
+<meta name="twitter:title" content="株式会社Leit On | AI導入・業務自動化とWeb集客の伴走パートナー">
+<meta name="twitter:description" content="生成AIによる業務効率化・AI BPO、Web広告運用、HP/LP制作で中小企業の成果に伴走。ご相談は無料。">
 <link rel="canonical" href="https://leit-on.jp/">
+<link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="%230B0C0A"/><circle cx="16" cy="16" r="8" fill="%2396BA32"/></svg>'>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --black: #1d1d1f;
-    --dark: #1d1d1f;
-    --gray: #86868b;
-    --gray-light: #6e6e73;
-    --light: #f5f5f7;
-    --white: #fff;
-    --accent: #2a5cff;
-    --accent-dark: #1e45cc;
-    --radius: 16px;
+    --bg: #0b0c0a;
+    --surface: #111310;
+    --line: rgba(244,245,240,.09);
+    --text: #f4f5f0;
+    --muted: rgba(244,245,240,.55);
+    --dim: rgba(244,245,240,.38);
+    --accent: #a8d63c;
+    --accent-deep: #96ba32;
+    --radius: 20px;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 88px;
+  }
+
   body {
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", "Noto Sans JP", sans-serif;
-    color: var(--black);
-    background: var(--white);
-    line-height: 1.47059;
+    font-family: "Inter", "Noto Sans JP", sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.8;
+    letter-spacing: .02em;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
+  ::selection { background: rgba(150,186,50,.35); }
+
+  .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
   /* ===== HEADER ===== */
   header {
-    position: fixed; top: 0; left: 0; right: 0;
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 0 48px;
-    height: 72px;
-    background: transparent;
-    backdrop-filter: none;
-    border-bottom: 1px solid transparent;
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     transition: background .3s, backdrop-filter .3s, border-color .3s;
-    z-index: 100;
-    max-width: 100%;
+    border-bottom: 1px solid transparent;
   }
-  .logo img {
-    height: 28px; width: auto; display: block;
+  header.scrolled {
+    background: rgba(11,12,10,.78);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom-color: var(--line);
   }
+  .header-inner {
+    max-width: 1120px; margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center;
+    height: 76px; padding: 0 24px;
+  }
+  .logo img { height: 24px; width: auto; display: block; }
+  .header-right { display: flex; align-items: center; gap: 36px; }
+  nav { display: flex; gap: 32px; }
   nav a {
-    margin-left: 32px; text-decoration: none; color: rgba(255,255,255,.8);
-    font-size: 14px; font-weight: 400; letter-spacing: .01em;
+    text-decoration: none; color: var(--muted);
+    font-size: 13px; font-weight: 500; letter-spacing: .08em;
+    transition: color .2s;
   }
-  nav a:hover { color: var(--white); }
+  nav a:hover { color: var(--text); }
   .header-cta {
-    margin-left: 32px; padding: 10px 24px;
-    background: var(--accent); color: var(--white);
-    text-decoration: none; font-size: 14px; font-weight: 400;
+    padding: 9px 22px;
+    border: 1px solid rgba(244,245,240,.25);
     border-radius: 100px;
+    color: var(--text); text-decoration: none;
+    font-size: 13px; font-weight: 500; letter-spacing: .04em;
+    transition: border-color .2s, background .2s, color .2s;
   }
-  .header-cta:hover { background: var(--accent-dark); }
+  .header-cta:hover { border-color: var(--accent); color: var(--accent); }
 
   /* ===== HERO ===== */
   .hero {
-    padding: 0 0;
-    background: #000;
-    color: var(--white);
     position: relative;
+    min-height: min(100svh, 1200px);
+    display: flex; flex-direction: column;
     overflow: hidden;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    text-align: left;
   }
-  .hero canvas {
-    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  .hero::before {
+    content: "";
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 88px 88px;
+    mask-image: radial-gradient(ellipse 80% 70% at 50% 30%, #000 0%, transparent 75%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 30%, #000 0%, transparent 75%);
+    opacity: .5;
+    pointer-events: none;
+  }
+  .hero::after {
+    content: "";
+    position: absolute;
+    top: -30%; right: -15%;
+    width: 70vw; height: 70vw;
+    background: radial-gradient(circle, rgba(150,186,50,.14) 0%, transparent 60%);
     pointer-events: none;
   }
   .hero-inner {
-    position: relative; z-index: 1;
-    padding: 0 48px;
-    width: 100%;
+    position: relative; z-index: 1; width: 100%;
+    flex: 1; display: flex; align-items: center;
+    padding-top: 76px;
+  }
+  .hero-inner > .container { width: 100%; }
+  .hero-label {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 12px; font-weight: 600; letter-spacing: .22em;
+    color: var(--accent); text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+  .hero-label::before {
+    content: ""; width: 32px; height: 1px; background: var(--accent);
   }
   .hero h1 {
-    font-size: 80px; font-weight: 700; line-height: 1.05;
-    margin-bottom: 20px; letter-spacing: -.015em;
-    background: linear-gradient(135deg, #fff 0%, #a0c4ff 50%, #2a5cff 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    font-size: clamp(44px, 7.2vw, 96px);
+    font-weight: 700; line-height: 1.14;
+    letter-spacing: .01em;
+    margin-bottom: 32px;
   }
-  .hero p {
-    font-size: 21px; color: var(--gray);
-    max-width: 600px; margin-bottom: 40px;
-    letter-spacing: .012em;
-    line-height: 1.381;
-    font-weight: 400;
+  .hero h1 .dot { color: var(--accent); }
+  .hero-lead {
+    font-size: 16px; color: var(--muted);
+    max-width: 560px; margin-bottom: 48px;
+    line-height: 2.1;
   }
-  .hero-cta {
-    display: inline-block; padding: 12px 32px;
-    background: var(--accent); color: var(--white);
-    text-decoration: none; font-weight: 400; font-size: 17px;
-    border-radius: 100px;
-    letter-spacing: -.01em;
+  .hero-actions { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 15px 36px;
+    background: var(--accent); color: #0b0c0a;
+    text-decoration: none; font-size: 15px; font-weight: 700;
+    letter-spacing: .02em; border-radius: 100px;
+    transition: background .2s, transform .2s;
   }
-  .hero-cta:hover { background: var(--accent-dark); }
+  .btn-primary:hover { background: #bce84f; transform: translateY(-1px); }
+  .btn-primary .arrow { transition: transform .2s; }
+  .btn-primary:hover .arrow { transform: translateX(3px); }
+  .btn-ghost {
+    display: inline-flex; align-items: center; gap: 8px;
+    color: var(--muted); text-decoration: none;
+    font-size: 14px; font-weight: 500;
+    padding: 15px 8px;
+    transition: color .2s;
+  }
+  .btn-ghost:hover { color: var(--text); }
+
+  /* ===== HERO STATS ===== */
+  .hero-stats {
+    position: relative; z-index: 1;
+    border-top: 1px solid var(--line);
+    margin-top: 48px;
+  }
+  .hero-stats-inner {
+    max-width: 1120px; margin: 0 auto; padding: 0 24px;
+    display: grid; grid-template-columns: repeat(3, 1fr);
+  }
+  .stat {
+    padding: 36px 0;
+    border-left: 1px solid var(--line);
+    padding-left: 32px;
+  }
+  .stat:first-child { border-left: none; padding-left: 0; }
+  .stat-value {
+    font-size: 40px; font-weight: 700; letter-spacing: -.02em;
+    line-height: 1.1; color: var(--text);
+  }
+  .stat-value span { color: var(--accent); }
+  .stat-label { font-size: 12px; color: var(--dim); margin-top: 8px; letter-spacing: .06em; }
 
   /* ===== SECTION COMMON ===== */
-  section {
-    padding: 120px 22px;
-    max-width: 980px;
-    margin: 0 auto;
-  }
-  .hero, .cta-section, .bg-light,
-  section[id="recruit"] {
-    max-width: 100%;
-    padding-left: 22px;
-    padding-right: 22px;
-  }
+  section { padding: 140px 0; }
+  .section-head { margin-bottom: 72px; }
   .section-label {
-    font-size: 14px; font-weight: 600; letter-spacing: .06em;
+    display: flex; align-items: center; gap: 10px;
+    font-size: 12px; font-weight: 600; letter-spacing: .22em;
     color: var(--accent); text-transform: uppercase;
-    margin-bottom: 8px;
+    margin-bottom: 20px;
   }
+  .section-label::before { content: ""; width: 32px; height: 1px; background: var(--accent); }
   .section-title {
-    font-size: 48px; font-weight: 700; margin-bottom: 16px;
-    letter-spacing: -.015em;
-    line-height: 1.08;
-    color: var(--black);
+    font-size: clamp(30px, 4vw, 48px);
+    font-weight: 700; line-height: 1.3; letter-spacing: .01em;
   }
   .section-desc {
-    font-size: 19px; color: var(--gray); max-width: 600px;
-    margin-bottom: 64px;
-    line-height: 1.42;
-    letter-spacing: .012em;
-    font-weight: 400;
+    font-size: 15px; color: var(--muted); max-width: 560px;
+    margin-top: 20px; line-height: 2;
   }
-  .bg-light { background: var(--light); max-width: 100%; padding-left: 0; padding-right: 0; }
-  .bg-light > * { max-width: 980px; margin-left: auto; margin-right: auto; padding-left: 22px; padding-right: 22px; }
 
   /* ===== SERVICE ===== */
-  .service-grid {
-    display: grid; grid-template-columns: repeat(2, 1fr);
-    gap: 20px; max-width: 980px;
-  }
-  .service-card {
-    background: var(--light);
-    border: none;
-    border-radius: var(--radius);
-    padding: 40px 36px;
-    transition: transform .3s ease;
-  }
-  .service-card:hover {
-    transform: scale(1.02);
+  .service-list { border-top: 1px solid var(--line); }
+  .service-row {
+    display: grid;
+    grid-template-columns: 90px 1fr 1.2fr 48px;
+    gap: 32px; align-items: start;
+    padding: 52px 0;
+    border-bottom: 1px solid var(--line);
+    text-decoration: none; color: inherit;
+    transition: background .25s;
   }
   .service-num {
-    font-size: 12px; font-weight: 600; color: var(--accent);
-    margin-bottom: 16px; letter-spacing: .04em;
+    font-size: 13px; font-weight: 600; color: var(--dim);
+    letter-spacing: .1em; padding-top: 8px;
   }
-  .service-card h3 {
-    font-size: 24px; font-weight: 700; margin-bottom: 10px;
-    line-height: 1.19;
-    letter-spacing: -.01em;
+  .service-row h3 {
+    font-size: clamp(20px, 2.4vw, 28px); font-weight: 700;
+    line-height: 1.4; letter-spacing: .01em;
+    transition: color .25s;
   }
-  .service-card p {
-    font-size: 14px; color: var(--gray); line-height: 1.47;
-    font-weight: 400;
+  .service-row:hover h3 { color: var(--accent); }
+  .service-body p { font-size: 14px; color: var(--muted); line-height: 2; }
+  .service-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+  .service-tags span {
+    font-size: 11px; font-weight: 500; color: var(--dim);
+    border: 1px solid var(--line); border-radius: 100px;
+    padding: 4px 12px; letter-spacing: .04em;
   }
-  .service-card .link {
-    display: inline-block; margin-top: 20px;
-    font-size: 17px; font-weight: 400; color: var(--accent);
-    text-decoration: none;
+  .service-arrow {
+    padding-top: 8px; color: var(--dim);
+    transition: color .25s, transform .25s;
+    font-size: 20px; text-align: right;
   }
+  .service-row:hover .service-arrow { color: var(--accent); transform: translateX(4px); }
 
-  /* ===== ABOUT ===== */
-  .about-section {
-    max-width: 100%;
-    padding: 120px 22px;
-    background: linear-gradient(135deg, #0a0a1a 0%, #0f1a3d 35%, #162454 60%, #1a3a7a 100%);
-    text-align: center;
+  /* ===== ZENMAI ===== */
+  .zenmai-card {
+    margin-top: 80px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 64px;
+    position: relative; overflow: hidden;
+    background: var(--surface);
   }
-  .about-inner {
-    max-width: 760px;
-    margin: 0 auto;
+  .zenmai-card::after {
+    content: "";
+    position: absolute; bottom: -50%; right: -10%;
+    width: 50%; height: 130%;
+    background: radial-gradient(circle, rgba(150,186,50,.16) 0%, transparent 65%);
+    pointer-events: none;
   }
-  .about-message p {
-    font-size: 19px;
-    color: rgba(255,255,255,.75);
-    line-height: 1.8;
-    margin-bottom: 24px;
-    font-weight: 400;
-    letter-spacing: .02em;
+  .zenmai-label {
+    font-size: 12px; font-weight: 600; letter-spacing: .22em;
+    color: var(--accent); text-transform: uppercase; margin-bottom: 20px;
   }
-  .about-message p:last-child {
-    margin-bottom: 0;
+  .zenmai-card h3 {
+    font-size: clamp(26px, 3.4vw, 40px); font-weight: 700;
+    line-height: 1.4; margin-bottom: 16px; letter-spacing: .01em;
   }
-
-  /* ===== COMPANY TABLE ===== */
-  .company-table {
-    width: 100%;
-    max-width: 980px;
-    margin: 64px auto 0;
-    border-collapse: collapse;
-    padding: 0 22px;
+  .zenmai-card > p {
+    font-size: 15px; color: var(--muted); max-width: 520px;
+    line-height: 2; margin-bottom: 36px;
   }
-  .company-table th,
-  .company-table td {
-    font-size: 15px;
-    padding: 20px 24px;
-    border-bottom: 1px solid #d2d2d7;
-    text-align: left;
-    line-height: 1.6;
-    font-weight: 400;
-    vertical-align: top;
-  }
-  .company-table th {
-    width: 140px;
-    font-weight: 600;
-    color: var(--black);
-    white-space: nowrap;
-  }
-  .company-table td {
-    color: var(--gray-light);
+  .zenmai-name {
+    display: inline-block; font-size: 13px; color: var(--dim);
+    margin-bottom: 12px; letter-spacing: .08em;
   }
 
   /* ===== WORKS ===== */
   .works-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr);
-    gap: 20px; max-width: 980px;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
   }
   .works-card {
-    border-radius: var(--radius); overflow: hidden;
-    border: none; background: var(--white);
-    padding: 32px 28px;
-    position: relative;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 36px 32px;
+    background: var(--surface);
+    transition: border-color .25s, transform .25s;
   }
-  .works-metric {
-    font-size: 40px; font-weight: 700; line-height: 1.1;
-    letter-spacing: -.02em; margin-bottom: 16px;
-    background: linear-gradient(135deg, var(--accent) 0%, #6a9dff 100%);
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
+  .works-card:hover { border-color: rgba(150,186,50,.4); transform: translateY(-3px); }
   .works-tag {
     display: inline-block; font-size: 11px; font-weight: 600;
-    color: var(--accent); background: rgba(42,92,255,.08);
-    padding: 3px 10px; border-radius: 100px; margin-bottom: 12px;
+    color: var(--accent); letter-spacing: .08em;
+    border: 1px solid rgba(150,186,50,.35);
+    padding: 4px 12px; border-radius: 100px; margin-bottom: 24px;
+  }
+  .works-metric {
+    font-size: clamp(28px, 3vw, 38px); font-weight: 700;
+    letter-spacing: -.01em; line-height: 1.15;
+    color: var(--text); margin-bottom: 16px;
   }
   .works-card h3 {
-    font-size: 17px; font-weight: 700; margin-bottom: 8px;
-    letter-spacing: -.01em; line-height: 1.35;
+    font-size: 15px; font-weight: 700; margin-bottom: 8px;
+    line-height: 1.6; letter-spacing: .01em;
   }
-  .works-card p {
-    font-size: 13px; color: var(--gray); font-weight: 400; line-height: 1.5;
-  }
+  .works-card p { font-size: 13px; color: var(--muted); line-height: 1.9; }
 
-  /* ===== MARQUEE (制作実績) ===== */
-  .marquee-section {
-    padding: 80px 0;
-    background: var(--white);
-    overflow: hidden;
-    max-width: 100%;
-  }
-  .marquee-section .section-label,
-  .marquee-section .section-title {
-    max-width: 980px; margin-left: auto; margin-right: auto;
-    padding-left: 22px; padding-right: 22px;
-  }
-  .marquee-section .section-title { margin-bottom: 48px; }
+  /* ===== MARQUEE ===== */
+  .marquee-section { padding: 0 0 140px; overflow: hidden; }
   .marquee-track {
     display: flex; width: max-content;
-    animation: marquee 30s linear infinite;
+    animation: marquee 36s linear infinite;
   }
   .marquee-track:hover { animation-play-state: paused; }
   .marquee-item {
-    flex-shrink: 0; width: 400px; height: 240px;
-    margin-right: 20px; border-radius: var(--radius);
-    overflow: hidden; position: relative;
-    box-shadow: 0 2px 16px rgba(0,0,0,.08);
+    flex-shrink: 0; width: 420px; height: 252px;
+    margin-right: 20px; border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--line);
   }
   .marquee-item img {
-    width: 100%; height: 100%; object-fit: cover;
-    display: block;
+    width: 100%; height: 100%; object-fit: cover; display: block;
   }
   @keyframes marquee {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
   }
-
-  /* ===== STRENGTH ===== */
-  .strength-list {
-    display: grid; grid-template-columns: repeat(3, 1fr);
-    gap: 30px; max-width: 980px;
-  }
-  .strength-item .num {
-    font-size: 56px; font-weight: 700; color: var(--accent);
-    line-height: 1; margin-bottom: 20px; opacity: .2;
-    letter-spacing: -.02em;
-  }
-  .strength-item h3 {
-    font-size: 21px; font-weight: 700; margin-bottom: 10px;
-    letter-spacing: -.01em;
-  }
-  .strength-item p {
-    font-size: 14px; color: var(--gray); line-height: 1.47; font-weight: 400;
+  .marquee-note {
+    font-size: 11px; color: var(--dim);
+    text-align: right; margin-top: 16px;
   }
 
-  /* ===== CTA SECTION ===== */
+  /* ===== MISSION ===== */
+  .mission { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .mission-inner { max-width: 760px; }
+  .mission-statement {
+    font-size: clamp(28px, 3.6vw, 44px); font-weight: 700;
+    line-height: 1.5; letter-spacing: .01em; margin-bottom: 40px;
+  }
+  .mission-statement .dot { color: var(--accent); }
+  .mission p { font-size: 15px; color: var(--muted); line-height: 2.2; margin-bottom: 20px; }
+  .mission p:last-child { margin-bottom: 0; }
+
+  /* ===== COMPANY ===== */
+  .company-table { width: 100%; border-collapse: collapse; }
+  .company-table th, .company-table td {
+    font-size: 14px; padding: 26px 8px;
+    border-bottom: 1px solid var(--line);
+    text-align: left; line-height: 1.9; vertical-align: top;
+  }
+  .company-table th {
+    width: 160px; font-weight: 600; color: var(--dim);
+    white-space: nowrap; letter-spacing: .06em;
+  }
+  .company-table td { color: var(--text); font-weight: 400; }
+
+  /* ===== CTA ===== */
   .cta-section {
+    position: relative; overflow: hidden;
+    border-top: 1px solid var(--line);
     text-align: center;
-    background: #000;
-    color: var(--white);
-    padding: 120px 22px;
-    max-width: 100%;
   }
-  .cta-section .section-title {
-    color: var(--white);
-    font-size: 48px;
-    letter-spacing: -.015em;
+  .cta-section::before {
+    content: "";
+    position: absolute; top: -60%; left: 50%; transform: translateX(-50%);
+    width: 90vw; height: 120%;
+    background: radial-gradient(ellipse, rgba(150,186,50,.12) 0%, transparent 60%);
+    pointer-events: none;
   }
-  .cta-section p {
-    font-size: 19px; color: var(--gray);
-    margin-bottom: 40px;
-    font-weight: 400;
+  .cta-section .container { position: relative; z-index: 1; }
+  .cta-section h2 {
+    font-size: clamp(30px, 4.4vw, 56px); font-weight: 700;
+    line-height: 1.4; margin-bottom: 20px; letter-spacing: .01em;
   }
-  .cta-btn {
-    display: inline-block; padding: 12px 32px;
-    background: var(--accent); color: var(--white);
-    text-decoration: none; font-weight: 400; font-size: 17px;
-    border-radius: 100px; margin: 0 8px;
-    letter-spacing: -.01em;
-  }
-  .cta-btn:hover { background: var(--accent-dark); }
+  .cta-section p { font-size: 15px; color: var(--muted); margin-bottom: 44px; }
 
-  /* ===== CONTACT FORM ===== */
-  .contact-section {
-    background: var(--white);
-    max-width: 100%;
-    padding: 120px 22px;
-  }
-  .contact-inner {
-    max-width: 640px;
-    margin: 0 auto;
-  }
-  .contact-section .section-label,
-  .contact-section .section-title,
-  .contact-section .section-desc {
-    text-align: center;
-  }
-  .contact-section .section-desc {
-    max-width: 640px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-  }
-  .form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
+  /* ===== CONTACT ===== */
+  .contact-inner { max-width: 640px; margin: 0 auto; }
+  .contact-inner .section-head { text-align: center; }
+  .contact-inner .section-label { justify-content: center; }
+  .contact-inner .section-label::before { display: none; }
+  .contact-inner .section-desc { margin-left: auto; margin-right: auto; }
+  .contact-form { display: flex; flex-direction: column; gap: 24px; }
+  .form-group { display: flex; flex-direction: column; gap: 8px; }
   .form-group label {
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--black);
-    letter-spacing: .01em;
+    font-size: 13px; font-weight: 600; color: var(--text); letter-spacing: .04em;
   }
   .form-group label .req {
-    font-size: 11px;
-    font-weight: 600;
-    color: var(--accent);
-    margin-left: 6px;
+    font-size: 10px; font-weight: 600; color: var(--accent);
+    border: 1px solid rgba(150,186,50,.4); border-radius: 4px;
+    padding: 1px 6px; margin-left: 8px; vertical-align: 1px;
   }
-  .form-group input,
-  .form-group select,
-  .form-group textarea {
-    font-family: inherit;
-    font-size: 16px;
+  .form-group input, .form-group select, .form-group textarea {
+    font-family: inherit; font-size: 16px;
     padding: 14px 16px;
-    border: 1px solid #d2d2d7;
+    border: 1px solid var(--line);
     border-radius: 12px;
-    background: var(--light);
-    color: var(--black);
+    background: rgba(244,245,240,.04);
+    color: var(--text);
     outline: none;
     transition: border-color .2s, box-shadow .2s;
     -webkit-appearance: none;
   }
-  .form-group input:focus,
-  .form-group select:focus,
-  .form-group textarea:focus {
+  .form-group select { color: var(--text); }
+  .form-group select option { background: var(--surface); color: var(--text); }
+  .form-group input::placeholder, .form-group textarea::placeholder { color: var(--dim); }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
     border-color: var(--accent);
-    box-shadow: 0 0 0 3px rgba(42,92,255,.1);
+    box-shadow: 0 0 0 3px rgba(150,186,50,.15);
   }
-  .form-group textarea {
-    min-height: 160px;
-    resize: vertical;
-  }
-  .form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }
+  .form-group textarea { min-height: 160px; resize: vertical; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   .contact-submit {
-    display: inline-block;
-    padding: 16px 48px;
-    background: var(--accent);
-    color: var(--white);
-    border: none;
-    font-family: inherit;
-    font-size: 17px;
-    font-weight: 500;
-    border-radius: 100px;
-    cursor: pointer;
-    letter-spacing: -.01em;
+    padding: 16px 52px;
+    background: var(--accent); color: #0b0c0a;
+    border: none; font-family: inherit;
+    font-size: 15px; font-weight: 700; letter-spacing: .02em;
+    border-radius: 100px; cursor: pointer;
     transition: background .2s, transform .1s;
-    align-self: center;
-    margin-top: 8px;
+    align-self: center; margin-top: 8px;
   }
-  .contact-submit:hover { background: var(--accent-dark); }
+  .contact-submit:hover { background: #bce84f; }
   .contact-submit:active { transform: scale(.98); }
-  .contact-submit:disabled {
-    opacity: .5;
-    cursor: not-allowed;
-  }
+  .contact-submit:disabled { opacity: .5; cursor: not-allowed; }
   .form-status {
-    text-align: center;
-    font-size: 15px;
-    padding: 16px;
-    border-radius: 12px;
-    display: none;
+    text-align: center; font-size: 14px; padding: 16px;
+    border-radius: 12px; display: none; line-height: 1.8;
   }
   .form-status.success {
-    display: block;
-    background: rgba(42,92,255,.06);
-    color: var(--accent);
+    display: block; background: rgba(150,186,50,.1); color: var(--accent);
   }
   .form-status.error {
-    display: block;
-    background: rgba(255,59,48,.06);
-    color: #ff3b30;
-  }
-  @media (max-width: 768px) {
-    .form-row { grid-template-columns: 1fr; }
+    display: block; background: rgba(255,90,80,.1); color: #ff6b60;
   }
 
-  /* ===== BLOG ===== */
-  .blog-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr);
-    gap: 20px; max-width: 980px;
+  /* ===== RECRUIT STRIP ===== */
+  .recruit-strip {
+    border-top: 1px solid var(--line);
+    padding: 64px 0;
   }
-  .blog-card {
-    border-radius: var(--radius); overflow: hidden;
-    transition: transform .3s ease;
+  .recruit-inner {
+    display: flex; justify-content: space-between; align-items: center; gap: 24px;
   }
-  .blog-card:hover { transform: scale(1.02); }
-  .blog-thumb {
-    height: 200px; background: #e8e8ed;
-    display: flex; align-items: center; justify-content: center;
-    color: var(--gray); font-size: 14px;
-    border-radius: var(--radius);
-  }
-  .blog-card-body { padding: 16px 4px; }
-  .blog-date { font-size: 12px; color: var(--gray); margin-bottom: 6px; font-weight: 400; }
-  .blog-card-body h3 {
-    font-size: 17px; font-weight: 600; line-height: 1.29;
-    letter-spacing: -.01em;
-  }
+  .recruit-inner h2 { font-size: 22px; font-weight: 700; letter-spacing: .01em; }
+  .recruit-inner p { font-size: 13px; color: var(--muted); margin-top: 6px; }
 
   /* ===== FOOTER ===== */
   footer {
-    background: #111; color: rgba(255,255,255,.5);
-    padding: 48px 22px 20px;
+    border-top: 1px solid var(--line);
+    padding: 72px 0 32px;
   }
   .footer-inner {
-    display: flex; justify-content: space-between;
-    max-width: 980px; margin: 0 auto 40px;
+    display: flex; justify-content: space-between; gap: 48px;
+    margin-bottom: 64px; flex-wrap: wrap;
   }
-  .footer-logo {
-    font-size: 21px; font-weight: 700; color: var(--white);
-    margin-bottom: 16px;
-  }
-  .footer-info p { font-size: 12px; margin-bottom: 4px; color: rgba(255,255,255,.5); line-height: 1.47; }
+  .footer-logo img { height: 24px; width: auto; display: block; margin-bottom: 20px; }
+  .footer-info p { font-size: 12px; color: var(--dim); line-height: 1.9; }
+  .footer-nav-group { display: flex; gap: 72px; flex-wrap: wrap; }
   .footer-nav h4 {
-    font-size: 12px; font-weight: 600; color: var(--white);
-    margin-bottom: 12px; letter-spacing: .02em;
-    text-transform: uppercase;
+    font-size: 11px; font-weight: 600; color: var(--dim);
+    margin-bottom: 16px; letter-spacing: .14em; text-transform: uppercase;
   }
   .footer-nav a {
-    display: block; font-size: 12px; color: rgba(255,255,255,.5);
-    text-decoration: none; margin-bottom: 8px;
-    line-height: 1.47;
+    display: block; font-size: 13px; color: var(--muted);
+    text-decoration: none; margin-bottom: 10px; line-height: 1.7;
+    transition: color .2s;
   }
-  .footer-nav a:hover { color: var(--white); }
+  .footer-nav a:hover { color: var(--text); }
   .footer-bottom {
-    border-top: 1px solid rgba(255,255,255,.15);
-    padding-top: 16px;
-    max-width: 980px; margin: 0 auto;
-    display: flex; justify-content: space-between;
-    font-size: 12px; color: rgba(255,255,255,.4);
+    border-top: 1px solid var(--line);
+    padding-top: 24px;
+    font-size: 11px; color: var(--dim); letter-spacing: .04em;
   }
-  .footer-bottom a {
-    color: rgba(255,255,255,.4); text-decoration: none; margin-left: 20px;
-  }
-  .footer-bottom a:hover { color: var(--white); }
 
   /* ===== SCROLL ANIMATION ===== */
   .fade-up {
     opacity: 0;
-    transform: translateY(40px);
-    transition: opacity .7s ease, transform .7s ease;
+    transform: translateY(28px);
+    transition: opacity .8s cubic-bezier(.2,.6,.2,1), transform .8s cubic-bezier(.2,.6,.2,1);
   }
-  .fade-up.visible {
-    opacity: 1;
-    transform: translateY(0);
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+  @media (prefers-reduced-motion: reduce) {
+    .fade-up { opacity: 1; transform: none; transition: none; }
+    .marquee-track { animation: none; }
+    html { scroll-behavior: auto; }
   }
 
-  .pc-only { display: inline; }
-  .sp-br { display: none; }
-  .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; z-index: 200; position: relative; }
-  .hamburger span { display: block; width: 26px; height: 2px; background: var(--white); margin: 6px 0; transition: transform .3s ease, opacity .3s ease; }
+  /* ===== MOBILE NAV ===== */
+  .hamburger {
+    display: none; background: none; border: none; cursor: pointer;
+    padding: 8px; z-index: 200; position: relative;
+  }
+  .hamburger span {
+    display: block; width: 24px; height: 1.5px; background: var(--text);
+    margin: 7px 0; transition: transform .3s ease, opacity .3s ease;
+  }
   .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(6px,6px); }
   .hamburger.open span:nth-child(2) { opacity: 0; }
   .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(6px,-6px); }
   .mobile-nav {
-    position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0,0,0,.97); z-index: 150;
-    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 36px;
+    position: fixed; inset: 0;
+    background: rgba(11,12,10,.98); z-index: 150;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 32px;
     opacity: 0; visibility: hidden;
     transition: opacity .35s ease, visibility .35s ease;
   }
   .mobile-nav.open { opacity: 1; visibility: visible; }
   .mobile-nav a {
-    color: var(--white); text-decoration: none; font-size: 22px; font-weight: 500;
-    letter-spacing: .02em;
-    transform: translateY(20px); opacity: 0;
+    color: var(--text); text-decoration: none; font-size: 20px; font-weight: 500;
+    letter-spacing: .06em;
+    transform: translateY(16px); opacity: 0;
     transition: transform .4s ease, opacity .4s ease;
   }
-  .mobile-nav.open a {
-    transform: translateY(0); opacity: 1;
-  }
-  .mobile-nav.open a:nth-child(1) { transition-delay: .05s; }
-  .mobile-nav.open a:nth-child(2) { transition-delay: .1s; }
-  .mobile-nav.open a:nth-child(3) { transition-delay: .15s; }
-  .mobile-nav.open a:nth-child(4) { transition-delay: .2s; }
-  .mobile-nav.open a:nth-child(6) { transition-delay: .3s; }
+  .mobile-nav.open a { transform: translateY(0); opacity: 1; }
+  .mobile-nav.open a:nth-child(2) { transition-delay: .05s; }
+  .mobile-nav.open a:nth-child(3) { transition-delay: .1s; }
+  .mobile-nav.open a:nth-child(4) { transition-delay: .15s; }
+  .mobile-nav.open a:nth-child(5) { transition-delay: .2s; }
+  .mobile-nav.open a:nth-child(6) { transition-delay: .25s; }
   .mobile-nav-close {
-    position: absolute; top: 20px; right: 20px;
+    position: absolute; top: 24px; right: 20px;
     background: none; border: none; cursor: pointer;
     width: 40px; height: 40px; padding: 0;
   }
   .mobile-nav-close span {
-    display: block; width: 28px; height: 2px; background: var(--white);
+    display: block; width: 26px; height: 1.5px; background: var(--text);
     position: absolute; top: 50%; left: 50%;
   }
   .mobile-nav-close span:nth-child(1) { transform: translate(-50%,-50%) rotate(45deg); }
   .mobile-nav-close span:nth-child(2) { transform: translate(-50%,-50%) rotate(-45deg); }
 
   /* ===== RESPONSIVE ===== */
+  @media (max-width: 900px) {
+    .service-row { grid-template-columns: 48px 1fr; gap: 12px 20px; padding: 40px 0; }
+    .service-body { grid-column: 2; }
+    .service-arrow { display: none; }
+    .works-grid { grid-template-columns: 1fr 1fr; }
+  }
   @media (max-width: 768px) {
-    .pc-only { display: none; }
-    header { padding: 0 20px; }
-    nav { display: none; }
-    .header-cta { display: none; }
+    nav, .header-cta { display: none; }
     .hamburger { display: block; }
-    .hero { padding: 140px 16px 80px; min-height: auto; }
-    .hero-inner { padding: 0 16px; }
-    .hero h1 { font-size: 36px; }
-    .hero p { font-size: 15px; }
-    .sp-br { display: inline; }
-    .pc-br { display: none; }
-    section { padding: 80px 20px; }
-    .section-title { font-size: 28px; }
-    .section-desc { font-size: 15px; }
-    .service-grid { grid-template-columns: 1fr; }
-    .works-grid {
-      grid-template-columns: repeat(2, 1fr); gap: 12px;
-    }
-    .works-card { padding: 20px 16px; }
-    .works-metric { font-size: 22px; margin-bottom: 8px; }
-    .works-card h3 { font-size: 13px; margin-bottom: 4px; }
-    .works-card p { font-size: 11px; }
-    .blog-grid,
-    .strength-list { grid-template-columns: 1fr; }
-    .about-content { grid-template-columns: 1fr; gap: 40px; }
-    .footer-inner { flex-direction: column; gap: 32px; }
-    .cta-section .section-title { font-size: 26px; }
-    .cta-section p { font-size: 15px; }
+    .header-inner { height: 64px; padding: 0 20px; }
+    html { scroll-padding-top: 72px; }
+    section { padding: 88px 0; }
+    .container { padding: 0 20px; }
+    .hero h1 { font-size: clamp(30px, 9vw, 44px); }
+    .hero-lead { font-size: 14px; }
+    .hero-actions { gap: 12px; }
+    .hero-stats { margin-top: 64px; }
+    .hero-stats-inner { grid-template-columns: 1fr; padding: 0 20px; }
+    .stat { border-left: none; padding: 20px 0; padding-left: 0; border-top: 1px solid var(--line); }
+    .stat:first-child { border-top: none; }
+    .stat-value { font-size: 30px; }
+    .section-head { margin-bottom: 48px; }
+    .zenmai-card { padding: 40px 28px; margin-top: 56px; }
+    .works-grid { grid-template-columns: 1fr; gap: 14px; }
+    .works-card { padding: 28px 24px; }
+    .marquee-section { padding: 0 0 88px; }
     .marquee-item { width: 300px; height: 180px; }
+    .marquee-note { padding: 0 20px; }
+    .form-row { grid-template-columns: 1fr; }
+    .recruit-inner { flex-direction: column; align-items: flex-start; }
+    .footer-inner { flex-direction: column; gap: 40px; }
+    .footer-nav-group { gap: 40px; }
   }
 </style>
 </head>
 <body>
 
 <!-- ===== HEADER ===== -->
-<header>
-  <div class="logo"><img src="images/logo.png" alt="Leit On"></div>
-  <div style="display:flex;align-items:center;">
-    <nav>
-      <a href="#service">SERVICE</a>
-      <a href="#about">ABOUT</a>
-      <a href="#works">WORKS</a>
-      <a href="#recruit">RECRUIT</a>
-    </nav>
-    <a href="#contact" class="header-cta">お問い合わせ</a>
-    <button class="hamburger" onclick="toggleMenu()" aria-label="メニュー">
-      <span></span><span></span><span></span>
-    </button>
+<header id="siteHeader">
+  <div class="header-inner">
+    <a href="#" class="logo"><img src="images/logo.png" alt="Leit On"></a>
+    <div class="header-right">
+      <nav>
+        <a href="#service">SERVICE</a>
+        <a href="#works">WORKS</a>
+        <a href="#about">ABOUT</a>
+        <a href="#company">COMPANY</a>
+      </nav>
+      <a href="#contact" class="header-cta">お問い合わせ</a>
+      <button class="hamburger" onclick="toggleMenu()" aria-label="メニュー">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
 </header>
 <div class="mobile-nav" id="mobileNav">
@@ -623,388 +588,325 @@
     <span></span><span></span>
   </button>
   <a href="#service" onclick="toggleMenu()">SERVICE</a>
-  <a href="#about" onclick="toggleMenu()">ABOUT</a>
   <a href="#works" onclick="toggleMenu()">WORKS</a>
-  <a href="#recruit" onclick="toggleMenu()">RECRUIT</a>
+  <a href="#about" onclick="toggleMenu()">ABOUT</a>
+  <a href="#company" onclick="toggleMenu()">COMPANY</a>
   <a href="#contact" onclick="toggleMenu()">お問い合わせ</a>
 </div>
 
 <!-- ===== HERO ===== -->
-<section class="hero">
-  <canvas id="heroCanvas"></canvas>
+<div class="hero">
   <div class="hero-inner">
-    <h1>デジタルを先導し、<br>成果に繋げる</h1>
-    <p>AIをはじめとした最新のデジタルを駆使し、<br>御社の頭脳・右腕として目標達成にコミットします。</p>
-    <a href="#contact" class="hero-cta">まずは無料で相談する</a>
+    <div class="container">
+      <div class="hero-label">Digital &amp; AI Partner</div>
+      <h1>デジタルを先導し、<br>成果に繋げる<span class="dot">。</span></h1>
+      <p class="hero-lead">生成AIによる業務効率化とWeb集客の知見で、戦略設計から実装・運用までを一気通貫で支援。御社の頭脳・右腕として、目標達成にコミットします。</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">無料で相談する <span class="arrow">→</span></a>
+        <a href="#works" class="btn-ghost">実績を見る ↓</a>
+      </div>
+    </div>
   </div>
-</section>
+  <div class="hero-stats">
+    <div class="hero-stats-inner">
+      <div class="stat fade-up">
+        <div class="stat-value">50<span>+</span></div>
+        <div class="stat-label">累計支援店舗数</div>
+      </div>
+      <div class="stat fade-up" style="transition-delay:.1s">
+        <div class="stat-value">6,500<span>h</span></div>
+        <div class="stat-label">AI活用による年間削減工数</div>
+      </div>
+      <div class="stat fade-up" style="transition-delay:.2s">
+        <div class="stat-value">95<span>%</span></div>
+        <div class="stat-label">AI研修 受講満足度</div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- ===== SERVICE ===== -->
 <section id="service">
-  <div class="section-label fade-up">Service</div>
-  <div class="section-title fade-up">事業内容</div>
-  <div class="section-desc fade-up">デジタル技術を用いて、<br class="pc-only">企業の課題に最適なソリューションを展開します。</div>
-  <div class="service-grid">
-    <div class="service-card fade-up">
-      <div class="service-num">01</div>
-      <h3>Web集客事業</h3>
-      <p>リスティング広告・SNS広告の運用代行、<br>MEO対策など、オンライン・オフラインの集客を支援します。</p>
+  <div class="container">
+    <div class="section-head fade-up">
+      <div class="section-label">Service</div>
+      <h2 class="section-title">事業内容</h2>
+      <p class="section-desc">AIとデジタルの実装力で、企業の課題に最適なソリューションを提供します。</p>
     </div>
-    <div class="service-card fade-up" style="transition-delay:.1s">
-      <div class="service-num">02</div>
-      <h3>採用代行 オタスケジンジ</h3>
-      <p>求人媒体の選定から応募者対応まで、<br>採用業務をまるごと代行。コストを抑えた採用を実現します。</p>
+    <div class="service-list">
+      <a href="#contact" class="service-row fade-up">
+        <div class="service-num">01</div>
+        <h3>AI導入・<br class="pc-br">業務効率化支援</h3>
+        <div class="service-body">
+          <p>生成AIを活用した業務の自動化・仕組み化を、ヒアリングから実装・現場への定着まで一貫して支援。医療機関・士業をはじめとするバックオフィス業務のAI BPOにも注力しています。</p>
+          <div class="service-tags">
+            <span>生成AI活用</span><span>業務自動化</span><span>AI BPO</span><span>AI研修</span>
+          </div>
+        </div>
+        <div class="service-arrow">→</div>
+      </a>
+      <a href="#contact" class="service-row fade-up">
+        <div class="service-num">02</div>
+        <h3>Web集客・<br class="pc-br">広告運用</h3>
+        <div class="service-body">
+          <p>Google・Meta広告の運用代行、MEO対策など、オンラインの集客を支援。データに基づく改善サイクルで、限られた予算から最大の成果を引き出します。</p>
+          <div class="service-tags">
+            <span>リスティング広告</span><span>SNS広告</span><span>MEO対策</span><span>レポーティング</span>
+          </div>
+        </div>
+        <div class="service-arrow">→</div>
+      </a>
+      <a href="#contact" class="service-row fade-up">
+        <div class="service-num">03</div>
+        <h3>HP・LP制作</h3>
+        <div class="service-body">
+          <p>集客から逆算した戦略設計で、成果につながるホームページ・ランディングページを制作。公開後の広告運用・改善までワンストップで対応します。</p>
+          <div class="service-tags">
+            <span>コーポレートサイト</span><span>LP</span><span>採用サイト</span><span>運用改善</span>
+          </div>
+        </div>
+        <div class="service-arrow">→</div>
+      </a>
     </div>
-    <div class="service-card fade-up" style="transition-delay:.2s">
-      <div class="service-num">03</div>
-      <h3>HP・LP制作</h3>
-      <p>集客に強いホームページ・ランディングページを制作。<br>戦略設計からデザイン・実装まで一貫対応。</p>
-    </div>
-    <div class="service-card fade-up" style="transition-delay:.3s">
-      <div class="service-num">04</div>
-      <h3>AI導入・業務効率化支援</h3>
-      <p>ChatGPT活用、業務フロー自動化、<br>データ分析基盤の構築など、AI技術で業務を変革します。</p>
-    </div>
-  </div>
-</section>
 
-<!-- ===== ABOUT ===== -->
-<section id="about" class="about-section">
-  <div class="about-inner fade-up">
-    <div class="section-label" style="color:rgba(255,255,255,.4);">About</div>
-    <div class="section-title" style="color:var(--white);">私たちについて</div>
-    <div class="about-message">
-      <p>Leit Onは静岡県浜松市に<br class="sp-br">拠点を置くデジタル支援会社です。</p>
-      <p>Leit Onはドイツ語のleiten（導く）を<br class="sp-br">元にした造語で、<br>「御社の強力なパートナーになる」<br class="sp-br">ことを使命に、中小企業の<br class="sp-br">デジタル活用を支援しています。</p>
-      <p>最先端の技術と知見を掛け合わせ、<br class="sp-br">御社のポテンシャルを最大化します。</p>
-    </div>
-  </div>
-</section>
-
-<!-- ===== STRENGTH ===== -->
-<section>
-  <div class="section-label fade-up">Features</div>
-  <div class="section-title fade-up">Leit Onの特徴</div>
-  <div class="strength-list">
-    <div class="strength-item fade-up">
-      <div class="num">01</div>
-      <h3>相談から実行まで、<br>丸ごと任せられる</h3>
-      <p>「何から始めればいいかわからない」でも大丈夫。<br>現状のヒアリングから戦略設計、施策の実行まで<br>一社で完結。複数の会社に依頼する手間がなくなります。</p>
-    </div>
-    <div class="strength-item fade-up" style="transition-delay:.1s">
-      <div class="num">02</div>
-      <h3>限られた予算でも、<br>成果を出せる</h3>
-      <p>AIを活用した業務効率化により、<br>高品質なサービスを低コストで提供。<br>大手に頼む予算がなくても、同等以上の成果を実現できます。</p>
-    </div>
-    <div class="strength-item fade-up" style="transition-delay:.2s">
-      <div class="num">03</div>
-      <h3>数字で、<br>効果を実感できる</h3>
-      <p>施策のやりっぱなしはしません。<br>定期的なレポートで成果を可視化し、<br>改善点を明確にした上で次の打ち手をご提案します。</p>
+    <!-- ZENMAI -->
+    <div class="zenmai-card fade-up">
+      <div class="zenmai-label">Product</div>
+      <span class="zenmai-name">業務自動化サービス「Zenmai / ゼンマイくん」</span>
+      <h3>巻いとけば、<br class="sp-br">あとは勝手に働く。</h3>
+      <p>データ集計、レポート作成、経理まわり——毎日の手作業を、裏側で動くAIが自動化。本質的なAI導入は「入れたら勝手に動く」こと。まずは手作業を3つ教えてください。無料で診断します。</p>
+      <a href="#contact" class="btn-primary">無料診断を相談する <span class="arrow">→</span></a>
     </div>
   </div>
 </section>
 
 <!-- ===== WORKS ===== -->
-<section id="works" class="bg-light">
-  <div class="section-label fade-up">Works</div>
-  <div class="section-title fade-up">実績・事例</div>
-  <div class="section-desc fade-up">さまざまな業種・課題でお手伝いしてきた事例の一部をご紹介します。<br class="pc-only">その他、クリニック・ブライダル・人材サービス・EC・整体など幅広い業種を支援しています。</div>
-  <div class="works-grid">
-    <div class="works-card fade-up">
-      <span class="works-tag">店舗集客</span>
-      <div class="works-metric">累計50店舗超</div>
-      <h3>店舗集客支援</h3>
-      <p>飲食・美容・クリニックなど累計50店舗以上の集客をサポート</p>
+<section id="works" style="padding-top:0;">
+  <div class="container">
+    <div class="section-head fade-up">
+      <div class="section-label">Works</div>
+      <h2 class="section-title">実績・事例</h2>
+      <p class="section-desc">クリニック・飲食・金融・ECなど、幅広い業種のお手伝いをしてきた事例の一部をご紹介します。</p>
     </div>
-    <div class="works-card fade-up" style="transition-delay:.1s">
-      <span class="works-tag">AI導入</span>
-      <div class="works-metric">-1,500h/年</div>
-      <h3>生成AIによるデータ登録の自動化</h3>
-      <p>生成AIを使って非構造データを自動抽出し、登録業務を自動化。処理時間を10日から2日に短縮</p>
-    </div>
-    <div class="works-card fade-up" style="transition-delay:.2s">
-      <span class="works-tag">広告運用</span>
-      <div class="works-metric">+100万円/月</div>
-      <h3>飲食店の集客支援</h3>
-      <p>月3万円の広告費で昨年対比 売上100万円増を実現</p>
-    </div>
-    <div class="works-card fade-up">
-      <span class="works-tag">広告 / SEO</span>
-      <div class="works-metric">月商600万</div>
-      <h3>耳鼻科クリニックの開業支援</h3>
-      <p>開業から右肩上がりで成長し、1年で月商600万円規模に</p>
-    </div>
-    <div class="works-card fade-up" style="transition-delay:.1s">
-      <span class="works-tag">AI研修</span>
-      <div class="works-metric">満足度 95%</div>
-      <h3>AIエージェント構築 5日間研修</h3>
-      <p>大手金融機関向けにCopilot Studioを用いたAIエージェント開発研修を企画・実施</p>
-    </div>
-    <div class="works-card fade-up" style="transition-delay:.2s">
-      <span class="works-tag">業務効率化</span>
-      <div class="works-metric">-5,000h/年</div>
-      <h3>規定チェック業務の自動化</h3>
-      <p>テクノロジーと業務プロセスの見直しでチェック業務を自動化・標準化。処理時間50%短縮、品質改善を同時達成</p>
+    <div class="works-grid">
+      <div class="works-card fade-up">
+        <span class="works-tag">AI導入</span>
+        <div class="works-metric">−1,500h/年</div>
+        <h3>生成AIによるデータ登録の自動化</h3>
+        <p>非構造データを生成AIで自動抽出し、登録業務を自動化。処理時間を10日から2日に短縮</p>
+      </div>
+      <div class="works-card fade-up" style="transition-delay:.05s">
+        <span class="works-tag">業務効率化</span>
+        <div class="works-metric">−5,000h/年</div>
+        <h3>規定チェック業務の自動化</h3>
+        <p>テクノロジーと業務プロセスの見直しでチェック業務を自動化・標準化。処理時間50%短縮と品質改善を同時達成</p>
+      </div>
+      <div class="works-card fade-up" style="transition-delay:.1s">
+        <span class="works-tag">AI研修</span>
+        <div class="works-metric">満足度 95%</div>
+        <h3>AIエージェント構築 5日間研修</h3>
+        <p>大手金融機関向けにCopilot Studioを用いたAIエージェント開発研修を企画・実施</p>
+      </div>
+      <div class="works-card fade-up">
+        <span class="works-tag">広告 / SEO</span>
+        <div class="works-metric">月商600万</div>
+        <h3>耳鼻科クリニックの開業支援</h3>
+        <p>開業から右肩上がりで成長し、1年で月商600万円規模に</p>
+      </div>
+      <div class="works-card fade-up" style="transition-delay:.05s">
+        <span class="works-tag">広告運用</span>
+        <div class="works-metric">+100万円/月</div>
+        <h3>飲食店の集客支援</h3>
+        <p>月3万円の広告費で昨年対比 売上100万円増を実現</p>
+      </div>
+      <div class="works-card fade-up" style="transition-delay:.1s">
+        <span class="works-tag">店舗集客</span>
+        <div class="works-metric">累計50店舗超</div>
+        <h3>店舗集客支援</h3>
+        <p>飲食・美容・クリニックなど累計50店舗以上の集客をサポート</p>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ===== 制作実績マーキー ===== -->
 <div class="marquee-section">
-  <div class="section-label fade-up">Works — Web</div>
-  <div class="section-title fade-up">制作実績</div>
-  <div class="marquee-track">
-    <div class="marquee-item"><img src="images/work-1.jpg" alt="採用サイト制作"></div>
-    <div class="marquee-item"><img src="images/work-2.jpg" alt="採用サイト制作"></div>
-    <div class="marquee-item"><img src="images/work-3.jpg" alt="コーポレートサイト制作"></div>
-    <div class="marquee-item"><img src="images/work-4.jpg" alt="HP制作"></div>
-    <div class="marquee-item"><img src="images/work-5.jpg" alt="ECサイト制作"></div>
-    <!-- ループ用複製 -->
-    <div class="marquee-item"><img src="images/work-1.jpg" alt="採用サイト制作"></div>
-    <div class="marquee-item"><img src="images/work-2.jpg" alt="採用サイト制作"></div>
-    <div class="marquee-item"><img src="images/work-3.jpg" alt="コーポレートサイト制作"></div>
-    <div class="marquee-item"><img src="images/work-4.jpg" alt="HP制作"></div>
-    <div class="marquee-item"><img src="images/work-5.jpg" alt="ECサイト制作"></div>
+  <div class="container">
+    <div class="section-head fade-up" style="margin-bottom:48px;">
+      <div class="section-label">Works — Web</div>
+      <h2 class="section-title">制作実績</h2>
+    </div>
   </div>
-  <p style="text-align:right;max-width:980px;margin:16px auto 0;padding:0 22px;font-size:11px;color:var(--gray);">※本サンプルはパートナー CHIDA DESIGN の制作によるものです</p>
+  <div class="marquee-track">
+    <div class="marquee-item"><img src="images/work-1.jpg" alt="採用サイト制作" loading="lazy"></div>
+    <div class="marquee-item"><img src="images/work-2.jpg" alt="採用サイト制作" loading="lazy"></div>
+    <div class="marquee-item"><img src="images/work-3.jpg" alt="コーポレートサイト制作" loading="lazy"></div>
+    <div class="marquee-item"><img src="images/work-4.jpg" alt="HP制作" loading="lazy"></div>
+    <div class="marquee-item"><img src="images/work-5.jpg" alt="ECサイト制作" loading="lazy"></div>
+    <!-- ループ用複製 -->
+    <div class="marquee-item"><img src="images/work-1.jpg" alt="" loading="lazy"></div>
+    <div class="marquee-item"><img src="images/work-2.jpg" alt="" loading="lazy"></div>
+    <div class="marquee-item"><img src="images/work-3.jpg" alt="" loading="lazy"></div>
+    <div class="marquee-item"><img src="images/work-4.jpg" alt="" loading="lazy"></div>
+    <div class="marquee-item"><img src="images/work-5.jpg" alt="" loading="lazy"></div>
+  </div>
+  <div class="container">
+    <p class="marquee-note">※本サンプルはパートナー CHIDA DESIGN の制作によるものです</p>
+  </div>
 </div>
+
+<!-- ===== MISSION ===== -->
+<section id="about" class="mission">
+  <div class="container">
+    <div class="mission-inner fade-up">
+      <div class="section-label">Mission</div>
+      <h2 class="mission-statement">導く、という仕事<span class="dot">。</span></h2>
+      <p>Leit Onは、ドイツ語の「leiten（導く）」から生まれた、静岡県浜松市のデジタル支援会社です。</p>
+      <p>最先端のAI・デジタル技術と現場の知見を掛け合わせ、中小企業のポテンシャルを最大化する。私たちは、御社の強力なパートナーとして、成果まで並走し続けます。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== COMPANY ===== -->
+<section id="company">
+  <div class="container">
+    <div class="section-head fade-up">
+      <div class="section-label">Company</div>
+      <h2 class="section-title">会社概要</h2>
+    </div>
+    <table class="company-table fade-up">
+      <tr><th>会社名</th><td>株式会社Leit On</td></tr>
+      <tr><th>代表</th><td>大石 竜聖</td></tr>
+      <tr><th>設立</th><td>2026年2月</td></tr>
+      <tr><th>資本金</th><td>100万円</td></tr>
+      <tr><th>所在地</th><td>〒430-0933 静岡県浜松市中央区鍛冶町100-1<br>ザザシティ浜松中央館 B1F FUSE内</td></tr>
+      <tr><th>事業内容</th><td>AI導入・業務効率化支援（AI BPO）/ Web集客支援（広告運用・MEO対策）/ HP・LP制作 / 業務自動化サービス「Zenmai」の開発・提供</td></tr>
+    </table>
+  </div>
+</section>
 
 <!-- ===== CTA ===== -->
 <section class="cta-section">
-  <div class="section-label fade-up" style="color:rgba(255,255,255,.5);">Contact</div>
-  <div class="section-title fade-up">まずはお気軽に<br class="sp-br">ご相談ください</div>
-  <p class="fade-up">課題のヒアリングからお見積もりまで<br class="sp-br">無料で対応いたします。</p>
-  <a href="#contact" class="cta-btn fade-up">お問い合わせ</a>
+  <div class="container">
+    <div class="fade-up">
+      <div class="section-label" style="justify-content:center;">Contact</div>
+      <h2>まずは、お気軽に<br class="sp-br">ご相談ください<span style="color:var(--accent);">。</span></h2>
+      <p>課題のヒアリングからお見積もりまで、無料で対応いたします。</p>
+      <a href="#contact" class="btn-primary">お問い合わせ <span class="arrow">→</span></a>
+    </div>
+  </div>
 </section>
 
 <!-- ===== CONTACT ===== -->
-<section id="contact" class="contact-section">
-  <div class="contact-inner">
-    <div class="section-label fade-up">Contact</div>
-    <div class="section-title fade-up">お問い合わせ</div>
-    <div class="section-desc fade-up">ご相談・お見積もりは無料です。<br class="sp-br">お気軽にお問い合わせください。</div>
-    <form id="contactForm" class="contact-form fade-up">
-      <div class="form-row">
-        <div class="form-group">
-          <label>会社名</label>
-          <input type="text" name="company" placeholder="株式会社○○">
+<section id="contact">
+  <div class="container">
+    <div class="contact-inner">
+      <div class="section-head fade-up">
+        <div class="section-label">Contact</div>
+        <h2 class="section-title">お問い合わせ</h2>
+        <p class="section-desc">ご相談・お見積もりは無料です。2営業日以内にご返信いたします。</p>
+      </div>
+      <form id="contactForm" class="contact-form fade-up">
+        <div class="form-row">
+          <div class="form-group">
+            <label>会社名</label>
+            <input type="text" name="company" placeholder="株式会社○○">
+          </div>
+          <div class="form-group">
+            <label>お名前<span class="req">必須</span></label>
+            <input type="text" name="name" required placeholder="山田 太郎">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>メールアドレス<span class="req">必須</span></label>
+            <input type="email" name="email" required placeholder="info@example.com">
+          </div>
+          <div class="form-group">
+            <label>電話番号</label>
+            <input type="tel" name="phone" placeholder="090-0000-0000">
+          </div>
         </div>
         <div class="form-group">
-          <label>お名前<span class="req">必須</span></label>
-          <input type="text" name="name" required placeholder="山田 太郎">
+          <label>ご相談内容<span class="req">必須</span></label>
+          <select name="category" required>
+            <option value="" disabled selected>選択してください</option>
+            <option value="AI導入・業務効率化（AI BPO）">AI導入・業務効率化（AI BPO）</option>
+            <option value="Web集客・広告運用">Web集客・広告運用</option>
+            <option value="HP・LP制作">HP・LP制作</option>
+            <option value="業務自動化（Zenmai）">業務自動化（Zenmai）</option>
+            <option value="その他">その他</option>
+          </select>
         </div>
-      </div>
-      <div class="form-row">
         <div class="form-group">
-          <label>メールアドレス<span class="req">必須</span></label>
-          <input type="email" name="email" required placeholder="info@example.com">
+          <label>お問い合わせ内容<span class="req">必須</span></label>
+          <textarea name="message" required placeholder="ご相談内容をご記入ください"></textarea>
         </div>
-        <div class="form-group">
-          <label>電話番号</label>
-          <input type="tel" name="phone" placeholder="090-0000-0000">
-        </div>
-      </div>
-      <div class="form-group">
-        <label>ご相談内容<span class="req">必須</span></label>
-        <select name="category" required>
-          <option value="" disabled selected>選択してください</option>
-          <option value="Web集客・広告運用">Web集客・広告運用</option>
-          <option value="採用代行（オタスケジンジ）">採用代行（オタスケジンジ）</option>
-          <option value="HP・LP制作">HP・LP制作</option>
-          <option value="AI導入・業務効率化">AI導入・業務効率化</option>
-          <option value="その他">その他</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>お問い合わせ内容<span class="req">必須</span></label>
-        <textarea name="message" required placeholder="ご相談内容をご記入ください"></textarea>
-      </div>
-      <button type="submit" class="contact-submit">送信する</button>
-      <div id="formStatus" class="form-status"></div>
-    </form>
+        <button type="submit" class="contact-submit">送信する</button>
+        <div id="formStatus" class="form-status"></div>
+      </form>
+    </div>
   </div>
 </section>
 
 <!-- ===== RECRUIT ===== -->
-<section id="recruit" style="background:#000;color:var(--white);text-align:center;max-width:100%;padding:120px 22px;">
-  <div class="section-label fade-up" style="color:rgba(255,255,255,.4);">Recruit</div>
-  <div class="section-title fade-up" style="color:var(--white);letter-spacing:-.015em;">一緒に働く仲間を<br class="sp-br">募集しています</div>
-  <p class="fade-up" style="color:rgba(255,255,255,.5);margin-bottom:40px;">私たちと一緒に、クライアントの<br class="sp-br">ビジネス成長を支援しませんか。</p>
-  <a href="#contact" class="cta-btn fade-up">採用について相談する</a>
-</section>
-
-<!-- ===== COMPANY ===== -->
-<section id="company" class="bg-light">
-  <div class="section-label fade-up">Company</div>
-  <div class="section-title fade-up">会社概要</div>
-  <table class="company-table fade-up">
-    <tr><th>会社名</th><td>株式会社Leit On</td></tr>
-    <tr><th>代表</th><td>大石 竜聖</td></tr>
-    <tr><th>設立</th><td>2026年2月</td></tr>
-    <tr><th>資本金</th><td>100万円</td></tr>
-    <tr><th>所在地</th><td>〒430-0933 静岡県浜松市中央区鍛冶町100-1<br>ザザシティ浜松中央館 B1F FUSE内</td></tr>
-    <tr><th>事業内容</th><td>Web集客事業（広告運用・MEO対策）/ 採用代行（オタスケジンジ）/ HP・LP制作 / AI導入・業務効率化支援</td></tr>
-  </table>
-</section>
+<div id="recruit" class="recruit-strip">
+  <div class="container">
+    <div class="recruit-inner fade-up">
+      <div>
+        <h2>一緒に働く仲間を募集しています</h2>
+        <p>私たちと一緒に、クライアントのビジネス成長を支援しませんか。</p>
+      </div>
+      <a href="#contact" class="btn-ghost">採用について相談する →</a>
+    </div>
+  </div>
+</div>
 
 <!-- ===== FOOTER ===== -->
 <footer>
-  <div class="footer-inner">
-    <div>
-      <div class="footer-logo"><img src="images/logo.png" alt="Leit On" style="height:28px;width:auto;"></div>
-      <div class="footer-info">
-        <p>〒430-0933 静岡県浜松市中央区鍛冶町100-1</p>
-        <p>ザザシティ浜松中央館 B1F FUSE内</p>
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo"><img src="images/logo.png" alt="Leit On"></div>
+        <div class="footer-info">
+          <p>〒430-0933 静岡県浜松市中央区鍛冶町100-1</p>
+          <p>ザザシティ浜松中央館 B1F FUSE内</p>
+        </div>
+      </div>
+      <div class="footer-nav-group">
+        <div class="footer-nav">
+          <h4>Service</h4>
+          <a href="#service">AI導入・業務効率化支援</a>
+          <a href="#service">Web集客・広告運用</a>
+          <a href="#service">HP・LP制作</a>
+          <a href="#service">業務自動化 Zenmai</a>
+        </div>
+        <div class="footer-nav">
+          <h4>Company</h4>
+          <a href="#company">会社概要</a>
+          <a href="#works">実績・事例</a>
+          <a href="#recruit">採用情報</a>
+        </div>
+        <div class="footer-nav">
+          <h4>Support</h4>
+          <a href="#contact">お問い合わせ</a>
+        </div>
       </div>
     </div>
-    <div class="footer-nav">
-      <h4>Service</h4>
-      <a href="#service">Web集客事業</a>
-      <a href="#service">採用代行（オタスケジンジ）</a>
-      <a href="#service">HP・LP制作</a>
-      <a href="#service">AI導入・業務効率化支援</a>
+    <div class="footer-bottom">
+      <span>&copy; 2026 株式会社Leit On All rights reserved.</span>
     </div>
-    <div class="footer-nav">
-      <h4>Company</h4>
-      <a href="#company">会社概要</a>
-      <a href="#works">実績・事例</a>
-      <a href="#recruit">採用情報</a>
-    </div>
-    <div class="footer-nav">
-      <h4>Support</h4>
-      <a href="#contact">お問い合わせ</a>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>&copy; 2026 株式会社Leit On All rights reserved.</span>
-    <div></div>
   </div>
 </footer>
 
 <script>
-// ===== MOTION GRAPHIC =====
-(function() {
-  const canvas = document.getElementById('heroCanvas');
-  const ctx = canvas.getContext('2d');
-  let w, h, particles, connections;
-
-  function resize() {
-    const hero = canvas.parentElement;
-    w = canvas.width = hero.offsetWidth;
-    h = canvas.height = hero.offsetHeight;
-  }
-
-  function init() {
-    resize();
-    particles = [];
-    // 大きめのオーブを少数配置
-    const count = 6 + Math.floor((w * h) / 300000);
-    for (let i = 0; i < count; i++) {
-      particles.push({
-        x: Math.random() * w,
-        y: Math.random() * h,
-        vx: (Math.random() - 0.5) * 0.25,
-        vy: (Math.random() - 0.5) * 0.25,
-        r: Math.random() * 60 + 50,
-        phase: Math.random() * Math.PI * 2,
-        hue: Math.random() > 0.5 ? 220 : 260,
-      });
-    }
-  }
-
-  function draw() {
-    ctx.clearRect(0, 0, w, h);
-    const time = Date.now() * 0.001;
-
-    // 各オーブを描画
-    for (const p of particles) {
-      p.x += p.vx + Math.sin(time * 0.3 + p.phase) * 0.3;
-      p.y += p.vy + Math.cos(time * 0.25 + p.phase) * 0.3;
-      if (p.x < -p.r) p.x = w + p.r;
-      if (p.x > w + p.r) p.x = -p.r;
-      if (p.y < -p.r) p.y = h + p.r;
-      if (p.y > h + p.r) p.y = -p.r;
-
-      const breath = 0.6 + Math.sin(time * 0.8 + p.phase) * 0.2;
-      const r = p.r + Math.sin(time * 0.5 + p.phase) * 15;
-
-      // 大きなぼかしグロー（最外周）
-      const g1 = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, r * 2.5);
-      g1.addColorStop(0, 'hsla(' + p.hue + ',80%,60%,' + breath * 0.08 + ')');
-      g1.addColorStop(0.5, 'hsla(' + (p.hue + 30) + ',70%,50%,' + breath * 0.04 + ')');
-      g1.addColorStop(1, 'hsla(' + p.hue + ',80%,60%,0)');
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, r * 2.5, 0, Math.PI * 2);
-      ctx.fillStyle = g1;
-      ctx.fill();
-
-      // メインオーブ（ガラス玉風）
-      const g2 = ctx.createRadialGradient(
-        p.x - r * 0.25, p.y - r * 0.25, r * 0.05,
-        p.x, p.y, r
-      );
-      g2.addColorStop(0, 'hsla(' + p.hue + ',70%,80%,' + breath * 0.35 + ')');
-      g2.addColorStop(0.4, 'hsla(' + p.hue + ',80%,55%,' + breath * 0.2 + ')');
-      g2.addColorStop(0.7, 'hsla(' + (p.hue + 40) + ',90%,40%,' + breath * 0.1 + ')');
-      g2.addColorStop(1, 'hsla(' + p.hue + ',80%,30%,0)');
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, r, 0, Math.PI * 2);
-      ctx.fillStyle = g2;
-      ctx.fill();
-
-      // エッジのリング
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, r * 0.85, 0, Math.PI * 2);
-      ctx.strokeStyle = 'hsla(' + p.hue + ',60%,70%,' + breath * 0.12 + ')';
-      ctx.lineWidth = 1.5;
-      ctx.stroke();
-
-      // ハイライト（光の反射）
-      const hx = p.x - r * 0.3;
-      const hy = p.y - r * 0.3;
-      const g3 = ctx.createRadialGradient(hx, hy, 0, hx, hy, r * 0.4);
-      g3.addColorStop(0, 'hsla(0,0%,100%,' + breath * 0.2 + ')');
-      g3.addColorStop(1, 'hsla(0,0%,100%,0)');
-      ctx.beginPath();
-      ctx.arc(hx, hy, r * 0.4, 0, Math.PI * 2);
-      ctx.fillStyle = g3;
-      ctx.fill();
-    }
-
-    // オーブ間の接続線（透明度高め）
-    for (let i = 0; i < particles.length; i++) {
-      for (let j = i + 1; j < particles.length; j++) {
-        const a = particles[i], b = particles[j];
-        const dx = a.x - b.x, dy = a.y - b.y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < 500) {
-          const alpha = (1 - dist / 500) * 0.08;
-          const mx = (a.x + b.x) / 2 + Math.sin(time * 0.5 + i) * 40;
-          const my = (a.y + b.y) / 2 + Math.cos(time * 0.5 + j) * 40;
-          ctx.beginPath();
-          ctx.moveTo(a.x, a.y);
-          ctx.quadraticCurveTo(mx, my, b.x, b.y);
-          ctx.strokeStyle = 'rgba(120,160,255,' + alpha + ')';
-          ctx.lineWidth = 1;
-          ctx.stroke();
-        }
-      }
-    }
-
-    requestAnimationFrame(draw);
-  }
-
-  window.addEventListener('resize', () => { resize(); });
-  init();
-  draw();
-})();
-
 // ===== SCROLL ANIMATION =====
 const fadeEls = document.querySelectorAll('.fade-up');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting) {
       e.target.classList.add('visible');
+      observer.unobserve(e.target);
     }
   });
 }, { threshold: 0.15 });
@@ -1017,18 +919,10 @@ function toggleMenu() {
 }
 
 // ===== HEADER SCROLL =====
-const header = document.querySelector('header');
+const header = document.getElementById('siteHeader');
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 80) {
-    header.style.background = 'rgba(17,17,17,.95)';
-    header.style.backdropFilter = 'blur(12px)';
-    header.style.borderBottomColor = 'rgba(255,255,255,.1)';
-  } else {
-    header.style.background = 'transparent';
-    header.style.backdropFilter = 'none';
-    header.style.borderBottomColor = 'transparent';
-  }
-});
+  header.classList.toggle('scrolled', window.scrollY > 40);
+}, { passive: true });
 
 // ===== CONTACT FORM =====
 const FORM_URL = 'https://formspree.io/f/xgonrvnb';
@@ -1065,7 +959,6 @@ document.getElementById('contactForm').addEventListener('submit', async function
     btn.textContent = '送信する';
   }
 });
-
 </script>
 
 </body>
