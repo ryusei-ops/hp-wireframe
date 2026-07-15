@@ -590,6 +590,11 @@
     .hero h1 { font-size: clamp(30px, 9vw, 44px); }
     .hero-lead { font-size: 14px; margin-bottom: 44px; }
     .hero-inner { min-height: min(100svh, 780px); padding-top: 64px; }
+    .hero::after {
+      width: 160vw; height: 160vw;
+      top: -12%; right: -45%;
+      background: radial-gradient(circle, rgba(150,186,50,.20) 0%, transparent 62%);
+    }
     .hero-actions { gap: 12px; }
     .section-head { margin-bottom: 48px; }
     .zenmai-card { padding: 40px 28px; margin-top: 56px; }
