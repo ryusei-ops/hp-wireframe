@@ -15,7 +15,7 @@
 <meta name="twitter:title" content="株式会社Leit On | AI導入・業務自動化とWeb集客の伴走パートナー">
 <meta name="twitter:description" content="生成AIによる業務効率化・AI BPO、Web広告運用、HP/LP制作、採用代行で中小企業の成果に伴走。ご相談は無料。">
 <link rel="canonical" href="https://leit-on.jp/">
-<link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="%23FBFBF9"/><circle cx="16" cy="16" r="8" fill="%2396BA32"/></svg>'>
+<link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="%23FBFBF9"/><circle cx="16" cy="16" r="8" fill="%232A5CFF"/></svg>'>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
@@ -28,9 +28,10 @@
     --text: #16181a;
     --muted: rgba(22,24,26,.68);
     --dim: rgba(22,24,26,.46);
-    --accent: #96ba32;
-    --accent-dark: #71911f;
-    --dark-bg: #14160e;
+    --accent: #2a5cff;
+    --accent-dark: #1e45cc;
+    --accent-light: #8aa8ff;
+    --dark-bg: #0f1117;
     --on-dark: #f4f5f0;
     --on-dark-muted: rgba(244,245,240,.62);
     --radius: 20px;
@@ -53,18 +54,18 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  ::selection { background: rgba(150,186,50,.35); }
+  ::selection { background: rgba(42,92,255,.25); }
 
   strong { font-weight: 700; color: var(--ink); }
   .marker {
     font-weight: 700; color: var(--ink);
-    background: linear-gradient(transparent 62%, rgba(150,186,50,.4) 62%);
+    background: linear-gradient(transparent 62%, rgba(42,92,255,.25) 62%);
     padding: 0 1px;
   }
   .zenmai-card strong, .cta-section strong { color: var(--on-dark); }
   .zenmai-card .marker, .cta-section .marker {
     color: var(--on-dark);
-    background: linear-gradient(transparent 62%, rgba(150,186,50,.45) 62%);
+    background: linear-gradient(transparent 62%, rgba(122,157,255,.45) 62%);
   }
 
   .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
@@ -120,12 +121,12 @@
   .btn-accent {
     display: inline-flex; align-items: center; gap: 10px;
     padding: 15px 36px;
-    background: var(--accent); color: var(--ink);
+    background: var(--accent); color: #fff;
     text-decoration: none; font-size: 15px; font-weight: 700;
     letter-spacing: .02em; border-radius: 100px;
     transition: background .2s, transform .2s;
   }
-  .btn-accent:hover { background: #a9cd47; transform: translateY(-1px); }
+  .btn-accent:hover { background: var(--accent-dark); transform: translateY(-1px); }
   .btn-accent .arrow { transition: transform .2s; }
   .btn-accent:hover .arrow { transform: translateX(3px); }
   .btn-ghost {
@@ -161,7 +162,7 @@
     position: absolute;
     top: -30%; right: -15%;
     width: 70vw; height: 70vw;
-    background: radial-gradient(circle, rgba(150,186,50,.17) 0%, transparent 60%);
+    background: radial-gradient(circle, rgba(42,92,255,.10) 0%, transparent 60%);
     pointer-events: none;
   }
   .hero-inner {
@@ -179,13 +180,9 @@
   .hero-label::before {
     content: ""; width: 32px; height: 1px; background: var(--accent-dark);
   }
-  .hero-grid {
-    display: grid; grid-template-columns: 1.2fr .8fr;
-    gap: 64px; align-items: center;
-  }
   .hero h1 {
-    font-size: clamp(36px, 4vw, 56px);
-    font-weight: 700; line-height: 1.22;
+    font-size: clamp(44px, 7.2vw, 96px);
+    font-weight: 700; line-height: 1.14;
     letter-spacing: .01em;
     margin-bottom: 32px;
   }
@@ -196,33 +193,6 @@
     line-height: 2.1;
   }
   .hero-actions { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
-  .hero-visual { position: relative; }
-  .hero-visual > img {
-    width: 100%; aspect-ratio: 4 / 4.4; object-fit: cover;
-    border-radius: 24px;
-    border: 1px solid var(--line);
-    box-shadow: 0 24px 64px rgba(22,24,26,.10);
-    display: block;
-  }
-  .hero-chip {
-    position: absolute; left: -28px; bottom: 32px;
-    display: flex; align-items: center; gap: 14px;
-    background: #fff;
-    border: 1px solid var(--line);
-    border-radius: 16px;
-    padding: 14px 22px 14px 16px;
-    box-shadow: 0 16px 40px rgba(22,24,26,.12);
-  }
-  .hero-chip .chip-icon {
-    flex-shrink: 0;
-    width: 38px; height: 38px; border-radius: 11px;
-    background: rgba(150,186,50,.16);
-    color: var(--accent-dark);
-    display: flex; align-items: center; justify-content: center;
-  }
-  .hero-chip .chip-icon svg { width: 18px; height: 18px; }
-  .hero-chip b { display: block; font-size: 16px; line-height: 1.3; color: var(--ink); letter-spacing: .01em; }
-  .hero-chip small { display: block; font-size: 11px; color: var(--dim); letter-spacing: .04em; }
 
   /* ===== HERO STATS ===== */
   .hero-stats {
@@ -285,7 +255,7 @@
   .service-icon {
     flex-shrink: 0;
     width: 52px; height: 52px; border-radius: 14px;
-    background: rgba(150,186,50,.15);
+    background: rgba(42,92,255,.10);
     color: var(--accent-dark);
     display: flex; align-items: center; justify-content: center;
   }
@@ -325,12 +295,12 @@
     content: "";
     position: absolute; bottom: -50%; right: -10%;
     width: 50%; height: 130%;
-    background: radial-gradient(circle, rgba(150,186,50,.22) 0%, transparent 65%);
+    background: radial-gradient(circle, rgba(42,92,255,.22) 0%, transparent 65%);
     pointer-events: none;
   }
   .zenmai-label {
     font-size: 12px; font-weight: 600; letter-spacing: .22em;
-    color: var(--accent); text-transform: uppercase; margin-bottom: 20px;
+    color: var(--accent-light); text-transform: uppercase; margin-bottom: 20px;
   }
   .zenmai-card h3 {
     font-size: clamp(26px, 3.4vw, 40px); font-weight: 700;
@@ -367,14 +337,14 @@
     border-radius: 0 0 3px 3px;
   }
   .works-card:hover {
-    border-color: rgba(150,186,50,.5);
+    border-color: rgba(42,92,255,.45);
     transform: translateY(-3px);
     box-shadow: 0 12px 32px rgba(22,24,26,.06);
   }
   .works-tag {
     display: inline-block; font-size: 11px; font-weight: 600;
     color: var(--accent-dark); letter-spacing: .08em;
-    border: 1px solid rgba(150,186,50,.5);
+    border: 1px solid rgba(42,92,255,.4);
     padding: 4px 12px; border-radius: 100px; margin-bottom: 24px;
   }
   .works-metric {
@@ -459,12 +429,12 @@
     content: "";
     position: absolute; top: -60%; left: 50%; transform: translateX(-50%);
     width: 90vw; height: 120%;
-    background: radial-gradient(ellipse, rgba(150,186,50,.16) 0%, transparent 60%);
+    background: radial-gradient(ellipse, rgba(42,92,255,.18) 0%, transparent 60%);
     pointer-events: none;
   }
   .cta-section .container { position: relative; z-index: 1; }
-  .cta-section .section-label { justify-content: center; color: var(--accent); }
-  .cta-section .section-label::before { background: var(--accent); }
+  .cta-section .section-label { justify-content: center; color: var(--accent-light); }
+  .cta-section .section-label::before { background: var(--accent-light); }
   .cta-section h2 {
     font-size: clamp(30px, 4.4vw, 56px); font-weight: 700;
     line-height: 1.4; margin-bottom: 20px; letter-spacing: .01em;
@@ -485,7 +455,7 @@
   }
   .form-group label .req {
     font-size: 10px; font-weight: 600; color: var(--accent-dark);
-    border: 1px solid rgba(150,186,50,.6); border-radius: 4px;
+    border: 1px solid rgba(42,92,255,.5); border-radius: 4px;
     padding: 1px 6px; margin-left: 8px; vertical-align: 1px;
   }
   .form-group input, .form-group select, .form-group textarea {
@@ -501,8 +471,8 @@
   }
   .form-group input::placeholder, .form-group textarea::placeholder { color: var(--dim); }
   .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-    border-color: var(--accent-dark);
-    box-shadow: 0 0 0 3px rgba(150,186,50,.18);
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(42,92,255,.15);
   }
   .form-group textarea { min-height: 160px; resize: vertical; }
   .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
@@ -523,7 +493,7 @@
     border-radius: 12px; display: none; line-height: 1.8;
   }
   .form-status.success {
-    display: block; background: rgba(150,186,50,.12); color: var(--accent-dark);
+    display: block; background: rgba(42,92,255,.08); color: var(--accent-dark);
   }
   .form-status.error {
     display: block; background: rgba(220,60,50,.08); color: #c0392b;
@@ -654,13 +624,9 @@
     html { scroll-padding-top: 72px; }
     section { padding: 88px 0; }
     .container { padding: 0 20px; }
-    .hero-grid { grid-template-columns: 1fr; gap: 40px; }
     .hero h1 { font-size: clamp(30px, 9vw, 44px); }
     .hero-lead { font-size: 14px; }
     .hero-actions { gap: 12px; }
-    .hero-visual > img { aspect-ratio: 16 / 10; }
-    .hero-chip { left: 12px; bottom: 12px; padding: 10px 16px 10px 12px; }
-    .hero-chip b { font-size: 14px; }
     .hero-stats { margin-top: 64px; }
     .hero-stats-inner { grid-template-columns: 1fr; padding: 0 20px; }
     .stat { border-left: none; padding: 20px 0; padding-left: 0; border-top: 1px solid var(--line); }
@@ -723,26 +689,12 @@
 <div class="hero">
   <div class="hero-inner">
     <div class="container">
-      <div class="hero-grid">
-        <div>
-          <div class="hero-label">Digital &amp; AI Partner</div>
-          <h1>デジタルを先導し、<br>成果に繋げる<span class="dot">。</span></h1>
-          <p class="hero-lead">生成AIによる業務効率化とWeb集客の知見で、戦略設計から実装・運用までを<span class="marker">一気通貫で支援</span>。御社の頭脳・右腕として、<strong>目標達成にコミット</strong>します。</p>
-          <div class="hero-actions">
-            <a href="#contact" class="btn-primary">無料で相談する <span class="arrow">→</span></a>
-            <a href="#works" class="btn-ghost">実績を見る ↓</a>
-          </div>
-        </div>
-        <div class="hero-visual">
-          <img src="images/photo-hero.jpg" alt="データに基づく成果改善のイメージ">
-          <div class="hero-chip">
-            <div class="chip-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="15 7 21 7 21 13"/></svg></div>
-            <div>
-              <b>+100万円/月</b>
-              <small>飲食店の売上改善実績</small>
-            </div>
-          </div>
-        </div>
+      <div class="hero-label">Digital &amp; AI Partner</div>
+      <h1>デジタルを先導し、<br>成果に繋げる<span class="dot">。</span></h1>
+      <p class="hero-lead">生成AIによる業務効率化とWeb集客の知見で、戦略設計から実装・運用までを<span class="marker">一気通貫で支援</span>。御社の頭脳・右腕として、<strong>目標達成にコミット</strong>します。</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">無料で相談する <span class="arrow">→</span></a>
+        <a href="#works" class="btn-ghost">実績を見る ↓</a>
       </div>
     </div>
   </div>
