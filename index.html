@@ -209,12 +209,18 @@
     padding-left: 32px;
   }
   .stat:first-child { border-left: none; padding-left: 0; }
-  .stat-value {
-    font-size: 40px; font-weight: 700; letter-spacing: -.02em;
-    line-height: 1.1; color: var(--ink);
+  .stat-label {
+    font-size: 12px; font-weight: 600; color: var(--dim);
+    letter-spacing: .06em; margin-bottom: 12px;
   }
-  .stat-value span { color: var(--accent-dark); }
-  .stat-label { font-size: 12px; color: var(--dim); margin-top: 8px; letter-spacing: .06em; }
+  .stat-value {
+    font-size: 15px; font-weight: 700; color: var(--ink);
+    letter-spacing: .02em; line-height: 1.2;
+  }
+  .stat-value em {
+    font-style: normal; font-size: 36px;
+    letter-spacing: -.02em; line-height: 1; margin: 0 3px;
+  }
 
   /* ===== SECTION COMMON ===== */
   section { padding: 140px 0; }
@@ -622,13 +628,16 @@
     section { padding: 88px 0; }
     .container { padding: 0 20px; }
     .hero h1 { font-size: clamp(30px, 9vw, 44px); }
-    .hero-lead { font-size: 14px; }
-    .hero-actions { gap: 12px; }
-    .hero-stats { margin-top: 64px; }
+    .hero-lead { font-size: 14px; margin-bottom: 0; }
+    .hero-inner { align-items: stretch; }
+    .hero-inner > .container { display: flex; flex-direction: column; padding-top: 32px; padding-bottom: 8px; }
+    .hero-actions { gap: 12px; margin-top: auto; padding-top: 48px; }
+    .hero-stats { margin-top: 40px; }
     .hero-stats-inner { grid-template-columns: 1fr; padding: 0 20px; }
-    .stat { border-left: none; padding: 20px 0; padding-left: 0; border-top: 1px solid var(--line); }
+    .stat { border-left: none; padding: 18px 0; padding-left: 0; border-top: 1px solid var(--line); }
     .stat:first-child { border-top: none; }
-    .stat-value { font-size: 30px; }
+    .stat-label { margin-bottom: 8px; }
+    .stat-value em { font-size: 28px; }
     .section-head { margin-bottom: 48px; }
     .service-title { gap: 14px; }
     .service-icon { width: 44px; height: 44px; border-radius: 12px; }
@@ -698,16 +707,16 @@
   <div class="hero-stats">
     <div class="hero-stats-inner">
       <div class="stat fade-up">
-        <div class="stat-value">50<span>+</span></div>
-        <div class="stat-label">累計支援店舗数</div>
+        <div class="stat-label">店舗集客の支援実績</div>
+        <div class="stat-value">累計<em>50</em>店舗以上</div>
       </div>
       <div class="stat fade-up" style="transition-delay:.1s">
-        <div class="stat-value">6,500<span>h</span></div>
-        <div class="stat-label">AI活用による年間削減工数</div>
+        <div class="stat-label">AIによる業務効率化</div>
+        <div class="stat-value">年間<em>6,500</em>時間を削減</div>
       </div>
       <div class="stat fade-up" style="transition-delay:.2s">
-        <div class="stat-value">95<span>%</span></div>
-        <div class="stat-label">AI研修 受講満足度</div>
+        <div class="stat-label">AI研修の受講満足度</div>
+        <div class="stat-value"><em>95</em>%</div>
       </div>
     </div>
   </div>
