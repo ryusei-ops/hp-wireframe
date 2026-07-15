@@ -192,34 +192,6 @@
   }
   .hero-actions { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
 
-  /* ===== HERO STATS ===== */
-  .hero-stats {
-    position: relative; z-index: 1;
-    border-top: 1px solid var(--line);
-  }
-  .hero-stats-inner {
-    max-width: 1120px; margin: 0 auto; padding: 0 24px;
-    display: grid; grid-template-columns: repeat(3, 1fr);
-  }
-  .stat {
-    padding: 36px 0;
-    border-left: 1px solid var(--line);
-    padding-left: 32px;
-  }
-  .stat:first-child { border-left: none; padding-left: 0; }
-  .stat-label {
-    font-size: 12px; font-weight: 600; color: var(--dim);
-    letter-spacing: .06em; margin-bottom: 12px;
-  }
-  .stat-value {
-    font-size: 15px; font-weight: 700; color: var(--ink);
-    letter-spacing: .02em; line-height: 1.2;
-  }
-  .stat-value em {
-    font-style: normal; font-size: 36px;
-    letter-spacing: -.02em; line-height: 1; margin: 0 3px;
-  }
-
   /* ===== SECTION COMMON ===== */
   section { padding: 140px 0; }
   .section-head { margin-bottom: 72px; }
@@ -616,18 +588,9 @@
     section { padding: 88px 0; }
     .container { padding: 0 20px; }
     .hero h1 { font-size: clamp(30px, 9vw, 44px); }
-    .hero-lead { font-size: 14px; margin-bottom: 0; }
-    /* FVはCTAまで: ヒーロー本文だけで100svhを使い、実績はスクロール直後に */
-    .hero-inner { align-items: stretch; min-height: min(100svh, 820px); padding-top: 64px; }
-    .hero-inner > .container { display: flex; flex-direction: column; padding-top: 32px; padding-bottom: 32px; }
-    .hero-actions { gap: 12px; margin-top: auto; padding-top: 48px; }
-    .hero-stats { margin-top: 0; }
-    .hero-stats-inner { grid-template-columns: repeat(3, 1fr); gap: 0 14px; padding: 0 20px; }
-    .stat { padding: 24px 0 24px 14px; border-left: 1px solid var(--line); }
-    .stat:first-child { padding-left: 0; border-left: none; }
-    .stat-label { font-size: 10px; margin-bottom: 8px; letter-spacing: .04em; }
-    .stat-value { font-size: 11px; }
-    .stat-value em { font-size: 22px; margin: 0 2px; }
+    .hero-lead { font-size: 14px; margin-bottom: 44px; }
+    .hero-inner { min-height: min(100svh, 780px); padding-top: 64px; }
+    .hero-actions { gap: 12px; }
     .section-head { margin-bottom: 48px; }
     .zenmai-card { padding: 40px 28px; margin-top: 56px; }
     .works-grid { grid-template-columns: 1fr; gap: 14px; }
@@ -687,22 +650,6 @@
       <div class="hero-actions">
         <a href="#contact" class="btn-primary">無料で相談する <span class="arrow">→</span></a>
         <a href="#works" class="btn-ghost">実績を見る ↓</a>
-      </div>
-    </div>
-  </div>
-  <div class="hero-stats">
-    <div class="hero-stats-inner">
-      <div class="stat fade-up">
-        <div class="stat-label">店舗集客の支援実績</div>
-        <div class="stat-value">累計<em>50</em>店舗以上</div>
-      </div>
-      <div class="stat fade-up" style="transition-delay:.1s">
-        <div class="stat-label">AIによる業務効率化</div>
-        <div class="stat-value">年間<em>6,500</em>時間を削減</div>
-      </div>
-      <div class="stat fade-up" style="transition-delay:.2s">
-        <div class="stat-label">AI研修の受講満足度</div>
-        <div class="stat-value"><em>95</em>%</div>
       </div>
     </div>
   </div>
