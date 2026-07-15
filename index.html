@@ -15,7 +15,7 @@
 <meta name="twitter:title" content="株式会社Leit On | AI導入・業務自動化とWeb集客の伴走パートナー">
 <meta name="twitter:description" content="生成AIによる業務効率化・AI BPO、Web広告運用、HP/LP制作、採用代行で中小企業の成果に伴走。ご相談は無料。">
 <link rel="canonical" href="https://leit-on.jp/">
-<link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="%23FBFBF9"/><circle cx="16" cy="16" r="8" fill="%232A5CFF"/></svg>'>
+<link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="%23FBFBF9"/><circle cx="16" cy="16" r="8" fill="%2396BA32"/></svg>'>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
@@ -28,10 +28,10 @@
     --text: #16181a;
     --muted: rgba(22,24,26,.68);
     --dim: rgba(22,24,26,.46);
-    --accent: #2a5cff;
-    --accent-dark: #1e45cc;
-    --accent-light: #8aa8ff;
-    --dark-bg: #0f1117;
+    --accent: #96ba32;
+    --accent-dark: #71911f;
+    --accent-light: #a8d63c;
+    --dark-bg: #14160e;
     --on-dark: #f4f5f0;
     --on-dark-muted: rgba(244,245,240,.62);
     --radius: 20px;
@@ -54,18 +54,18 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  ::selection { background: rgba(42,92,255,.25); }
+  ::selection { background: rgba(150,186,50,.35); }
 
   strong { font-weight: 700; color: var(--ink); }
   .marker {
     font-weight: 700; color: var(--ink);
-    background: linear-gradient(transparent 62%, rgba(42,92,255,.25) 62%);
+    background: linear-gradient(transparent 62%, rgba(150,186,50,.4) 62%);
     padding: 0 1px;
   }
   .zenmai-card strong, .cta-section strong { color: var(--on-dark); }
   .zenmai-card .marker, .cta-section .marker {
     color: var(--on-dark);
-    background: linear-gradient(transparent 62%, rgba(122,157,255,.45) 62%);
+    background: linear-gradient(transparent 62%, rgba(150,186,50,.45) 62%);
   }
 
   .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
@@ -121,12 +121,12 @@
   .btn-accent {
     display: inline-flex; align-items: center; gap: 10px;
     padding: 15px 36px;
-    background: var(--accent); color: #fff;
+    background: var(--accent); color: var(--ink);
     text-decoration: none; font-size: 15px; font-weight: 700;
     letter-spacing: .02em; border-radius: 100px;
     transition: background .2s, transform .2s;
   }
-  .btn-accent:hover { background: var(--accent-dark); transform: translateY(-1px); }
+  .btn-accent:hover { background: #a9cd47; transform: translateY(-1px); }
   .btn-accent .arrow { transition: transform .2s; }
   .btn-accent:hover .arrow { transform: translateX(3px); }
   .btn-ghost {
@@ -162,7 +162,7 @@
     position: absolute;
     top: -30%; right: -15%;
     width: 70vw; height: 70vw;
-    background: radial-gradient(circle, rgba(42,92,255,.10) 0%, transparent 60%);
+    background: radial-gradient(circle, rgba(150,186,50,.17) 0%, transparent 60%);
     pointer-events: none;
   }
   .hero-inner {
@@ -255,7 +255,7 @@
   .service-icon {
     flex-shrink: 0;
     width: 52px; height: 52px; border-radius: 14px;
-    background: rgba(42,92,255,.10);
+    background: rgba(150,186,50,.15);
     color: var(--accent-dark);
     display: flex; align-items: center; justify-content: center;
   }
@@ -295,7 +295,7 @@
     content: "";
     position: absolute; bottom: -50%; right: -10%;
     width: 50%; height: 130%;
-    background: radial-gradient(circle, rgba(42,92,255,.22) 0%, transparent 65%);
+    background: radial-gradient(circle, rgba(150,186,50,.22) 0%, transparent 65%);
     pointer-events: none;
   }
   .zenmai-label {
@@ -337,14 +337,14 @@
     border-radius: 0 0 3px 3px;
   }
   .works-card:hover {
-    border-color: rgba(42,92,255,.45);
+    border-color: rgba(150,186,50,.5);
     transform: translateY(-3px);
     box-shadow: 0 12px 32px rgba(22,24,26,.06);
   }
   .works-tag {
     display: inline-block; font-size: 11px; font-weight: 600;
     color: var(--accent-dark); letter-spacing: .08em;
-    border: 1px solid rgba(42,92,255,.4);
+    border: 1px solid rgba(150,186,50,.5);
     padding: 4px 12px; border-radius: 100px; margin-bottom: 24px;
   }
   .works-metric {
@@ -429,7 +429,7 @@
     content: "";
     position: absolute; top: -60%; left: 50%; transform: translateX(-50%);
     width: 90vw; height: 120%;
-    background: radial-gradient(ellipse, rgba(42,92,255,.18) 0%, transparent 60%);
+    background: radial-gradient(ellipse, rgba(150,186,50,.16) 0%, transparent 60%);
     pointer-events: none;
   }
   .cta-section .container { position: relative; z-index: 1; }
@@ -455,7 +455,7 @@
   }
   .form-group label .req {
     font-size: 10px; font-weight: 600; color: var(--accent-dark);
-    border: 1px solid rgba(42,92,255,.5); border-radius: 4px;
+    border: 1px solid rgba(150,186,50,.6); border-radius: 4px;
     padding: 1px 6px; margin-left: 8px; vertical-align: 1px;
   }
   .form-group input, .form-group select, .form-group textarea {
@@ -471,8 +471,8 @@
   }
   .form-group input::placeholder, .form-group textarea::placeholder { color: var(--dim); }
   .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-    border-color: var(--accent);
-    box-shadow: 0 0 0 3px rgba(42,92,255,.15);
+    border-color: var(--accent-dark);
+    box-shadow: 0 0 0 3px rgba(150,186,50,.18);
   }
   .form-group textarea { min-height: 160px; resize: vertical; }
   .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
@@ -493,7 +493,7 @@
     border-radius: 12px; display: none; line-height: 1.8;
   }
   .form-status.success {
-    display: block; background: rgba(42,92,255,.08); color: var(--accent-dark);
+    display: block; background: rgba(150,186,50,.12); color: var(--accent-dark);
   }
   .form-status.error {
     display: block; background: rgba(220,60,50,.08); color: #c0392b;
