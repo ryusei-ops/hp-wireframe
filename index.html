@@ -274,7 +274,7 @@
     font-size: clamp(26px, 3.4vw, 40px); font-weight: 700;
     line-height: 1.4; margin-bottom: 16px; letter-spacing: .01em;
   }
-  .zenmai-card > p {
+  .zenmai-card p {
     font-size: 15px; color: var(--on-dark-muted); max-width: 520px;
     line-height: 2; margin-bottom: 36px;
   }
@@ -282,7 +282,20 @@
     display: inline-block; font-size: 13px; color: rgba(244,245,240,.45);
     margin-bottom: 12px; letter-spacing: .08em;
   }
-  .zenmai-card .btn-accent { position: relative; z-index: 1; }
+  .zenmai-grid {
+    position: relative; z-index: 1;
+    display: grid; grid-template-columns: 1.05fr .95fr;
+    gap: 56px; align-items: center;
+  }
+  .zenmai-visual { display: block; }
+  .zenmai-visual img {
+    width: 100%; display: block;
+    border-radius: 14px;
+    border: 1px solid rgba(244,245,240,.16);
+    box-shadow: 0 24px 56px rgba(0,0,0,.45);
+    transition: transform .25s;
+  }
+  .zenmai-visual:hover img { transform: translateY(-3px); }
 
   /* ===== WORKS ===== */
   .works-grid {
@@ -603,6 +616,7 @@
       width: 120vw; height: 120vw;
     }
     .zenmai-card { padding: 40px 28px; margin-top: 56px; }
+    .zenmai-grid { grid-template-columns: 1fr; gap: 36px; }
     .works-grid { grid-template-columns: 1fr; gap: 14px; }
     .works-card { padding: 28px 24px; }
     .marquee-section { padding: 0 0 88px; }
@@ -718,11 +732,18 @@
 
     <!-- ZENMAI -->
     <div class="zenmai-card fade-up">
-      <div class="zenmai-label">Product</div>
-      <span class="zenmai-name">業務自動化サービス「Zenmai / ゼンマイくん」</span>
-      <h3>裏側で働くAIで、<br class="sp-br">業務を自動化する。</h3>
-      <p>データ集計、SNS運用、経理、問い合わせの一次対応——毎日の手作業を、業務フローに<span class="marker">組み込んだAIが自動化</span>します。<strong>無料の30分オンライン診断</strong>で、何が自動化できるか・実装するならいくらかまで、その場で分かります（毎月5社限定）。</p>
-      <a href="https://leit-on.jp/zenmai-kun/" class="btn-accent">詳細を見る <span class="arrow">→</span></a>
+      <div class="zenmai-grid">
+        <div>
+          <div class="zenmai-label">Product</div>
+          <span class="zenmai-name">業務自動化サービス「Zenmai / ゼンマイくん」</span>
+          <h3>裏側で働くAIで、<br class="sp-br">業務を自動化する。</h3>
+          <p>データ集計、SNS運用、経理、問い合わせの一次対応——毎日の手作業を、業務フローに<span class="marker">組み込んだAIが自動化</span>します。<strong>無料の30分オンライン診断</strong>で、何が自動化できるか・実装するならいくらかまで、その場で分かります（毎月5社限定）。</p>
+          <a href="https://leit-on.jp/zenmai-kun/" class="btn-accent">詳細を見る <span class="arrow">→</span></a>
+        </div>
+        <a class="zenmai-visual" href="https://leit-on.jp/zenmai-kun/" aria-label="Zenmaiのサービスサイトを見る">
+          <img src="images/zenmai-fv.jpg" alt="Zenmai サービスサイト" loading="lazy">
+        </a>
+      </div>
     </div>
   </div>
 </section>
