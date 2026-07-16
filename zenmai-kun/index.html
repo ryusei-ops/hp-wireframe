@@ -20,7 +20,6 @@
   --text:#1E2A3A;
   --muted:#5B6B7E;
   --line:#E3E9F0;
-  --en:"Avenir Next","Helvetica Neue","Segoe UI",sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
@@ -36,7 +35,7 @@ img{max-width:100%;}
 .inner{max-width:1040px;margin:0 auto;padding:0 24px;}
 section{padding:112px 0;}
 h2{
-  font-size:clamp(30px,4.6vw,46px);
+  font-size:clamp(26px,4vw,38px);
   line-height:1.5;
   color:var(--navy);
   text-align:center;
@@ -45,19 +44,17 @@ h2{
 }
 .eyebrow{
   display:block;text-align:center;
-  font-family:var(--en);
-  font-size:13px;font-weight:700;
-  letter-spacing:.32em;text-transform:uppercase;
+  font-size:12.5px;font-weight:800;
+  letter-spacing:.22em;text-transform:uppercase;
   color:var(--teal-dark);
-  margin-bottom:16px;
+  margin-bottom:14px;
 }
 .final .eyebrow{color:var(--lime);}
 .lead{
   text-align:center;
   color:var(--muted);
-  max-width:720px;
-  margin:0 auto 56px;
-  font-size:17px;
+  max-width:680px;
+  margin:0 auto 48px;
 }
 .accent{color:var(--teal);}
 h1,h2{text-wrap:balance;word-break:auto-phrase;}
@@ -70,8 +67,8 @@ h1,h2{text-wrap:balance;word-break:auto-phrase;}
   background:var(--teal);
   color:#fff;
   font-weight:700;
-  font-size:18.5px;
-  padding:20px 52px;
+  font-size:18px;
+  padding:18px 44px;
   border-radius:999px;
   text-decoration:none;
   box-shadow:0 8px 24px rgba(15,181,165,.35);
@@ -80,9 +77,7 @@ h1,h2{text-wrap:balance;word-break:auto-phrase;}
   cursor:pointer;
   text-align:center;
 }
-.btn::after{content:"→";display:inline-block;margin-left:10px;transition:transform .2s ease;}
 .btn:hover{transform:translateY(-2px);background:var(--teal-dark);box-shadow:0 12px 28px rgba(15,181,165,.45);}
-.btn:hover::after{transform:translateX(5px);}
 .micro{
   display:block;
   font-size:13px;
@@ -139,19 +134,19 @@ header{
 .hero::before{
   content:"";position:absolute;
   width:640px;height:640px;right:-140px;top:-120px;
-  background:radial-gradient(circle,rgba(15,181,165,.30),transparent 62%);
+  background:radial-gradient(circle,rgba(15,181,165,.14),transparent 62%);
 }
 .hero::after{
   content:"";position:absolute;
   width:520px;height:520px;left:-160px;bottom:-140px;
-  background:radial-gradient(circle,rgba(184,227,76,.32),transparent 62%);
+  background:radial-gradient(circle,rgba(184,227,76,.16),transparent 62%);
 }
 .hero > .inner{width:100%;position:relative;z-index:1;}
 .hero-grid{
   display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:start;
 }
 .hero h1{
-  font-size:clamp(34px,5.4vw,58px);
+  font-size:clamp(32px,5vw,50px);
   line-height:1.4;
   color:var(--navy);
   letter-spacing:.02em;
@@ -209,13 +204,7 @@ header{
   gap:18px 28px;
   margin-bottom:14px;
 }
-.task-group{
-  background:#fff;
-  border-left:3px solid var(--teal);
-  border-radius:14px;
-  padding:16px 18px;
-  box-shadow:0 8px 24px rgba(18,41,75,.06);
-}
+.task-group{border-left:3px solid var(--teal);padding-left:14px;}
 .tg-title{
   font-size:12.5px;font-weight:800;color:var(--teal-dark);
   letter-spacing:.05em;margin-bottom:3px;
@@ -331,11 +320,6 @@ header{
   padding:28px 26px;
   box-shadow:0 14px 40px rgba(18,41,75,.09);
   display:flex;flex-direction:column;
-  transition:transform .25s ease, box-shadow .25s ease;
-}
-.case-card:hover{
-  transform:translateY(-6px);
-  box-shadow:0 24px 56px rgba(18,41,75,.14);
 }
 .case-card h3{
   font-size:17px;color:var(--navy);margin-bottom:14px;
@@ -380,8 +364,8 @@ header{
 
 /* ===== 中間CTA ===== */
 .cta-band{
-  background:linear-gradient(115deg,var(--navy) 0%,#0E3D5C 55%,#0B6E68 100%);
-  padding:72px 0;text-align:center;
+  background:var(--navy);
+  padding:60px 0;text-align:center;
 }
 .cta-band p{
   color:#fff;font-size:clamp(19px,3vw,24px);font-weight:700;margin-bottom:24px;
@@ -526,7 +510,7 @@ header{
   box-shadow:0 14px 36px rgba(18,41,75,.08);
   display:flex;flex-direction:column;justify-content:center;
 }
-.stat .num{font-family:var(--en);font-size:clamp(34px,3vw,44px);font-weight:700;color:var(--teal-dark);margin-bottom:6px;letter-spacing:.01em;}
+.stat .num{font-size:36px;font-weight:800;color:var(--teal-dark);margin-bottom:6px;}
 .stat .label{font-size:13.5px;color:var(--muted);}
 
 /* ===== 料金 ===== */
@@ -605,8 +589,8 @@ header{
 
 /* ===== 最終CTA+フォーム ===== */
 .final{
-  background:linear-gradient(150deg,var(--navy) 0%,var(--navy-deep) 60%,#0B4A50 130%);
-  padding:100px 0;
+  background:linear-gradient(170deg,var(--navy) 0%,var(--navy-deep) 100%);
+  padding:90px 0;
 }
 .final h2{color:#fff;}
 .final .lead{color:rgba(255,255,255,.75);}
