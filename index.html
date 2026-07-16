@@ -282,18 +282,22 @@
     display: inline-block; font-size: 13px; color: rgba(244,245,240,.45);
     margin-bottom: 12px; letter-spacing: .08em;
   }
-  .zenmai-inner { position: relative; z-index: 1; }
-  .zenmai-logo {
-    display: inline-flex; align-items: center; gap: 14px;
-    text-decoration: none;
-    margin: 6px 0 18px;
+  .zenmai-grid {
+    position: relative; z-index: 1;
+    display: grid; grid-template-columns: 1.05fr .95fr;
+    gap: 56px; align-items: center;
   }
-  .zenmai-logo svg { width: 48px; height: 48px; flex-shrink: 0; }
-  .zenmai-logo span {
-    font-size: 32px; font-weight: 700; color: #fff;
+  .zenmai-visual {
+    display: flex; align-items: center; justify-content: center; gap: 22px;
+    text-decoration: none;
+    transition: transform .25s;
+  }
+  .zenmai-visual:hover { transform: translateY(-3px); }
+  .zenmai-visual svg { width: 112px; height: 112px; flex-shrink: 0; }
+  .zenmai-visual span {
+    font-size: 60px; font-weight: 700; color: #fff;
     letter-spacing: .01em; line-height: 1;
   }
-  .zenmai-name { display: block; }
 
   /* ===== WORKS ===== */
   .works-grid {
@@ -614,8 +618,9 @@
       width: 120vw; height: 120vw;
     }
     .zenmai-card { padding: 40px 28px; margin-top: 56px; }
-    .zenmai-logo svg { width: 40px; height: 40px; }
-    .zenmai-logo span { font-size: 26px; }
+    .zenmai-grid { grid-template-columns: 1fr; gap: 40px; }
+    .zenmai-visual svg { width: 76px; height: 76px; }
+    .zenmai-visual span { font-size: 40px; }
     .works-grid { grid-template-columns: 1fr; gap: 14px; }
     .works-card { padding: 28px 24px; }
     .marquee-section { padding: 0 0 88px; }
@@ -731,9 +736,15 @@
 
     <!-- ZENMAI -->
     <div class="zenmai-card fade-up">
-      <div class="zenmai-inner">
-        <div class="zenmai-label">Product</div>
-        <a class="zenmai-logo" href="https://leit-on.jp/zenmai-kun/" aria-label="Zenmaiのサービスサイトを見る">
+      <div class="zenmai-grid">
+        <div>
+          <div class="zenmai-label">Product</div>
+          <span class="zenmai-name">業務自動化サービス「Zenmai / ゼンマイくん」</span>
+          <h3>裏側で働くAIで、<br class="sp-br">業務を自動化する。</h3>
+          <p>データ集計、SNS運用、経理、問い合わせの一次対応——毎日の手作業を、業務フローに<span class="marker">組み込んだAIが自動化</span>します。<strong>無料の30分オンライン診断</strong>で、何が自動化できるか・実装するならいくらかまで、その場で分かります（毎月5社限定）。</p>
+          <a href="https://leit-on.jp/zenmai-kun/" class="btn-accent">詳細を見る <span class="arrow">→</span></a>
+        </div>
+        <a class="zenmai-visual" href="https://leit-on.jp/zenmai-kun/" aria-label="Zenmaiのサービスサイトを見る">
           <svg viewBox="0 0 100 100" aria-hidden="true">
             <circle cx="46" cy="52" r="32" fill="#fff" stroke="#12294B" stroke-width="5"/>
             <circle cx="36" cy="47" r="4" fill="#12294B"/>
@@ -745,10 +756,6 @@
           </svg>
           <span>Zenmai</span>
         </a>
-        <span class="zenmai-name">業務自動化サービス「ゼンマイくん」</span>
-        <h3>裏側で働くAIで、<br class="sp-br">業務を自動化する。</h3>
-        <p>データ集計、SNS運用、経理、問い合わせの一次対応——毎日の手作業を、業務フローに<span class="marker">組み込んだAIが自動化</span>します。<strong>無料の30分オンライン診断</strong>で、何が自動化できるか・実装するならいくらかまで、その場で分かります（毎月5社限定）。</p>
-        <a href="https://leit-on.jp/zenmai-kun/" class="btn-accent">詳細を見る <span class="arrow">→</span></a>
       </div>
     </div>
   </div>
