@@ -618,9 +618,17 @@
       width: 120vw; height: 120vw;
     }
     .zenmai-card { padding: 40px 28px; margin-top: 56px; }
-    .zenmai-grid { grid-template-columns: 1fr; gap: 40px; }
-    .zenmai-visual svg { width: 76px; height: 76px; }
-    .zenmai-visual span { font-size: 40px; }
+    /* SPは 見出し→ロゴ→説明→CTA の順に並べ替え */
+    .zenmai-grid { display: flex; flex-direction: column; gap: 0; align-items: flex-start; }
+    .zenmai-grid > div { display: contents; }
+    .zenmai-label { order: 1; }
+    .zenmai-name { order: 2; }
+    .zenmai-card h3 { order: 3; }
+    .zenmai-visual { order: 4; justify-content: flex-start; margin: 8px 0 24px; }
+    .zenmai-card p { order: 5; }
+    .zenmai-card .btn-accent { order: 6; }
+    .zenmai-visual svg { width: 60px; height: 60px; }
+    .zenmai-visual span { font-size: 32px; }
     .works-grid { grid-template-columns: 1fr; gap: 14px; }
     .works-card { padding: 28px 24px; }
     .marquee-section { padding: 0 0 88px; }
