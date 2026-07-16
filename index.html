@@ -228,12 +228,10 @@
   .service-list { border-top: 1px solid var(--line); }
   .service-row {
     display: grid;
-    grid-template-columns: 90px 1fr 1.2fr 48px;
+    grid-template-columns: 90px 1fr 1.2fr;
     gap: 32px; align-items: start;
     padding: 52px 0;
     border-bottom: 1px solid var(--line);
-    text-decoration: none; color: inherit;
-    transition: background .25s;
   }
   .service-num {
     font-size: 13px; font-weight: 600; color: var(--dim);
@@ -242,9 +240,7 @@
   .service-row h3 {
     font-size: clamp(20px, 2.4vw, 28px); font-weight: 700;
     line-height: 1.4; letter-spacing: .01em;
-    transition: color .25s;
   }
-  .service-row:hover h3 { color: var(--accent-dark); }
   .service-body p { font-size: 14.5px; color: var(--muted); line-height: 2; }
   .service-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
   .service-tags span {
@@ -253,12 +249,6 @@
     padding: 4px 12px; letter-spacing: .04em;
     background: var(--surface);
   }
-  .service-arrow {
-    padding-top: 8px; color: var(--dim);
-    transition: color .25s, transform .25s;
-    font-size: 20px; text-align: right;
-  }
-  .service-row:hover .service-arrow { color: var(--accent-dark); transform: translateX(4px); }
 
   /* ===== ZENMAI ===== */
   .zenmai-card {
@@ -590,7 +580,6 @@
   @media (max-width: 900px) {
     .service-row { grid-template-columns: 48px 1fr; gap: 12px 20px; padding: 40px 0; }
     .service-body { grid-column: 2; }
-    .service-arrow { display: none; }
     .works-grid { grid-template-columns: 1fr 1fr; }
   }
   @media (max-width: 768px) {
@@ -685,7 +674,7 @@
       <p class="section-desc">AIとデジタルの実装力で、企業の課題に最適なソリューションを提供します。</p>
     </div>
     <div class="service-list">
-      <a href="#contact" class="service-row fade-up">
+      <div class="service-row fade-up">
         <div class="service-num">01</div>
         <h3>AI導入・<br class="pc-br">業務効率化支援</h3>
         <div class="service-body">
@@ -694,9 +683,8 @@
             <span>生成AI活用</span><span>業務自動化</span><span>AI BPO</span><span>AI研修</span>
           </div>
         </div>
-        <div class="service-arrow">→</div>
-      </a>
-      <a href="#contact" class="service-row fade-up">
+      </div>
+      <div class="service-row fade-up">
         <div class="service-num">02</div>
         <h3>Web集客・<br class="pc-br">広告運用</h3>
         <div class="service-body">
@@ -705,9 +693,8 @@
             <span>リスティング広告</span><span>SNS広告</span><span>MEO対策</span><span>レポーティング</span>
           </div>
         </div>
-        <div class="service-arrow">→</div>
-      </a>
-      <a href="#contact" class="service-row fade-up">
+      </div>
+      <div class="service-row fade-up">
         <div class="service-num">03</div>
         <h3>HP・LP制作</h3>
         <div class="service-body">
@@ -716,9 +703,8 @@
             <span>コーポレートサイト</span><span>LP</span><span>採用サイト</span><span>運用改善</span>
           </div>
         </div>
-        <div class="service-arrow">→</div>
-      </a>
-      <a href="#contact" class="service-row fade-up">
+      </div>
+      <div class="service-row fade-up">
         <div class="service-num">04</div>
         <h3>採用代行<br class="pc-br">「オタスケジンジ」</h3>
         <div class="service-body">
@@ -727,8 +713,7 @@
             <span>求人媒体選定</span><span>求人原稿作成</span><span>応募者対応</span><span>採用戦略</span>
           </div>
         </div>
-        <div class="service-arrow">→</div>
-      </a>
+      </div>
     </div>
 
     <!-- ZENMAI -->
