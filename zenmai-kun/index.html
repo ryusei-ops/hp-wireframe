@@ -33,15 +33,23 @@ body{
 }
 img{max-width:100%;}
 .inner{max-width:1040px;margin:0 auto;padding:0 24px;}
-section{padding:88px 0;}
+section{padding:112px 0;}
 h2{
-  font-size:clamp(24px,4vw,34px);
+  font-size:clamp(26px,4vw,38px);
   line-height:1.5;
   color:var(--navy);
   text-align:center;
-  margin-bottom:16px;
-  letter-spacing:.02em;
+  margin-bottom:18px;
+  letter-spacing:.03em;
 }
+.eyebrow{
+  display:block;text-align:center;
+  font-size:12.5px;font-weight:800;
+  letter-spacing:.22em;text-transform:uppercase;
+  color:var(--teal-dark);
+  margin-bottom:14px;
+}
+.final .eyebrow{color:var(--lime);}
 .lead{
   text-align:center;
   color:var(--muted);
@@ -114,6 +122,7 @@ header{
 
 /* ===== FV ===== */
 .hero{
+  position:relative;
   min-height:100vh;
   min-height:100svh;
   display:flex;
@@ -122,7 +131,17 @@ header{
   background:linear-gradient(160deg,#FFFFFF 0%,#EFF6F8 55%,#E6F4F1 100%);
   overflow:hidden;
 }
-.hero > .inner{width:100%;}
+.hero::before{
+  content:"";position:absolute;
+  width:640px;height:640px;right:-140px;top:-120px;
+  background:radial-gradient(circle,rgba(15,181,165,.14),transparent 62%);
+}
+.hero::after{
+  content:"";position:absolute;
+  width:520px;height:520px;left:-160px;bottom:-140px;
+  background:radial-gradient(circle,rgba(184,227,76,.16),transparent 62%);
+}
+.hero > .inner{width:100%;position:relative;z-index:1;}
 .hero-grid{
   display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:start;
 }
@@ -221,6 +240,11 @@ header{
   border-bottom:2.5px solid var(--navy);
   transform:translateX(-50%) rotate(45deg);
 }
+/* スクロールフェードイン(JSがrvを付与。JSなしなら常時表示) */
+.rv{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s ease;}
+.rv.on{opacity:1;transform:none;}
+@media (prefers-reduced-motion: reduce){.rv{opacity:1;transform:none;transition:none;}}
+
 /* ぜんまい回転 */
 @keyframes windup{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
 .zk-key{transform-origin:236px 150px;animation:windup 6s linear infinite;}
@@ -229,9 +253,9 @@ header{
 /* ===== 共感チェックリスト ===== */
 .checklist{
   max-width:640px;margin:0 auto;
-  background:var(--card);border:1px solid var(--line);
-  border-radius:16px;padding:36px 40px;
-  box-shadow:0 6px 24px rgba(18,41,75,.05);
+  background:var(--card);border:none;
+  border-radius:20px;padding:38px 42px;
+  box-shadow:0 14px 40px rgba(18,41,75,.08);
 }
 .checklist li{
   list-style:none;
@@ -260,7 +284,7 @@ header{
   max-width:860px;margin:40px auto 0;
 }
 .compare-col{
-  border-radius:16px;padding:30px 28px;
+  border-radius:20px;padding:32px 30px;
 }
 .compare-col.jitan{background:var(--bg);border:1px solid var(--line);}
 .compare-col.jidoka{background:var(--navy);color:#fff;}
@@ -291,10 +315,10 @@ header{
 }
 .case-card{
   background:var(--card);
-  border:1px solid var(--line);
-  border-radius:16px;
-  padding:26px 24px;
-  box-shadow:0 6px 20px rgba(18,41,75,.05);
+  border:none;
+  border-radius:20px;
+  padding:28px 26px;
+  box-shadow:0 14px 40px rgba(18,41,75,.09);
   display:flex;flex-direction:column;
 }
 .case-card h3{
@@ -415,9 +439,10 @@ header{
   display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:48px;
 }
 .step{
-  background:var(--card);border:1px solid var(--line);
-  border-radius:16px;padding:26px 20px;text-align:center;
+  background:var(--card);border:none;
+  border-radius:20px;padding:28px 22px;text-align:center;
   position:relative;
+  box-shadow:0 10px 30px rgba(18,41,75,.07);
 }
 .step.em{border:2px solid var(--teal);background:#F2FBFA;}
 .step .s-num{
@@ -480,19 +505,20 @@ header{
 }
 .stat{
   background:#fff;
-  border:1px solid var(--line);
-  border-radius:16px;padding:28px 20px;text-align:center;
-  box-shadow:0 6px 20px rgba(18,41,75,.05);
+  border:none;
+  border-radius:20px;padding:32px 22px;text-align:center;
+  box-shadow:0 14px 36px rgba(18,41,75,.08);
   display:flex;flex-direction:column;justify-content:center;
 }
-.stat .num{font-size:28px;font-weight:800;color:var(--teal-dark);margin-bottom:6px;}
+.stat .num{font-size:36px;font-weight:800;color:var(--teal-dark);margin-bottom:6px;}
 .stat .label{font-size:13.5px;color:var(--muted);}
 
 /* ===== 料金 ===== */
 .price{background:#fff;}
 .price-table{
   max-width:680px;margin:40px auto 0;
-  border:1px solid var(--line);border-radius:16px;overflow:hidden;
+  border:none;border-radius:20px;overflow:hidden;
+  box-shadow:0 16px 44px rgba(18,41,75,.09);
 }
 .price-row{
   display:flex;justify-content:space-between;align-items:center;
@@ -510,10 +536,11 @@ header{
 .faq-list{max-width:720px;margin:40px auto 0;}
 .faq-list details{
   background:var(--card);
-  border:1px solid var(--line);
-  border-radius:12px;
+  border:none;
+  border-radius:14px;
   margin-bottom:12px;
   overflow:hidden;
+  box-shadow:0 6px 20px rgba(18,41,75,.06);
 }
 .faq-list summary{
   cursor:pointer;
@@ -543,8 +570,9 @@ header{
   max-width:720px;margin:0 auto;
   display:flex;gap:32px;align-items:center;
   background:var(--card);
-  border:1px solid var(--line);
-  border-radius:16px;padding:36px 40px;
+  border:none;
+  border-radius:20px;padding:38px 42px;
+  box-shadow:0 14px 40px rgba(18,41,75,.08);
 }
 .operator-logo{
   width:190px;flex-shrink:0;
@@ -639,7 +667,7 @@ footer .copy{color:rgba(255,255,255,.4);font-size:12px;}
 
 /* ===== レスポンシブ ===== */
 @media (max-width:860px){
-  section{padding:64px 0;}
+  section{padding:76px 0;}
   .hero{min-height:0;display:block;padding:92px 0 36px;}
   .hero-grid{grid-template-columns:1fr;gap:22px;}
   .hero h1{font-size:30px;}
@@ -774,6 +802,7 @@ footer .copy{color:rgba(255,255,255,.4);font-size:12px;}
 <!-- ============ SECTION 02: 共感チェックリスト ============ -->
 <section>
   <div class="inner">
+    <span class="eyebrow">Issue</span>
     <h2 class="jp"><span>こんなお悩みは、</span><span>ありませんか？</span></h2>
     <p class="lead">1つでも当てはまったら、そのままにしないでください。</p>
     <ul class="checklist">
@@ -791,6 +820,7 @@ footer .copy{color:rgba(255,255,255,.4);font-size:12px;}
 <!-- ============ SECTION 02.5: 事例 ============ -->
 <section>
   <div class="inner">
+    <span class="eyebrow">Case Study</span>
     <h2 class="jp"><span>"裏側のAI"は、</span><span class="accent">こんなふうに</span><span>働きます</span></h2>
     <p class="lead">チームが前職での実績も含め、これまで手がけてきた実際の構築事例です。</p>
     <div class="cards">
@@ -861,6 +891,7 @@ footer .copy{color:rgba(255,255,255,.4);font-size:12px;}
 <!-- ============ SECTION 03: 思想(組み込み+終わり方比較・統合版) ============ -->
 <section class="solution">
   <div class="inner">
+    <span class="eyebrow">Our Approach</span>
     <h2 class="jp"><span>AIは<span class="accent">"使う"</span>ものではなく、</span><br class="pc"><span>業務フローに<span class="accent">"組み込む"</span>もの。</span></h2>
     <p class="lead">多くのAI導入は「人がAIを操作して早く終わらせる」＝時短で止まり、入れて、教えて、終わり。<br>Zenmaiは業務フローの上流設計から入り、<strong>"勝手に動く状態"を作って、そのまま担当として回し続けます。</strong><br>ツール選びは、最後でいい——まず業務フローから。</p>
     <div class="compare">
@@ -900,6 +931,7 @@ footer .copy{color:rgba(255,255,255,.4);font-size:12px;}
 <!-- ============ SECTION 05: オファー詳細 ============ -->
 <section class="offer-detail">
   <div class="inner">
+    <span class="eyebrow">Free Diagnosis</span>
     <h2 class="jp"><span>無料診断で、</span><span>ここまで分かります。</span></h2>
     <div class="gifts">
       <div class="gift">
@@ -948,6 +980,7 @@ footer .copy{color:rgba(255,255,255,.4);font-size:12px;}
 <!-- ============ SECTION 06: 進め方 ============ -->
 <section>
   <div class="inner">
+    <span class="eyebrow">How It Works</span>
     <h2 class="jp"><span>やることは、</span><span>30分話すだけ。</span></h2>
     <div class="steps">
       <div class="step em">
@@ -977,6 +1010,7 @@ footer .copy{color:rgba(255,255,255,.4);font-size:12px;}
 <!-- ============ SECTION 07: 料金 ============ -->
 <section class="price">
   <div class="inner">
+    <span class="eyebrow">Pricing</span>
     <h2>無料の範囲と、その先</h2>
     <div class="price-table">
       <div class="price-row free">
@@ -1002,6 +1036,7 @@ footer .copy{color:rgba(255,255,255,.4);font-size:12px;}
 <!-- ============ SECTION 07.5: 実績 ============ -->
 <section class="track">
   <div class="inner">
+    <span class="eyebrow">Track Record</span>
     <h2 class="jp"><span>大手企業から</span><span>個人事業まで、</span><br class="pc"><span>AI導入を</span><span>設計から実装まで</span><span>手がけてきました。</span></h2>
     <p class="lead">エンタープライズのAI導入支援から、個人事業の「この作業だけ消したい」まで。規模を問わず、業務フローに組み込む形で支援してきました。</p>
     <div class="stats">
@@ -1024,6 +1059,7 @@ footer .copy{color:rgba(255,255,255,.4);font-size:12px;}
 <!-- ============ SECTION 08: 運営会社 ============ -->
 <section>
   <div class="inner">
+    <span class="eyebrow">Company</span>
     <h2>運営会社</h2>
     <div class="operator-card" style="margin-top:40px;">
       <div class="operator-logo"><img src="./assets/leiton-logo.png" alt="株式会社Leit On"></div>
@@ -1040,6 +1076,7 @@ footer .copy{color:rgba(255,255,255,.4);font-size:12px;}
 <!-- ============ SECTION 09: FAQ ============ -->
 <section>
   <div class="inner">
+    <span class="eyebrow">FAQ</span>
     <h2>よくある質問</h2>
     <div class="faq-list">
       <details open>
@@ -1085,6 +1122,7 @@ footer .copy{color:rgba(255,255,255,.4);font-size:12px;}
 <!-- ============ SECTION 10: 最終CTA+予約カレンダー ============ -->
 <section class="final" id="form">
   <div class="inner">
+    <span class="eyebrow">Reservation</span>
     <h2 class="jp"><span>まずは、</span><span>どのくらい</span><span>自動化できるかを</span><br class="pc"><span>知りませんか？</span></h2>
     <p class="lead">30分のオンライン診断で、その場で一緒に整理します。準備・資料は不要、カメラオフでもOK。<br>ご都合のいい枠をお選びください——無料診断は毎月5社までです。</p>
     <div class="booking-box">
@@ -1114,6 +1152,24 @@ footer .copy{color:rgba(255,255,255,.4);font-size:12px;}
 </div>
 
 <script>
+// スクロールフェードイン
+if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const targets = document.querySelectorAll('.case-card, .stat, .gift, .step, .compare-col, .checklist, .price-table, .operator-card, .sample-sheet, .why-free .block');
+  targets.forEach(function(el, i){
+    el.classList.add('rv');
+    el.style.transitionDelay = (i % 3) * 0.08 + 's';
+  });
+  const rio = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting) {
+        entry.target.classList.add('on');
+        rio.unobserve(entry.target);
+      }
+    });
+  }, {threshold: 0.12});
+  targets.forEach(function(el){ rio.observe(el); });
+}
+
 // Before/Afterミニバーのスクロール連動アニメーション(JSなしでも最終状態で表示される)
 const graphs = document.querySelectorAll('.mini-graph');
 if ('IntersectionObserver' in window && graphs.length) {
