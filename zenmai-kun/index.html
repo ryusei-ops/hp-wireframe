@@ -210,16 +210,24 @@ header{
   margin-bottom:12px;
 }
 .task-groups{
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:18px 28px;
-  margin-bottom:14px;
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:10px;
+  margin-bottom:12px;
 }
-.task-group{border-left:3px solid var(--teal);padding-left:14px;}
+.task-group{
+  background:#fff;
+  border:1px solid var(--line);
+  border-left:3px solid var(--teal);
+  border-radius:12px;
+  padding:12px 14px;
+  box-shadow:0 6px 16px rgba(18,41,75,.05);
+}
 .tg-title{
-  font-size:12.5px;font-weight:800;color:var(--teal-dark);
-  letter-spacing:.05em;margin-bottom:3px;
+  font-size:13px;font-weight:800;color:var(--teal-dark);
+  letter-spacing:.04em;margin-bottom:0;
+  white-space:nowrap;text-align:center;
 }
-.tg-items{font-size:14px;font-weight:700;color:var(--navy);line-height:1.7;}
+.tg-items{display:none;}
 .task-more{font-size:12.5px;color:var(--muted);}
 .badge{
   background:#fff;border:1px solid var(--line);
@@ -799,15 +807,15 @@ footer .copy{color:rgba(255,255,255,.4);font-size:12px;}
         <p class="task-lead">こんな業務を自動化できます</p>
         <div class="task-groups">
           <div class="task-group">
-            <p class="tg-title">経理・バックオフィス</p>
+            <p class="tg-title">経理・事務</p>
             <p class="tg-items">請求書の処理／仕訳・経費の入力／見積書の下書き</p>
           </div>
           <div class="task-group">
-            <p class="tg-title">データ・レポート</p>
+            <p class="tg-title">集計・レポート</p>
             <p class="tg-items">データ集計／日報・週報／売上の監視アラート</p>
           </div>
           <div class="task-group">
-            <p class="tg-title">顧客・メール対応</p>
+            <p class="tg-title">顧客対応</p>
             <p class="tg-items">問い合わせの一次対応／メール振り分け／予約リマインド</p>
           </div>
           <div class="task-group">
@@ -815,7 +823,7 @@ footer .copy{color:rgba(255,255,255,.4);font-size:12px;}
             <p class="tg-items">求人原稿の作成／応募者への連絡／SNS投稿の予約</p>
           </div>
         </div>
-        <p class="task-more">…ほか、議事録・文字起こし・データ転記など、パソコンで行う業務ならあらゆるものが対象です。</p>
+        <p class="task-more">…ほか、パソコンで行う業務なら、あらゆるものが対象です。</p>
       </div>
 
       <div class="hero-visual">
