@@ -158,6 +158,16 @@ header{
   margin-bottom:28px;
 }
 .hero .sub strong{color:var(--navy);}
+.hl{color:var(--teal-dark);}
+.hero-pill{
+  display:inline-flex;align-items:center;
+  background:#fff;border:1.5px solid var(--teal);
+  color:var(--teal-dark);
+  font-size:13px;font-weight:800;
+  border-radius:999px;padding:7px 18px;
+  margin-bottom:18px;
+  box-shadow:0 4px 14px rgba(15,181,165,.15);
+}
 .offer-box{
   position:relative;
   background:#fff;
@@ -556,7 +566,7 @@ header{
   box-shadow:0 14px 36px rgba(18,41,75,.08);
   display:flex;flex-direction:column;justify-content:center;
 }
-.stat .num{font-size:46px;font-weight:800;color:var(--teal-dark);margin-bottom:6px;}
+.stat .num{font-size:36px;font-weight:800;color:var(--teal-dark);margin-bottom:6px;}
 .stat .label{font-size:13.5px;color:var(--muted);}
 
 /* ===== 料金 ===== */
@@ -782,8 +792,9 @@ footer .copy{color:rgba(255,255,255,.4);font-size:12px;}
   <div class="inner">
     <div class="hero-grid">
       <div>
-        <h1>裏側で働くAIで、<br>業務を自動化する。</h1>
-        <p class="sub"><strong style="font-size:1.2em;color:var(--navy);">使われないAIから、勝手に動くAIへ</strong><br>業務自動化担当、Zenmaiくん</p>
+        <span class="hero-pill">累計支援50社以上 × 削減できなければ全額返金</span>
+        <h1><span class="hl">裏側で働くAI</span>で、<br>業務を自動化する。</h1>
+        <p class="sub"><strong style="font-size:1.2em;color:var(--navy);">使われないAIから、<span class="hl">勝手に動くAIへ</span></strong><br>業務自動化担当、Zenmaiくん</p>
 
         <p class="task-lead">こんな業務を自動化できます</p>
         <div class="task-groups">
@@ -1145,20 +1156,20 @@ footer .copy{color:rgba(255,255,255,.4);font-size:12px;}
 <section class="track">
   <div class="inner">
     <span class="eyebrow">Track Record</span>
-    <h2>数字で見るZenmai</h2>
-    <p class="lead">大手企業から個人事業まで、AI導入を設計から実装まで手がけてきました。</p>
+    <h2 class="jp"><span>大手企業から</span><span>個人事業まで、</span><br class="pc"><span>AI導入を</span><span>設計から実装まで</span><span>手がけてきました。</span></h2>
+    <p class="lead">エンタープライズのAI導入支援から、個人事業の「この作業だけ消したい」まで。規模を問わず、業務フローに組み込む形で支援してきました。</p>
     <div class="stats">
       <div class="stat">
         <p class="num">50社以上</p>
         <p class="label">累計の支援実績</p>
       </div>
       <div class="stat">
-        <p class="num">1/2</p>
-        <p class="label">転記業務の工数（月220時間→110時間）</p>
+        <p class="num">30以上</p>
+        <p class="label">自動化してきた業務</p>
       </div>
       <div class="stat">
-        <p class="num">1/6</p>
-        <p class="label">レポート作成時間（1件30分→5分）</p>
+        <p class="num">医療・士業・人材・EC ほか</p>
+        <p class="label">支援してきた業種</p>
       </div>
     </div>
   </div>
