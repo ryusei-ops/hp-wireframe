@@ -245,6 +245,52 @@ header{
 .rv.on{opacity:1;transform:none;}
 @media (prefers-reduced-motion: reduce){.rv{opacity:1;transform:none;transition:none;}}
 
+/* FVフロート通知カード */
+.zk-stage{position:relative;display:flex;justify-content:center;}
+.fcard{
+  position:absolute;
+  background:#fff;border-radius:12px;
+  box-shadow:0 10px 26px rgba(18,41,75,.14);
+  padding:9px 14px;
+  font-size:12px;font-weight:700;color:var(--navy);
+  display:flex;align-items:center;gap:7px;white-space:nowrap;
+  animation:floaty 4s ease-in-out infinite;
+}
+.fcard .ck{
+  width:16px;height:16px;border-radius:50%;
+  background:var(--teal);color:#fff;font-size:10px;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.fcard small{color:var(--muted);font-weight:600;margin-left:2px;}
+.fc1{top:2px;left:-160px;animation-delay:0s;}
+.fc2{top:122px;right:-162px;animation-delay:1.3s;}
+.fc3{bottom:2px;left:-130px;animation-delay:2.6s;}
+@keyframes floaty{50%{transform:translateY(-7px);}}
+@media (prefers-reduced-motion: reduce){.fcard{animation:none;}}
+
+/* Zenmaiとは: 縦フローカード */
+.flow-list{max-width:860px;margin:48px auto 0;display:grid;gap:16px;}
+.flow-card{
+  display:grid;grid-template-columns:58px 216px 1fr;gap:22px;align-items:center;
+  background:#fff;border-radius:20px;padding:26px 30px;
+  box-shadow:0 10px 30px rgba(18,41,75,.07);
+}
+.fc-num{font-size:38px;font-weight:800;color:#CBE5E1;line-height:1;text-align:center;}
+.fc-diagram{display:flex;flex-direction:column;gap:6px;align-items:center;justify-content:center;}
+.d-chips{display:flex;align-items:center;gap:4px;font-size:10px;color:#9AA8B8;font-weight:700;}
+.d-chip{background:#F1F4F8;border-radius:6px;padding:4px 8px;font-size:11px;font-weight:700;color:var(--muted);}
+.d-chip.hot{background:#FDECEC;color:#C0504D;}
+.d-chip.ai{background:var(--teal);color:#fff;}
+.d-chip.ai b{background:#fff;color:var(--teal-dark);border-radius:4px;padding:0 4px;margin-left:4px;font-size:9px;}
+.d-note{
+  background:#F2FBFA;border:1px solid #D5EDEA;border-radius:8px;
+  padding:5px 10px;font-size:11px;font-weight:700;color:var(--navy);
+  display:flex;align-items:center;gap:6px;
+}
+.d-note .ck{width:14px;height:14px;border-radius:50%;background:var(--teal);color:#fff;font-size:9px;display:flex;align-items:center;justify-content:center;}
+.fc-body h3{font-size:18px;color:var(--navy);margin-bottom:5px;}
+.fc-body p{font-size:14px;color:var(--muted);line-height:1.7;}
+
 /* ぜんまい回転 */
 @keyframes windup{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
 .zk-key{transform-origin:236px 150px;animation:windup 6s linear infinite;}
@@ -510,7 +556,7 @@ header{
   box-shadow:0 14px 36px rgba(18,41,75,.08);
   display:flex;flex-direction:column;justify-content:center;
 }
-.stat .num{font-size:36px;font-weight:800;color:var(--teal-dark);margin-bottom:6px;}
+.stat .num{font-size:46px;font-weight:800;color:var(--teal-dark);margin-bottom:6px;}
 .stat .label{font-size:13.5px;color:var(--muted);}
 
 /* ===== 料金 ===== */
@@ -689,6 +735,10 @@ footer .copy{color:rgba(255,255,255,.4);font-size:12px;}
   .hero-visual svg{width:128px;}
   .speech{font-size:12px;padding:6px 15px;}
   .hero-cta{display:none;}
+  .fcard{display:none;}
+  .flow-card{grid-template-columns:44px 1fr;gap:14px;}
+  .fc-diagram{display:none;}
+  .fc-num{font-size:28px;}
   .cards{grid-template-columns:1fr;}
   .compare{grid-template-columns:1fr;}
   .design-steps{grid-template-columns:1fr;}
@@ -759,6 +809,10 @@ footer .copy{color:rgba(255,255,255,.4);font-size:12px;}
 
       <div class="hero-visual">
         <span class="speech">巻いとけば、あとは勝手に働く。</span>
+        <div class="zk-stage">
+        <div class="fcard fc1"><span class="ck">✓</span>日次レポートを送信<small>8:30</small></div>
+        <div class="fcard fc2"><span class="ck">✓</span>請求書を会計ソフトへ登録</div>
+        <div class="fcard fc3"><span class="ck">✓</span>問い合わせを振り分け<small>完了</small></div>
         <!-- ゼンマイくん本体 -->
         <svg viewBox="0 0 300 300" aria-label="ゼンマイくん">
           <!-- 影 -->
@@ -789,6 +843,7 @@ footer .copy{color:rgba(255,255,255,.4);font-size:12px;}
           <ellipse cx="105" cy="252" rx="20" ry="10" fill="#12294B"/>
           <ellipse cx="175" cy="252" rx="20" ry="10" fill="#12294B"/>
         </svg>
+        </div>
         <div class="hero-cta">
           <span class="cta-kicker">＼ 準備不要・30分で終わります ／</span>
           <a class="btn" href="#form">無料オンライン診断を予約する</a>
@@ -814,6 +869,59 @@ footer .copy{color:rgba(255,255,255,.4);font-size:12px;}
       <li>「あの人にしかできない仕事」が増え続けている</li>
     </ul>
     <p class="checklist-note">→ 1つでも当てはまれば、診断で削減余地が見つかる可能性が高いです。</p>
+  </div>
+</section>
+
+<!-- ============ SECTION 02.3: Zenmaiとは(01-04フロー) ============ -->
+<section class="solution">
+  <div class="inner">
+    <span class="eyebrow">About Zenmai</span>
+    <h2 class="jp"><span>業務を伝えるだけで、</span><br class="pc"><span>"裏側のAI"が</span><span>動き出す。</span></h2>
+    <p class="lead">Zenmaiが業務フローを分解し、AIの持ち場を設計して、組み込みまで行います。</p>
+    <div class="flow-list">
+      <div class="flow-card">
+        <div class="fc-num">01</div>
+        <div class="fc-diagram">
+          <div class="d-chips"><span class="d-chip">受注</span>→<span class="d-chip hot">転記</span>→<span class="d-chip">報告</span></div>
+        </div>
+        <div class="fc-body">
+          <h3>業務の流れを伺う</h3>
+          <p>今の仕事の流れを、そのまま話してください。時間を取られている工程を一緒に見つけます。</p>
+        </div>
+      </div>
+      <div class="flow-card">
+        <div class="fc-num">02</div>
+        <div class="fc-diagram">
+          <div class="d-chips"><span class="d-chip">受注</span>→<span class="d-chip ai">転記<b>AI</b></span>→<span class="d-chip">報告</span></div>
+        </div>
+        <div class="fc-body">
+          <h3>AIの持ち場を設計する</h3>
+          <p>どこをAIに任せ、どこに人の確認を残すか。この切り分けが「使われないAI」を防ぎます。</p>
+        </div>
+      </div>
+      <div class="flow-card">
+        <div class="fc-num">03</div>
+        <div class="fc-diagram">
+          <div class="d-chips"><span class="d-chip">メール</span><span class="d-chip">表計算</span><span class="d-chip">会計ソフト</span></div>
+          <div class="d-chips"><span class="d-chip ai">つなぐ<b>AI</b></span></div>
+        </div>
+        <div class="fc-body">
+          <h3>業務フローに組み込む</h3>
+          <p>お使いのツールはそのまま。その裏側にAIを実装して、工程同士をつなぎます。</p>
+        </div>
+      </div>
+      <div class="flow-card">
+        <div class="fc-num">04</div>
+        <div class="fc-diagram">
+          <div class="d-note"><span class="ck">✓</span>日次レポートを送信 8:30</div>
+          <div class="d-note"><span class="ck">✓</span>請求書を登録 8:31</div>
+        </div>
+        <div class="fc-body">
+          <h3>あとは、勝手に回り続ける</h3>
+          <p>人が動かなくても業務が進みます。あなたは届いた結果を確認するだけです。</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1037,20 +1145,20 @@ footer .copy{color:rgba(255,255,255,.4);font-size:12px;}
 <section class="track">
   <div class="inner">
     <span class="eyebrow">Track Record</span>
-    <h2 class="jp"><span>大手企業から</span><span>個人事業まで、</span><br class="pc"><span>AI導入を</span><span>設計から実装まで</span><span>手がけてきました。</span></h2>
-    <p class="lead">エンタープライズのAI導入支援から、個人事業の「この作業だけ消したい」まで。規模を問わず、業務フローに組み込む形で支援してきました。</p>
+    <h2>数字で見るZenmai</h2>
+    <p class="lead">大手企業から個人事業まで、AI導入を設計から実装まで手がけてきました。</p>
     <div class="stats">
       <div class="stat">
         <p class="num">50社以上</p>
         <p class="label">累計の支援実績</p>
       </div>
       <div class="stat">
-        <p class="num">30以上</p>
-        <p class="label">自動化してきた業務</p>
+        <p class="num">1/2</p>
+        <p class="label">転記業務の工数（月220時間→110時間）</p>
       </div>
       <div class="stat">
-        <p class="num">医療・士業・人材・EC ほか</p>
-        <p class="label">支援してきた業種</p>
+        <p class="num">1/6</p>
+        <p class="label">レポート作成時間（1件30分→5分）</p>
       </div>
     </div>
   </div>
