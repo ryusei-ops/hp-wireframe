@@ -764,6 +764,13 @@ header{
 }
 .np-amount span{font-size:.55em;margin-left:2px;}
 .np-amount.sm{font-size:15px;color:rgba(255,255,255,.72);font-weight:700;}
+.np-item small b{display:inline;font-size:inherit;color:inherit;}
+.np-badge{
+  display:inline-block;margin-left:10px;padding:3px 11px;border-radius:999px;
+  background:var(--lime);color:var(--navy-deep);
+  font-size:11.5px;font-weight:800;letter-spacing:.03em;vertical-align:1px;
+}
+.np-gift{color:var(--lime);font-weight:800;}
 .np-note{
   text-align:center;margin-top:16px;font-size:13.5px;color:rgba(255,255,255,.62);line-height:1.8;
 }
@@ -949,6 +956,7 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.62);text-align:center
           <span class="hero-pill">モニター 3社限定</span>
           <span class="hero-pill alt">累計支援50社以上／年1万時間超の削減実績</span>
         </div>
+        <p class="hero-kicker">生成AIキャンプでお話ししている内容を、実際に構築するサービスです。</p>
         <h1>御社専用の<span class="hl">"AI社員"</span>を、<br>作りませんか？</h1>
         <div class="hero-envbar">
           <span class="he-item"><svg viewBox="0 0 24 24" aria-label="Microsoft"><rect x="1" y="1" width="10" height="10" fill="#F25022"/><rect x="13" y="1" width="10" height="10" fill="#7FBA00"/><rect x="1" y="13" width="10" height="10" fill="#00A4EF"/><rect x="13" y="13" width="10" height="10" fill="#FFB900"/></svg><b>Microsoft 365</b></span>
@@ -1233,7 +1241,6 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.62);text-align:center
       <li>ツールは全社に配ったが、<b>使っているのは一部の社員だけ</b></li>
       <li>AIに聞いても<b>社内のことは知らない</b>ので、結局使えない</li>
       <li>人を増やしたいが、<b>採用も教育も追いつかない</b></li>
-      <li><b>「あの人にしかできない業務」</b>が、引き継げないまま残っている</li>
     </ul>
   </div>
 </section>
@@ -1494,24 +1501,27 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.62);text-align:center
     </div>
 
     <div class="next-plan">
-      <p class="np-head">その後、広げていく場合</p>
+      <p class="np-head">導入したあとの、運用について</p>
       <div class="np-rows">
         <div class="np-row">
           <div class="np-item">
-            <b>2体目以降のAI社員</b>
-            <small>1体目で環境とデータの基盤が整うため、2体目以降は費用を抑えられます</small>
+            <b>運用プラン<span class="np-badge">導入後3ヶ月は無料</span></b>
+            <small>稼働の監視・不具合対応／業務の変化に合わせた調整（回数制限なし）／<b class="np-gift">AIの利用料</b>／月1回のご相談枠を含みます</small>
           </div>
-          <div class="np-amount">1体 30<span>万円</span></div>
+          <div class="np-amount">月 2<span>万円</span></div>
         </div>
         <div class="np-row">
           <div class="np-item">
-            <b>保守・改善</b>
-            <small>業務内容に応じて個別にご案内します。必須ではありません</small>
+            <b>AI社員を追加する場合</b>
+            <small>1体目で環境とデータの基盤が整うため、2体目以降は費用を抑えられます。運用プランをご契約中は割引価格です</small>
           </div>
-          <div class="np-amount sm">個別のご案内</div>
+          <div class="np-amount">1体 25<span>万円</span></div>
         </div>
       </div>
-      <p class="np-note">まず1体で試して、効果を確認してから広げていただくのが、いちばん失敗しない進め方です。</p>
+      <p class="np-note">
+        運用プランは4体以上で月3万円です。仕組みによっては保守なしで動き続けるものもあるため、必要かどうかは実装前にご説明します。<br>
+        追加構築は、運用プラン未契約の場合は1体30万円です。金額はすべて税抜です。
+      </p>
     </div>
   </div>
 </section>
@@ -1552,6 +1562,10 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.62);text-align:center
         <p class="a">御社のMicrosoft 365 / Google Workspace のテナント内に構築するため、業務データが外部サービスに蓄積されることはありません。AIへの入力が学習に使われない方式で構築し、扱うデータの範囲は事前に合意のうえ決めます。必要に応じてNDAを締結し、情報システム部門への説明資料もお渡しします。</p>
       </details>
       <details>
+        <summary>AIが出した内容が正しいか、どうやって確認できますか？</summary>
+        <p class="a">AIが抽出・判断した内容には、<b>元になったメール・議事録・ファイルの該当箇所へのリンクを残します</b>。「なぜこの結果になったのか」を後から必ず確認できるので、社内への説明や監査にも耐えます。<br>また、すべてをAIに任せる作りにはしません。<b>確定した数値はそのまま記録し、計算はプログラムで処理し、AIが担当するのは文脈の読み取りだけ</b>です。任せる範囲を絞ることで、精度のブレと運用コストの両方を抑えています。</p>
+      </details>
+      <details>
         <summary>Microsoft 365 も Google Workspace も使っていません。</summary>
         <p class="a">その場合も構築できます。いまお使いのメール・チャット・表計算・会計ソフトなどの環境に合わせて設計しますので、まずは現在の状況をお聞かせください。</p>
       </details>
@@ -1569,7 +1583,7 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.62);text-align:center
       </details>
       <details>
         <summary>モニター以外のプランはありますか？</summary>
-        <p class="a">あります。1体目で環境とデータの基盤が整うため、<b>2体目以降は1体あたり30万円（税抜）</b>でご提供しています。保守・改善が必要な場合は、業務内容に応じて個別にご案内します（必須ではありません）。まずは1体から始めて、効果を確認してから広げていただくケースが多いです。</p>
+        <p class="a">あります。導入後は<b>運用プラン（月2万円・導入後3ヶ月は無料）</b>をご用意しています。稼働の監視、業務の変化に合わせた調整、<b>AIの利用料</b>が含まれます。AI社員を増やす場合は、運用プランご契約中は1体25万円（未契約の場合は30万円）でいつでも追加できます。</p>
       </details>
       <details>
         <summary>相談したら、営業されますか？</summary>
