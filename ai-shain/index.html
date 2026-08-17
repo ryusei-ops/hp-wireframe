@@ -904,6 +904,17 @@ details .a{
 .cta-band p{font-size:clamp(17px,2.6vw,21px);font-weight:700;margin-bottom:20px;line-height:1.6;}
 .cta-band .cta-kicker{color:var(--lime);}
 
+.cb-lead{
+  font-size:clamp(20px,3.2vw,27px);font-weight:800;line-height:1.5;
+  letter-spacing:.02em;margin-bottom:12px;
+}
+.cb-sub{
+  font-size:15px;color:rgba(255,255,255,.72);line-height:1.85;
+  max-width:640px;margin:0 auto 22px;font-weight:400;
+}
+.sp-br{display:none;}
+@media (max-width:600px){ .sp-br{display:inline;} .cb-sub{font-size:14px;} }
+
 /* ===== 最終CTA ===== */
 .final{background:var(--navy-deep);color:#fff;}
 .final h2{color:#fff;}
@@ -1063,7 +1074,7 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.62);text-align:center
   <div class="inner">
     <span class="eyebrow">Line-up</span>
     <h2 class="jp"><span>たとえば、</span><span>こんなAI社員がいます。</span></h2>
-    <p class="lead">ホワイトカラーの業務を12の職種に分けています。御社の業務に合わせて、必要な社員から採用してください。すべて御社の環境に合わせて構築します。</p>
+    <p class="lead">いまテンプレートとして用意できているAI社員です。ご依頼の多いものから順に整えているので、これで全部というわけではありません。御社の業務に合わせて、必要な社員から採用してください。</p>
     <div class="staff-grid">
       <div class="staff-card">
         <div class="sc-head"><span class="sc-ico">📝</span><h3>議事録AI社員</h3></div>
@@ -1114,14 +1125,15 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.62);text-align:center
         <p>生成AIの検索で自社がどう紹介されているかを調べ、掲載されるための対策を続けます。</p>
       </div>
     </div>
-    <p class="staff-more">ここにない業務も構築できます。「これは任せられるか」を、無料相談でそのままお聞きください。</p>
+    <p class="staff-more">ここに載っていない業務も構築できます。むしろ、御社の業務に合わせて作るケースのほうが多いです。<br>「これは任せられるか」を、無料相談でそのままお聞きください。</p>
   </div>
 </section>
 
 <!-- 中間CTA -->
 <div class="cta-band">
   <div class="inner">
-    <p>どの業務から任せられるか、30分で整理します。</p>
+    <p class="cb-lead">3年後を見据えた働き方は、<br class="sp-br">いまから作れます。</p>
+    <p class="cb-sub">AIを業務に組み込んだ会社と、ツールを配っただけの会社。<br class="pc">その差は、これから開いていきます。</p>
     <span class="cta-kicker">＼ 準備・資料は不要です ／</span>
     <a class="btn" href="#cv">無料相談を予約する</a>
   </div>
