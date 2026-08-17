@@ -148,14 +148,6 @@ header{
   background:#fff;color:var(--teal-dark);
   border:1px solid rgba(15,181,165,.5);
 }
-.hero-kicker{
-  position:relative;padding-left:16px;margin-bottom:12px;
-  font-size:14.5px;font-weight:800;color:var(--teal-dark);letter-spacing:.03em;
-}
-.hero-kicker::before{
-  content:"";position:absolute;left:0;top:.62em;
-  width:7px;height:7px;border-radius:50%;background:var(--teal);
-}
 .hero h1{
   font-size:clamp(28px,4.4vw,42px);
   line-height:1.32;
@@ -237,9 +229,27 @@ header{
 }
 .ht-foot b{color:var(--navy);}
 .hero-cta{margin-top:24px;}
+.sp-only{display:none;}
+@media (max-width:760px){ .pc-only{display:none;} .sp-only{display:inline;} }
 .hero-cta .btn-row{justify-content:flex-start;}
 .hero-cta .btn{font-size:16.5px;padding:16px 32px;}
 .hero-cta .micro{text-align:left;}
+/* スマホではFVの要素を絞り、CTAを画面内に収める */
+@media (max-width:760px){
+  .hero{padding:104px 0 56px;}
+  .hero-pill.alt{display:none;}
+  .hero-merits{display:none;}
+  .hero h1{font-size:clamp(27px,7.4vw,34px);margin-bottom:16px;}
+  .hero-envbar{padding:11px 14px;margin-bottom:16px;gap:6px 10px;}
+  .he-item svg{width:22px;height:22px;}
+  .he-item b{font-size:14.5px;}
+  .he-sep{display:none;}
+  .hero .sub{font-size:15px;margin-bottom:18px;}
+  .hero-cta{margin-top:0;}
+  .hero-cta .btn{width:100%;font-size:16px;padding:15px 20px;}
+  .hero-cta .btn-row{gap:10px;}
+  .hero-tenant{padding:22px 18px 16px;}
+}
 @media (max-width:960px){
   .hero-cta .btn-row{justify-content:center;}
   .hero-cta .micro{text-align:center;}
@@ -956,7 +966,6 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.62);text-align:center
           <span class="hero-pill">モニター 3社限定</span>
           <span class="hero-pill alt">累計支援50社以上／年1万時間超の削減実績</span>
         </div>
-        <p class="hero-kicker">生成AIキャンプでお話ししている内容を、実際に構築するサービスです。</p>
         <h1>御社専用の<span class="hl">"AI社員"</span>を、<br>作りませんか？</h1>
         <div class="hero-envbar">
           <span class="he-item"><svg viewBox="0 0 24 24" aria-label="Microsoft"><rect x="1" y="1" width="10" height="10" fill="#F25022"/><rect x="13" y="1" width="10" height="10" fill="#7FBA00"/><rect x="1" y="13" width="10" height="10" fill="#00A4EF"/><rect x="13" y="13" width="10" height="10" fill="#FFB900"/></svg><b>Microsoft 365</b></span>
@@ -965,7 +974,7 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.62);text-align:center
         </div>
         <p class="sub">
           議事録も、資料作成も、リサーチも。<br>
-          <strong>いま人がやっている業務を、そのまま引き受けるAI社員を構築します。</strong>
+          <strong>いま人がやっている業務を、そのまま引き受けます。</strong>
         </p>
         <div class="hero-merits">
           <span>新しい契約は不要</span>
@@ -977,7 +986,7 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.62);text-align:center
             <a class="btn" href="#cv">無料相談を予約する</a>
             <a class="btn ghost" href="#monitor">モニター内容を見る</a>
           </div>
-          <span class="micro">相談は30分・オンライン／その場で「何を任せられるか」までお答えします</span>
+          <span class="micro"><span class="pc-only">相談は30分・オンライン／その場で「何を任せられるか」までお答えします</span><span class="sp-only">30分・オンライン／準備は不要です</span></span>
         </div>
       </div>
 
