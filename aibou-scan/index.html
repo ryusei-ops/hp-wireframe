@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="robots" content="noindex">
+<title>AIBOU 領収書アップロード</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  body { font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans",sans-serif;
+         background:#f6f8f7; color:#1f2937; min-height:100vh;
+         display:flex; flex-direction:column; align-items:center; padding:28px 20px 40px; }
+  .brand { font-size:14px; letter-spacing:.18em; font-weight:700; color:#15803d; margin-bottom:4px; }
+  h1 { font-size:20px; font-weight:700; margin-bottom:2px; }
+  .client { font-size:13px; color:#6b7280; margin-bottom:20px; }
+  .toggle { display:flex; align-items:center; gap:8px; font-size:13.5px; color:#374151;
+            background:#fff; border:1px solid #e5e7eb; border-radius:10px;
+            padding:10px 14px; margin-bottom:16px; width:100%; max-width:340px; }
+  .toggle input { width:18px; height:18px; accent-color:#16a34a; }
+  .cvstate { font-size:11.5px; color:#9ca3af; margin-left:auto; }
+  .shot {
+    width:100%; max-width:340px; background:#16a34a; color:#fff; border:none; border-radius:16px;
+    padding:22px 0; font-size:19px; font-weight:700; cursor:pointer;
+    box-shadow:0 4px 14px rgba(22,163,74,.35);
+  }
+  .shot:active { transform:scale(.98); }
+  .hint { font-size:12.5px; color:#6b7280; margin-top:14px; text-align:center; line-height:1.8; }
+  #list { width:100%; max-width:340px; margin-top:22px; display:flex; flex-direction:column; gap:8px; }
+  .row { background:#fff; border:1px solid #e5e7eb; border-radius:10px; padding:10px 14px;
+         font-size:13px; display:flex; justify-content:space-between; align-items:center; gap:10px; }
+  .row img { width:34px; height:34px; object-fit:cover; border-radius:6px; flex:none; }
+  .row .name { flex:1; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .ok { color:#16a34a; font-weight:700; flex:none; }
+  .ng { color:#dc2626; font-weight:700; flex:none; }
+  .wait { color:#9ca3af; flex:none; }
+  input[type=file] { display:none; }
+</style>
+</head>
+<body>
+  <div class="brand">AIBOU</div>
+  <h1>領収書アップロード</h1>
+  <div class="client" id="client">テストモード</div>
+
+  <label class="toggle">
+    <input type="checkbox" id="scanmode" checked>
+    書類スキャン補正（自動切り抜き）
+    <span class="cvstate" id="cvstate">補正エンジン読込中…</span>
+  </label>
+
+  <button class="shot" id="btn">📷 領収書を撮る</button>
+  <input type="file" id="file" accept="image/*,application/pdf" capture="environment" multiple>
+  <div class="hint">撮った写真は自動で会計担当に届きます。<br>1枚ずつ、文字が読める距離で撮ってください。</div>
+  <div id="list"></div>
+
+<script src="https://cdn.jsdelivr.net/gh/ColonelParrot/jscanify@master/src/jscanify.min.js"></script>
+<script>
+  // GAS ウェブアプリの受け口（doPost）
+  const GAS_URL = 'https://script.google.com/macros/s/AKfycbwDkhSSj4zbBiGVp5i1dKKeC899LBO21-13MXZZWvHrGwGyHx5JL74xvDJKU9wLT8BV/exec';
+  const CLIENT = new URLSearchParams(location.search).get('c') || '';
+  if (CLIENT) document.getElementById('client').textContent = '顧問先コード：' + CLIENT;
+
+  const btn = document.getElementById('btn');
+  const input = document.getElementById('file');
+  const list = document.getElementById('list');
+  const cvstate = document.getElementById('cvstate');
+
+  let cvReady = false;
+  let scanner = null;
+  function markReady() {
+    if (cvReady) return;
+    cvReady = true;
+    scanner = new jscanify();
+    cvstate.textContent = '補正 準備OK';
+  }
+  function onCvLoaded() {
+    try {
+      if (typeof cv === 'undefined') return;
+      if (typeof cv.then === 'function') { cv.then(m => { window.cv = m; markReady(); }); }
+      else if (cv.Mat) { markReady(); }
+      else { cv['onRuntimeInitialized'] = markReady; }
+    } catch (e) { /* タイムアウト側に任せる */ }
+  }
+  setTimeout(() => {
+    if (!cvReady) cvstate.textContent = '補正は利用不可（原本のまま送信）';
+  }, 25000);
+
+  btn.addEventListener('click', () => input.click());
+  input.addEventListener('change', () => {
+    [...input.files].forEach(handle);
+    input.value = '';
+  });
+
+  function dist(a, b) { return Math.hypot(a.x - b.x, a.y - b.y); }
+
+  function loadImage(file) {
+    return new Promise((resolve, reject) => {
+      const img = new Image();
+      img.onload = () => resolve(img);
+      img.onerror = reject;
+      img.src = URL.createObjectURL(file);
+    });
+  }
+
+  /** 書類スキャン補正: 輪郭検出→切り抜き→台形補正→コントラスト強調 */
+  async function scanCorrect(file) {
+    if (!document.getElementById('scanmode').checked) return { blob: file, scanned: false };
+    if (!cvReady || !file.type || !file.type.startsWith('image/')) return { blob: file, scanned: false };
+    try {
+      const img = await loadImage(file);
+      const src = cv.imread(img);
+      const contour = scanner.findPaperContour(src);
+      src.delete();
+      if (!contour) return { blob: file, scanned: false };
+      const p = scanner.getCornerPoints(contour);
+      const w = Math.round(Math.max(dist(p.topLeftCorner, p.topRightCorner), dist(p.bottomLeftCorner, p.bottomRightCorner)));
+      const h = Math.round(Math.max(dist(p.topLeftCorner, p.bottomLeftCorner), dist(p.topRightCorner, p.bottomRightCorner)));
+      if (!w || !h || w * h < img.naturalWidth * img.naturalHeight * 0.15) return { blob: file, scanned: false };
+      const paper = scanner.extractPaper(img, w, h);
+      const out = document.createElement('canvas');
+      out.width = w; out.height = h;
+      const ctx = out.getContext('2d');
+      ctx.filter = 'contrast(1.18) brightness(1.06) saturate(0.85)';
+      ctx.drawImage(paper, 0, 0);
+      const blob = await new Promise(r => out.toBlob(r, 'image/jpeg', 0.92));
+      return blob ? { blob, scanned: true } : { blob: file, scanned: false };
+    } catch (e) {
+      return { blob: file, scanned: false };
+    }
+  }
+
+  /** 送信前に長辺2600pxへ縮小 */
+  async function shrink(fileOrBlob) {
+    if (!fileOrBlob.type || !fileOrBlob.type.startsWith('image/')) return fileOrBlob;
+    try {
+      const img = await loadImage(fileOrBlob);
+      const MAX = 2600;
+      const scale = Math.min(1, MAX / Math.max(img.naturalWidth, img.naturalHeight));
+      const c = document.createElement('canvas');
+      c.width = Math.round(img.naturalWidth * scale);
+      c.height = Math.round(img.naturalHeight * scale);
+      c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
+      const out = await new Promise(r => c.toBlob(r, 'image/jpeg', 0.88));
+      return out || fileOrBlob;
+    } catch (e) { return fileOrBlob; }
+  }
+
+  function toBase64(blob) {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(reader.result.split(',')[1]);
+      reader.onerror = reject;
+      reader.readAsDataURL(blob);
+    });
+  }
+
+  async function handle(file) {
+    const row = document.createElement('div');
+    row.className = 'row';
+    row.innerHTML = '<span class="name">' + (file.name || '撮影画像') + '</span><span class="wait">補正中…</span>';
+    list.prepend(row);
+    const status = row.lastElementChild;
+
+    try {
+      let { blob, scanned } = await scanCorrect(file);
+      blob = await shrink(blob);
+      if (scanned) {
+        const thumb = document.createElement('img');
+        thumb.src = URL.createObjectURL(blob);
+        row.prepend(thumb);
+      }
+      status.textContent = '送信中…';
+
+      const base64 = await toBase64(blob);
+      const res = await fetch(GAS_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify({ clientCode: CLIENT, mimeType: blob.type || 'image/jpeg', data: base64 })
+      });
+      const json = await res.json();
+      if (json.ok) { status.textContent = scanned ? '✓ 補正して送信' : '✓ 送信完了'; status.className = 'ok'; }
+      else { status.textContent = '✗ ' + (json.error || '失敗'); status.className = 'ng'; }
+    } catch (e) {
+      status.textContent = '✗ 通信失敗（再送してください）';
+      status.className = 'ng';
+    }
+  }
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/@techstark/opencv-js@4.9.0-release.3/dist/opencv.js" onload="onCvLoaded()" onerror="document.getElementById('cvstate').textContent='補正エンジン読込失敗（原本のまま送信）'"></script>
+</body>
+</html>
