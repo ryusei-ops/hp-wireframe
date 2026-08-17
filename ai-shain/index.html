@@ -135,8 +135,16 @@ header{
   padding:132px 0 84px;
   border-bottom:1px solid var(--line);
 }
-.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:52px;align-items:center;}
-@media (max-width:960px){ .hero-grid{grid-template-columns:1fr;gap:40px;} }
+.hero-grid{
+  display:grid;grid-template-columns:1.02fr .98fr;gap:20px 52px;align-items:center;
+  grid-template-areas:"main visual" "cta visual";
+}
+.hero-main{grid-area:main;}
+.hero-visual{grid-area:visual;}
+.hero-cta{grid-area:cta;}
+@media (max-width:960px){
+  .hero-grid{grid-template-columns:1fr;gap:26px;grid-template-areas:"main" "visual" "cta";}
+}
 .hero-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;}
 .hero-pill{
   display:inline-block;
@@ -223,6 +231,15 @@ header{
   font-size:12.5px;font-weight:700;color:var(--teal-dark);line-height:1.3;
 }
 .ht-staff i{font-style:normal;font-size:15px;}
+.ht-staff span{position:relative;}
+.ht-staff span::after{
+  content:"";flex:none;margin-left:auto;
+  width:7px;height:7px;border-radius:50%;background:var(--teal);
+  box-shadow:0 0 0 3px rgba(15,181,165,.22);
+  animation:htPulse 2.4s ease-in-out infinite;
+}
+@keyframes htPulse{0%,100%{opacity:1;}50%{opacity:.3;}}
+@media (prefers-reduced-motion:reduce){ .ht-staff span::after{animation:none;} }
 .ht-foot{
   margin-top:16px;padding-top:14px;border-top:1px dashed var(--line);
   font-size:12px;color:var(--muted);text-align:center;line-height:1.7;
@@ -234,21 +251,31 @@ header{
 .hero-cta .btn-row{justify-content:flex-start;}
 .hero-cta .btn{font-size:16.5px;padding:16px 32px;}
 .hero-cta .micro{text-align:left;}
-/* スマホではFVの要素を絞り、CTAを画面内に収める */
+/* スマホ: テキストを削り、図で伝える。CTAを1画面の最下部に置く */
 @media (max-width:760px){
-  .hero{padding:104px 0 56px;}
+  .hero{padding:92px 0 40px;}
+  .hero-grid{gap:18px;}
   .hero-pill.alt{display:none;}
-  .hero-merits{display:none;}
-  .hero h1{font-size:clamp(27px,7.4vw,34px);margin-bottom:16px;}
-  .hero-envbar{padding:11px 14px;margin-bottom:16px;gap:6px 10px;}
-  .he-item svg{width:22px;height:22px;}
-  .he-item b{font-size:14.5px;}
-  .he-sep{display:none;}
-  .hero .sub{font-size:15px;margin-bottom:18px;}
+  .hero-pill{font-size:11.5px;padding:5px 14px;}
+  .hero-pills{margin-bottom:14px;}
+  .hero-envbar,.hero .sub,.hero-merits,.sp-hide{display:none;}
+  .hero h1{font-size:clamp(26px,7.2vw,32px);margin-bottom:0;}
   .hero-cta{margin-top:0;}
-  .hero-cta .btn{width:100%;font-size:16px;padding:15px 20px;}
-  .hero-cta .btn-row{gap:10px;}
-  .hero-tenant{padding:22px 18px 16px;}
+  .hero-cta .btn{width:100%;font-size:16.5px;padding:16px 20px;}
+  .hero-cta .micro{margin-top:9px;}
+  /* 図をコンパクトに */
+  .hero-tenant{padding:20px 14px 14px;border-radius:15px;}
+  .ht-label{font-size:10.5px;padding:3px 12px;top:-11px;left:16px;}
+  .ht-logos{gap:9px;}
+  .ht-logo{padding:12px 6px;}
+  .ht-logo svg{width:30px;height:30px;margin-bottom:6px;}
+  .ht-logo span{font-size:11.5px;}
+  .ht-mid{margin:13px 0 12px;}
+  .ht-mid span{font-size:11px;padding:0 10px;}
+  .ht-staff{gap:7px;}
+  .ht-staff span{padding:9px 9px;font-size:11.5px;gap:6px;}
+  .ht-staff i{font-size:14px;}
+  .ht-foot{display:none;}
 }
 @media (max-width:960px){
   .hero-cta .btn-row{justify-content:center;}
@@ -961,7 +988,7 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.62);text-align:center
 <div class="hero" id="top">
   <div class="inner">
     <div class="hero-grid">
-      <div>
+      <div class="hero-main">
         <div class="hero-pills">
           <span class="hero-pill">モニター 3社限定</span>
           <span class="hero-pill alt">累計支援50社以上／年1万時間超の削減実績</span>
@@ -981,23 +1008,16 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.62);text-align:center
           <span>権限設定はそのまま</span>
           <span>社員が覚えることはゼロ</span>
         </div>
-        <div class="hero-cta">
-          <div class="btn-row">
-            <a class="btn" href="#cv">無料相談を予約する</a>
-            <a class="btn ghost" href="#monitor">モニター内容を見る</a>
-          </div>
-          <span class="micro"><span class="pc-only">相談は30分・オンライン／その場で「何を任せられるか」までお答えします</span><span class="sp-only">30分・オンライン／準備は不要です</span></span>
-        </div>
       </div>
 
-      <div>
+      <div class="hero-visual">
         <div class="hero-tenant">
-          <span class="ht-label">御社のテナント</span>
+          <span class="ht-label">いま使っている環境</span>
           <div class="ht-logos">
             <div class="ht-logo"><svg viewBox="0 0 24 24" aria-label="Microsoft"><rect x="1" y="1" width="10" height="10" fill="#F25022"/><rect x="13" y="1" width="10" height="10" fill="#7FBA00"/><rect x="1" y="13" width="10" height="10" fill="#00A4EF"/><rect x="13" y="13" width="10" height="10" fill="#FFB900"/></svg><span>Microsoft 365</span></div>
             <div class="ht-logo"><svg viewBox="0 0 48 48" aria-label="Google"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/></svg><span>Google Workspace</span></div>
           </div>
-          <p class="ht-mid"><span>この環境の中で、そのまま働きます</span></p>
+          <p class="ht-mid"><span>この中で、AI社員が働きます</span></p>
           <div class="ht-staff">
             <span><i>📝</i>議事録AI社員</span>
             <span><i>📄</i>資料作成AI社員</span>
@@ -1006,6 +1026,14 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.62);text-align:center
           </div>
           <p class="ht-foot">データは<b>社外に出ません</b>。<br>いつものメール・ファイルに、終わった状態で結果が届きます。</p>
         </div>
+      </div>
+
+      <div class="hero-cta">
+        <div class="btn-row">
+          <a class="btn" href="#cv">無料相談を予約する</a>
+          <a class="btn ghost sp-hide" href="#monitor">モニター内容を見る</a>
+        </div>
+        <span class="micro"><span class="pc-only">相談は30分・オンライン／その場で「何を任せられるか」までお答えします</span><span class="sp-only">30分・オンライン／準備は不要です</span></span>
       </div>
     </div>
   </div>
