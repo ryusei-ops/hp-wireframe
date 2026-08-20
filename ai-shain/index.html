@@ -1655,7 +1655,6 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.62);text-align:center
 
     <div class="cv-grid">
       <div class="cv-box">
-        <span class="cv-step">方法 1</span>
         <h3>そのまま日時を予約する</h3>
         <p class="cv-desc">空いている枠を選ぶだけ。1分で予約が完了します。</p>
         <div class="booking-box">
@@ -1669,6 +1668,7 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.62);text-align:center
         </div>
       </div>
 
+<!-- フォーム導線は一旦停止（TimeRexの予約に一本化）。再開する場合はこのコメントを外し、GASを差し替えること
       <p class="cv-or">または</p>
 
       <div class="cv-box">
@@ -1716,6 +1716,7 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.62);text-align:center
           <p class="form-msg" id="form-msg"></p>
         </form>
       </div>
+-->
     </div>
   </div>
 </section>
@@ -1741,7 +1742,7 @@ const form = document.getElementById('contact-form');
 const formMsg = document.getElementById('form-msg');
 const submitBtn = document.getElementById('submit-btn');
 
-form.addEventListener('submit', function(e){
+if (form) form.addEventListener('submit', function(e){
   e.preventDefault();
   formMsg.className = 'form-msg';
   formMsg.textContent = '';
