@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-569VZ9NR');</script>
+<!-- End Google Tag Manager -->
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI社員構築｜組織の働き方を変える。Microsoft 365・Google Workspace の中に。— 株式会社Leit On</title>
@@ -646,6 +654,51 @@ header{
 @media (max-width:860px){ .env-card h3{min-height:0;} }
 .env-card p{font-size:14.5px;color:var(--muted);line-height:1.8;}
 
+/* ROI(元が取れるライン) */
+.roi{max-width:900px;margin:26px auto 0;}
+.roi-head{
+  text-align:center;font-size:14px;font-weight:800;letter-spacing:.08em;
+  color:var(--muted);margin-bottom:16px;
+}
+.roi-break{
+  display:grid;grid-template-columns:auto 1fr;gap:26px;align-items:center;
+  background:#fff;border:2px solid var(--teal);border-radius:14px;
+  padding:24px 28px;box-shadow:0 4px 16px rgba(15,181,165,.12);
+}
+@media (max-width:620px){ .roi-break{grid-template-columns:1fr;gap:14px;text-align:center;} }
+.rb-num{
+  font-size:clamp(22px,3.4vw,28px);font-weight:800;color:var(--navy);white-space:nowrap;
+  letter-spacing:.01em;
+}
+.rb-num b{font-size:1.9em;color:var(--teal-dark);letter-spacing:0;}
+.rb-txt p{font-size:16.5px;line-height:1.75;color:var(--navy);font-weight:600;}
+.rb-txt p b{font-weight:800;background:linear-gradient(transparent 62%, rgba(15,181,165,.28) 62%);}
+.rb-txt small{display:block;margin-top:8px;font-size:12.5px;color:var(--muted);line-height:1.7;}
+.roi-sub{
+  text-align:center;margin:24px 0 14px;font-size:15px;color:var(--text);line-height:1.8;
+}
+.roi-sub b{color:var(--navy);font-weight:800;}
+.roi-rows{background:#fff;border:1px solid var(--line);border-radius:13px;overflow:hidden;}
+.roi-row{
+  display:grid;grid-template-columns:190px 150px 1fr;gap:16px;align-items:center;
+  padding:15px 24px;border-bottom:1px solid var(--line);
+}
+.roi-row:last-child{border-bottom:none;}
+.rr-label{font-size:14.5px;font-weight:700;color:var(--navy);}
+.rr-val{font-size:20px;font-weight:800;text-align:right;font-variant-numeric:tabular-nums;}
+.rr-val.plus{color:var(--teal-dark);}
+.rr-val.minus{color:var(--muted);}
+.rr-val.big{font-size:26px;color:var(--teal-dark);}
+.rr-note{font-size:12.5px;color:var(--muted);line-height:1.65;}
+.roi-row.total{background:rgba(15,181,165,.07);}
+.roi-foot{
+  text-align:center;margin-top:14px;font-size:12.5px;color:var(--muted);line-height:1.8;
+}
+@media (max-width:700px){
+  .roi-row{grid-template-columns:1fr auto;gap:6px 12px;padding:13px 18px;}
+  .rr-note{grid-column:1 / -1;}
+}
+
 /* ===== 費用対効果(採用との比較) ===== */
 .cmp2{
   max-width:900px;margin:0 auto;background:#fff;
@@ -981,6 +1034,11 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.62);text-align:center
 </style>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-569VZ9NR"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
 
 <header>
   <div class="header-inner">
@@ -1452,6 +1510,38 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.62);text-align:center
         <span class="c-a">退職・異動でノウハウが失われる</span>
         <span class="c-b">やり方が仕組みとして会社に残る</span>
       </div>
+    </div>
+
+
+    <div class="roi">
+      <p class="roi-head">どのくらい減れば、元が取れるのか</p>
+      <div class="roi-break">
+        <div class="rb-num">月 <b>25</b>時間</div>
+        <div class="rb-txt">
+          <p>1日あたり、<b>1時間ちょっと</b>。<br>これだけ減れば、<b>初年度の費用は回収できます</b>。</p>
+          <small>初年度の費用＝構築50万円＋運用プラン18万円（9ヶ月分）＝68万円。人件費を時給2,500円で換算した場合。</small>
+        </div>
+      </div>
+
+      <p class="roi-sub">実際の削減実績（人材企業・50名規模）は <b>月110時間</b>。この場合はこうなります。</p>
+      <div class="roi-rows">
+        <div class="roi-row">
+          <span class="rr-label">年間で生まれる価値</span>
+          <span class="rr-val plus">330万円</span>
+          <span class="rr-note">月110時間 × 12ヶ月 × 時給2,500円</span>
+        </div>
+        <div class="roi-row">
+          <span class="rr-label">初年度にかかる費用</span>
+          <span class="rr-val minus">68万円</span>
+          <span class="rr-note">構築50万円＋運用18万円</span>
+        </div>
+        <div class="roi-row total">
+          <span class="rr-label">初年度の差引</span>
+          <span class="rr-val big">＋262万円</span>
+          <span class="rr-note">2年目以降は運用24万円のみ／年306万円のプラス</span>
+        </div>
+      </div>
+      <p class="roi-foot">※ 人件費は年収400万円・社会保険料等を含めた目安として時給2,500円で計算しています。削減できる時間は業務の内容と量によって変わります。</p>
     </div>
 
     <div class="freed">
