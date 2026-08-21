@@ -861,6 +861,33 @@ header{
   font-size:11.5px;font-weight:800;letter-spacing:.03em;vertical-align:1px;
 }
 .np-gift{color:var(--lime);font-weight:800;}
+.komon{max-width:780px;margin:22px auto 0;}
+.km-head{
+  text-align:center;font-size:13px;font-weight:800;letter-spacing:.1em;
+  color:rgba(255,255,255,.6);margin-bottom:12px;
+}
+.km-rows{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);border-radius:12px;overflow:hidden;}
+.km-row{
+  display:grid;grid-template-columns:190px 130px 1fr;gap:14px;align-items:center;
+  padding:13px 22px;border-bottom:1px solid rgba(255,255,255,.1);
+}
+.km-row:last-child{border-bottom:none;}
+.km-row.own{background:rgba(15,181,165,.16);}
+.km-name{font-size:14.5px;font-weight:700;color:rgba(255,255,255,.85);}
+.km-row.own .km-name{color:#fff;}
+.km-price{font-size:16px;font-weight:800;color:rgba(255,255,255,.7);white-space:nowrap;font-variant-numeric:tabular-nums;}
+.km-row.own .km-price{color:var(--lime);font-size:18px;}
+.km-work{font-size:13px;color:rgba(255,255,255,.6);line-height:1.6;}
+.km-row.own .km-work{color:rgba(255,255,255,.85);}
+.km-row.own .km-work b{color:#fff;}
+.km-note{
+  text-align:center;margin-top:14px;font-size:14px;color:rgba(255,255,255,.7);line-height:1.8;
+}
+.km-note b{color:#fff;}
+@media (max-width:640px){
+  .km-row{grid-template-columns:1fr auto;gap:4px 12px;padding:12px 16px;}
+  .km-work{grid-column:1 / -1;font-size:12.5px;}
+}
 .np-note{
   text-align:center;margin-top:16px;font-size:13.5px;color:rgba(255,255,255,.62);line-height:1.8;
 }
@@ -1516,10 +1543,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="roi">
       <p class="roi-head">どのくらい減れば、元が取れるのか</p>
       <div class="roi-break">
-        <div class="rb-num">月 <b>25</b>時間</div>
+        <div class="rb-num">月 <b>32</b>時間</div>
         <div class="rb-txt">
-          <p>1日あたり、<b>1時間ちょっと</b>。<br>これだけ減れば、<b>初年度の費用は回収できます</b>。</p>
-          <small>初年度の費用＝構築50万円＋運用プラン18万円（9ヶ月分）＝68万円。人件費を時給2,500円で換算した場合。</small>
+          <p>1日あたり、<b>1時間半ほど</b>。<br>これだけ減れば、<b>初年度の費用は回収できます</b>。</p>
+          <small>初年度の費用＝構築50万円＋運用プラン45万円（9ヶ月分）＝95万円。人件費を時給2,500円で換算した場合。</small>
         </div>
       </div>
 
@@ -1532,13 +1559,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <div class="roi-row">
           <span class="rr-label">初年度にかかる費用</span>
-          <span class="rr-val minus">68万円</span>
-          <span class="rr-note">構築50万円＋運用18万円</span>
+          <span class="rr-val minus">95万円</span>
+          <span class="rr-note">構築50万円＋運用45万円</span>
         </div>
         <div class="roi-row total">
           <span class="rr-label">初年度の差引</span>
-          <span class="rr-val big">＋262万円</span>
-          <span class="rr-note">2年目以降は運用24万円のみ／年306万円のプラス</span>
+          <span class="rr-val big">＋235万円</span>
+          <span class="rr-note">2年目以降は運用60万円のみ／年270万円のプラス</span>
         </div>
       </div>
       <p class="roi-foot">※ 人件費は年収400万円・社会保険料等を含めた目安として時給2,500円で計算しています。削減できる時間は業務の内容と量によって変わります。</p>
@@ -1647,19 +1674,41 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <b>運用プラン<span class="np-badge">導入後3ヶ月は無料</span></b>
             <small>稼働の監視・不具合対応／業務の変化に合わせた調整（回数制限なし）／<b class="np-gift">AIの利用料</b>／月1回のご相談枠を含みます</small>
           </div>
-          <div class="np-amount">月 2<span>万円</span></div>
+          <div class="np-amount">月 5<span>万円</span></div>
         </div>
         <div class="np-row">
           <div class="np-item">
             <b>AI社員を追加する場合</b>
-            <small>1体目で環境とデータの基盤が整うため、2体目以降は費用を抑えられます。運用プランをご契約中は割引価格です</small>
+            <small>1体目で環境とデータの基盤が整うため、2体目以降は費用を抑えられます。<b>モニターにご参加いただいた企業は、この価格を継続してご利用いただけます</b></small>
           </div>
-          <div class="np-amount">1体 25<span>万円</span></div>
+          <div class="np-amount">1体 30<span>万円</span></div>
         </div>
       </div>
+      <div class="komon">
+        <p class="km-head">月5万円が、高いか安いか</p>
+        <div class="km-rows">
+          <div class="km-row">
+            <span class="km-name">顧問税理士</span>
+            <span class="km-price">月 3〜5万円</span>
+            <span class="km-work">会計・税務／月1回の訪問</span>
+          </div>
+          <div class="km-row">
+            <span class="km-name">社会保険労務士</span>
+            <span class="km-price">月 2〜3万円</span>
+            <span class="km-work">労務・手続き／随時</span>
+          </div>
+          <div class="km-row own">
+            <span class="km-name">AI社員の運用プラン</span>
+            <span class="km-price">月 5万円</span>
+            <span class="km-work">議事録・経理・資料作成など／<b>毎日動き続ける</b></span>
+          </div>
+        </div>
+        <p class="km-note">顧問税理士と同じくらいの月額で、<b>毎日働く担当がもう1人</b>増えると考えていただくのが近いです。</p>
+      </div>
+
       <p class="np-note">
-        運用プランは4体以上で月3万円です。仕組みによっては保守なしで動き続けるものもあるため、必要かどうかは実装前にご説明します。<br>
-        追加構築は、運用プラン未契約の場合は1体30万円です。金額はすべて税抜です。
+        追加構築の30万円は、モニターにご参加いただいた企業の価格です（通常50万円）。<br>
+        運用プランは3体まで月5万円です。4体以上は個別にご相談ください。金額はすべて税抜です。
       </p>
     </div>
   </div>
@@ -1722,7 +1771,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </details>
       <details>
         <summary>モニター以外のプランはありますか？</summary>
-        <p class="a">あります。導入後は<b>運用プラン（月2万円・導入後3ヶ月は無料）</b>をご用意しています。稼働の監視、業務の変化に合わせた調整、<b>AIの利用料</b>が含まれます。AI社員を増やす場合は、運用プランご契約中は1体25万円（未契約の場合は30万円）でいつでも追加できます。</p>
+        <p class="a">あります。導入後は<b>運用プラン（月5万円・導入後3ヶ月は無料）</b>をご用意しています。稼働の監視、業務の変化に合わせた調整、<b>AIの利用料</b>が含まれます。AI社員を増やす場合は<b>1体30万円</b>（モニター参加企業の価格・通常50万円）でいつでも追加できます。</p>
       </details>
       <details>
         <summary>もっとまとめて、複数の業務を一度に自動化したいのですが。</summary>
